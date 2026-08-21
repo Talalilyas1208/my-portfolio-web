@@ -33,7 +33,7 @@ export default function HomePage() {
       <Hero />
 
       {/* Flagship Spotlight Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="projects">
         <div className="relative">
           {/* Subtle Glow backdrop */}
           <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-48 bg-primary-600/10 blur-3xl pointer-events-none"></div>
