@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { 
   Terminal, 
@@ -61,10 +62,14 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg p-1"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-600 to-accent-cyan p-[1px] shadow-md shadow-primary-500/20 group-hover:shadow-primary-500/40 transition-all duration-300">
-              <div className="w-full h-full bg-[#0B0F17] rounded-[11px] flex items-center justify-center font-mono font-bold text-primary-400 group-hover:text-white transition-colors">
-                MT
-              </div>
+            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary-500/60 shadow-md shadow-primary-500/20 group-hover:border-primary-400 group-hover:scale-105 transition-all duration-300">
+              <Image
+                src="/profile.png"
+                alt="Muhammad Talal"
+                fill
+                sizes="40px"
+                className="object-cover object-top"
+              />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">

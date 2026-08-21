@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { personalData } from '@/data/portfolioData';
 import { 
   Terminal, 
@@ -35,14 +36,30 @@ export default function Hero() {
               <span>🇵🇰 Leading AI &amp; React Engineer in Pakistan &bull; BS AI</span>
             </div>
 
-            {/* Name & Headline */}
-            <div className="space-y-3">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-                Hi, I&apos;m <span className="text-gradient-blue">{personalData.name}</span>
-              </h1>
-              <p className="text-lg sm:text-xl font-medium text-slate-300 font-mono">
-                {personalData.title}
-              </p>
+            {/* Profile Avatar + Name & Headline */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <div className="relative group shrink-0">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 via-accent-cyan to-primary-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-primary-400/80 bg-surface-200 shadow-xl">
+                  <Image
+                    src="/profile.png"
+                    alt="Muhammad Talal - AI & Full-Stack React Engineer"
+                    fill
+                    sizes="(max-width: 768px) 80px, 96px"
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
+                  Hi, I&apos;m <span className="text-gradient-blue">{personalData.name}</span>
+                </h1>
+                <p className="text-base sm:text-lg font-medium text-slate-300 font-mono">
+                  {personalData.title}
+                </p>
+              </div>
             </div>
 
             {/* Lead Positioning Headline Callout (Crucial Differentiator) */}
