@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const siteUrl = 'https://muhammadtalal.dev';
+  const siteUrl = 'https://talalai.vercel.app';
   const url = `${siteUrl}/projects/${project.slug}`;
 
   return {
@@ -89,7 +89,7 @@ export default function ProjectCaseStudyPage({ params }: Props) {
     author: {
       '@type': 'Person',
       name: personalData.name,
-      url: 'https://muhammadtalal.dev',
+      url: 'https://talalai.vercel.app',
     },
     keywords: project.techStack.join(', '),
   };
@@ -102,19 +102,19 @@ export default function ProjectCaseStudyPage({ params }: Props) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://muhammadtalal.dev',
+        item: 'https://talalai.vercel.app',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Projects',
-        item: 'https://muhammadtalal.dev/projects',
+        item: 'https://talalai.vercel.app/projects',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: project.title,
-        item: `https://muhammadtalal.dev/projects/${project.slug}`,
+        item: `https://talalai.vercel.app/projects/${project.slug}`,
       },
     ],
   };

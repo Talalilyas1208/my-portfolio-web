@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { projectsData, articlesData } from '@/data/portfolioData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://muhammadtalal.dev';
+  const baseUrl = 'https://talalai.vercel.app';
   const currentDate = new Date();
 
   // Static core routes

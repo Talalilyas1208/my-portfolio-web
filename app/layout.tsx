@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
-const siteUrl = 'https://muhammadtalal.dev';
+const siteUrl = 'https://talalai.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
