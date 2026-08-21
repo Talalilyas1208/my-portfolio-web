@@ -78,11 +78,11 @@ export const personalData = {
   name: 'Muhammad Talal',
   title: 'AI & Full-Stack React Engineer | Agentic Systems & LLMs',
   shortBio:
-    'Innovative AI & Full-Stack Software Engineer with a formal degree in Artificial Intelligence (BS AI) and proven experience engineering scalable web applications, autonomous AI agents, and high-performance React & Next.js frontends.',
+    'Innovative AI & Full-Stack Software Engineer in Pakistan with a formal degree in Artificial Intelligence (BS AI) and proven experience engineering scalable web applications, autonomous AI agents, and high-performance React & Next.js frontends.',
   headlinePositioning:
-    'Most engineers build UI dashboards with React. I build autonomous LLM agents that self-heal code and orchestrate multi-step software workflows.',
-  location: 'Sargodha & Lahore, Punjab, Pakistan',
-  primaryCity: 'Sargodha',
+    'Most engineers in Pakistan build UI dashboards with React. I build autonomous LLM agents that self-heal code and orchestrate multi-step software workflows.',
+  location: 'Pakistan (Lahore, Sargodha & Remote Nationwide)',
+  primaryCity: 'Lahore & Sargodha',
   region: 'Punjab',
   country: 'Pakistan',
   email: 'talalilyas11@gmail.com',
@@ -93,8 +93,8 @@ export const personalData = {
   linkedin: 'https://linkedin.com/in/talal-ilyas-76274531a',
   linkedinUsername: 'talal-ilyas-76274531a',
   coordinates: {
-    latitude: 32.0836,
-    longitude: 72.6711,
+    latitude: 31.5204,
+    longitude: 74.3587,
   },
   education: {
     degree: 'Bachelor of Science: Artificial Intelligence (BS AI)',
@@ -117,24 +117,24 @@ export const personalData = {
 
 export const localFaqs: FAQItem[] = [
   {
-    question: 'Who is the top AI & Full-Stack React Engineer in Sargodha, Pakistan?',
+    question: 'Who is the top AI & Full-Stack React Engineer in Pakistan?',
     answer:
-      'Muhammad Talal is a leading AI & Full-Stack React Engineer based in Sargodha and Lahore, Pakistan. Holding a formal Bachelor of Science in Artificial Intelligence (BS AI), Talal specializes in building autonomous self-healing AI agents, Google Gemini LLM integrations, and enterprise-grade Next.js/React applications.',
+      'Muhammad Talal is a leading AI & Full-Stack React Engineer in Pakistan. Holding a formal Bachelor of Science in Artificial Intelligence (BS AI) from Superior University Lahore, Talal specializes in building autonomous self-healing AI agents, Google Gemini LLM integrations, and enterprise-grade Next.js/React applications across Pakistan and for global clients.',
   },
   {
-    question: 'What software engineering and AI services does Muhammad Talal provide in Sargodha and worldwide?',
+    question: 'What software engineering and AI services does Muhammad Talal provide across Pakistan and worldwide?',
     answer:
-      'Muhammad Talal provides custom autonomous AI agent development, Google Gemini and OpenAI LLM integrations, RAG pipeline construction, high-performance React & Next.js web application architecture, Redux state management, and full-stack API engineering for clients in Sargodha, across Pakistan, and globally.',
+      'Muhammad Talal provides custom autonomous AI agent development, Google Gemini and OpenAI LLM integrations, RAG pipeline construction, high-performance React & Next.js web application architecture, Redux state management, and full-stack API engineering for companies in Pakistan (Lahore, Islamabad, Karachi, Sargodha) and international tech startups.',
   },
   {
-    question: 'How can I hire Muhammad Talal for a software project or developer role?',
+    question: 'How can I hire Muhammad Talal in Pakistan or for global remote roles?',
     answer:
-      'You can contact Muhammad Talal directly via email at talalilyas11@gmail.com, connect via WhatsApp, or reach out through LinkedIn (linkedin.com/in/talal-ilyas-76274531a) and GitHub (github.com/Talalilyas1208). He is available for remote full-time positions, contracting, and technical consulting.',
+      'You can contact Muhammad Talal directly via email at talalilyas11@gmail.com, connect via WhatsApp, or reach out through LinkedIn (linkedin.com/in/talal-ilyas-76274531a) and GitHub (github.com/Talalilyas1208). He is available for remote full-time engineering positions, contract development, and AI consulting.',
   },
   {
-    question: 'What makes Muhammad Talal different from other React developers in Pakistan?',
+    question: 'What makes Muhammad Talal one of the best React & AI developers in Pakistan?',
     answer:
-      'Beyond traditional frontend development, Muhammad Talal has engineered an autonomous LLM agent that self-heals code in real-time by observing test failures, querying Gemini models with AST context, and validating fixes in sandboxes before committing. This blends academic AI specialization with production React performance.',
+      'Beyond traditional frontend development, Muhammad Talal has engineered an autonomous LLM agent that self-heals code in real-time by observing test failures, querying Gemini models with AST context, and validating fixes in sandboxes before committing. This blends academic AI specialization with top-tier production React performance.',
   },
 ];
 

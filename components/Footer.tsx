@@ -52,12 +52,12 @@ export default function Footer() {
             <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
               <span className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-primary-400" />
-                Lahore, Pakistan
+                Pakistan (Lahore &amp; Sargodha)
               </span>
               {lahoreTime && (
                 <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-200 border border-white/[0.06]">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  {lahoreTime} PKT
+                  {lahoreTime} PKT (Pakistan Standard Time)
                 </span>
               )}
             </div>

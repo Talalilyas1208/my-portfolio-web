@@ -157,7 +157,7 @@ export default function Navbar() {
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-xs text-slate-300 font-medium">Available for AI & React Roles</span>
               </div>
-              <span className="text-[11px] font-mono text-slate-400">Lahore, PK</span>
+              <span className="text-[11px] font-mono text-slate-400">Pakistan 🇵🇰</span>
             </div>
 
             {navLinks.map((link) => {
