@@ -210,13 +210,13 @@ export default function HomePage() {
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 <MapPin className="w-3.5 h-3.5" />
-                🇵🇰 Pakistan (Lahore, Islamabad, Karachi, Sargodha) &bull; Global Remote
+                🌐 Worldwide Remote &bull; Global AI &amp; React Engineering
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                Leading AI &amp; React Software Engineer in Pakistan
+                Global AI &amp; Full-Stack React Software Engineering
               </h2>
               <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
-                Looking for Pakistan&apos;s top software &amp; AI engineering talent or a remote senior engineer for your global team? Muhammad Talal delivers cutting-edge autonomous AI pipelines, Google Gemini LLM integrations, and modern React 18/Next.js 14 web applications with 100% type safety and sub-second Core Web Vitals.
+                Looking for world-class software &amp; AI engineering talent for your team or startup? Muhammad Talal delivers cutting-edge autonomous AI pipelines, Google Gemini &amp; OpenAI integrations, and modern React 18/Next.js 14 web applications with 100% type safety and sub-second Core Web Vitals across US, European, and Asian timezones.
               </p>
             </div>
 

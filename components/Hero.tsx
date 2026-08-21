@@ -33,7 +33,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>🇵🇰 Leading AI &amp; React Engineer in Pakistan &bull; BS AI</span>
+              <span>🌐 Available Worldwide for AI &amp; React Roles &bull; BS in AI</span>
             </div>
 
             {/* Profile Avatar + Name & Headline */}
@@ -129,7 +129,7 @@ export default function Hero() {
                 LinkedIn
               </a>
               <span className="text-slate-700">•</span>
-              <span className="text-slate-400">Pakistan (Lahore &amp; Sargodha)</span>
+              <span className="text-slate-400">Worldwide Remote &bull; Base: Pakistan</span>
             </div>
           </div>
 
