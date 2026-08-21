@@ -228,6 +228,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} dark`}>
       <head>
+        <meta name="google-site-verification" content="google46d288d7e8f0014d" />
         <JsonLd data={personJsonLd} />
       </head>
       <body className="min-h-screen bg-[#0B0F17] text-slate-100 font-sans flex flex-col antialiased">
