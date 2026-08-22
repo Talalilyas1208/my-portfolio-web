@@ -4,6 +4,8 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
+import { ReduxProvider } from '@/store/provider';
+import ProjectQuickPreviewModal from '@/components/ProjectQuickPreviewModal';
 import { personalData } from '@/data/portfolioData';
 
 const inter = Inter({
@@ -227,9 +229,12 @@ export default function RootLayout({
         <JsonLd data={personJsonLd} />
       </head>
       <body className="min-h-screen bg-[#0B0F17] text-slate-100 font-sans flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <ReduxProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <ProjectQuickPreviewModal />
+        </ReduxProvider>
       </body>
     </html>
   );

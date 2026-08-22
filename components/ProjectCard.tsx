@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { Project } from '@/data/portfolioData';
-import { ArrowRight, Github, ExternalLink, Sparkles, Terminal, Activity, Layers } from 'lucide-react';
+import { useAppDispatch } from '@/store/hooks';
+import { openQuickPreview } from '@/store/slices/projectsSlice';
+import { ArrowRight, Github, ExternalLink, Sparkles, Terminal, Activity, Layers, Eye } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -9,6 +13,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
+  const dispatch = useAppDispatch();
   const isFlagship = project.isFlagship;
 
   return (
@@ -38,8 +43,18 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           </span>
         </div>
 
-        {/* Links */}
+        {/* Links & Instant Preview */}
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => dispatch(openQuickPreview(project.slug))}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono text-primary-300 hover:text-white bg-primary-600/15 hover:bg-primary-600/30 border border-primary-500/30 transition-all"
+            title="Instant 0ms Quick Preview"
+          >
+            <Eye className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Quick Preview</span>
+          </button>
+
           {project.githubUrl && (
             <a
               href={project.githubUrl}
