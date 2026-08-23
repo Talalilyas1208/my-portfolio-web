@@ -24,6 +24,8 @@ import {
 } from 'lucide-react';
 
 import LiveAgentTerminal from '@/components/LiveAgentTerminal';
+import ArchitectureDiagram from '@/components/ArchitectureDiagram';
+import SkillMatrixExplorer from '@/components/SkillMatrixExplorer';
 
 export default function HomePage() {
   const flagshipProject = projectsData.find((p) => p.isFlagship) || projectsData[0];
@@ -66,19 +68,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Projects Grid */}
+      {/* Interactive System Architecture Visualizer */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <ArchitectureDiagram />
+      </section>
+
+      {/* Featured Projects Grid & Redux Explorer */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-primary-600/10 text-primary-400 border border-primary-500/20 mb-3">
               <Layers className="w-3.5 h-3.5" />
-              Full-Stack & React Architecture
+              Production Case Studies
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Selected Production Projects
+              Interactive Project Portfolio
             </h2>
             <p className="text-sm text-slate-400 mt-1 max-w-xl">
-              Scalable web applications with complex state machines, real-time calculations, and end-to-end type safety.
+              Search by technology or filter by engineering category. Click &ldquo;Quick Preview&rdquo; for instant architecture metrics.
             </p>
           </div>
 
@@ -86,7 +93,7 @@ export default function HomePage() {
             href="/projects"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
           >
-            <span>View All Case Studies</span>
+            <span>View All Detailed Case Studies</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -120,6 +127,14 @@ export default function HomePage() {
               <p className="text-xs text-slate-400">
                 {personalData.education.institution} • Graduated {personalData.education.graduationDate}
               </p>
+              <ul className="space-y-1.5 text-xs text-slate-300 pt-1">
+                {personalData.education.highlights.map((h, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <Link
@@ -131,20 +146,23 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Right Column: Roles Preview */}
+          {/* Right Column: Timeline Cards */}
           <div className="lg:col-span-8 space-y-6">
             {experienceData.map((exp, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-surface-200/90 border border-white/[0.06] hover:border-primary-500/30 transition-all group"
+                className="p-6 sm:p-7 rounded-2xl bg-surface-200/90 border border-white/[0.06] hover:border-primary-500/30 transition-all space-y-4"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.05] pb-4">
                   <div>
-                    <h3 className="text-lg font-bold text-slate-100 group-hover:text-primary-400 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-100">
                       {exp.role}
                     </h3>
-                    <div className="text-xs sm:text-sm text-primary-400 font-medium font-mono">
-                      {exp.company} &bull; {exp.location}
+                    <div className="text-sm text-primary-400 font-mono flex items-center gap-2">
+                      <Briefcase className="w-3.5 h-3.5" />
+                      <span>{exp.company}</span>
+                      <span className="text-slate-600">&bull;</span>
+                      <span className="text-slate-400 text-xs">{exp.location}</span>
                     </div>
                   </div>
                   <span className="text-xs font-mono text-slate-400 bg-surface-300 px-3 py-1 rounded-full border border-white/[0.05] self-start sm:self-auto">
@@ -172,53 +190,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Skills Matrix Preview */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Interactive Skills Matrix Explorer */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <SectionHeading
-          eyebrow="Core Competencies"
-          title="Technical Stack & AI Tooling"
-          description="From architecting autonomous LLM execution loops to engineering sub-second React rendering pipelines."
+          eyebrow="Interactive Competency Matrix"
+          title="Technical Stack, AI Tooling & Frameworks"
+          description="Explore skills across Agentic AI, React frontend architecture, Redux state management, backend APIs, and cloud DevOps."
           align="center"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillGroupsData.slice(0, 3).map((group, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-2xl bg-surface-200/90 border border-white/[0.06] hover:border-primary-500/30 transition-all flex flex-col justify-between"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <Cpu className="w-4 h-4 text-primary-400" />
-                  <h3 className="text-base font-bold text-slate-100">{group.category}</h3>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  {group.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {group.skills.map((skill, sIdx) => (
-                    <SkillBadge
-                      key={sIdx}
-                      name={skill.name}
-                      highlight={skill.highlight}
-                      size="sm"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <Link
-            href="/skills"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-200 hover:bg-surface-100 text-slate-200 font-medium text-xs border border-white/[0.08] transition-all"
-          >
-            <span>Explore Complete Skill Matrix (State, Databases, DevOps)</span>
-            <ArrowRight className="w-3.5 h-3.5 text-primary-400" />
-          </Link>
-        </div>
+        <SkillMatrixExplorer />
       </section>
 
       {/* Local Sargodha & Pakistan Engineering Spotlight (Crucial for Local Google Ranking) */}

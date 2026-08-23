@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { personalData } from '@/data/portfolioData';
-import { Mail, Copy, Check, Send, Sparkles, Github, Linkedin, MessageSquare, Clock, MapPin, Phone } from 'lucide-react';
+import { submitContactInquiry } from '@/lib/supabase';
+import { Mail, Copy, Check, Send, Sparkles, Github, Linkedin, MessageSquare, Clock, MapPin, Phone, CheckCircle2 } from 'lucide-react';
 
 export default function ContactForm() {
   const [copied, setCopied] = useState(false);
@@ -13,6 +14,7 @@ export default function ContactForm() {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [feedbackMessage, setFeedbackMessage] = useState('');
 
   const copyEmail = () => {
     navigator.clipboard.writeText(personalData.email);
@@ -20,23 +22,17 @@ export default function ContactForm() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
 
-    // Generate mailto link with encoded parameters
-    const subject = encodeURIComponent(
-      formState.subject || `Inquiry from ${formState.name} via Portfolio (Sargodha/Global)`
-    );
-    const body = encodeURIComponent(
-      `Hello Muhammad Talal,\n\n${formState.message}\n\nFrom: ${formState.name}\nEmail: ${formState.email}`
-    );
-    const mailtoUrl = `mailto:${personalData.email}?subject=${subject}&body=${body}`;
+    const result = await submitContactInquiry(formState);
+    setStatus(result.success ? 'success' : 'error');
+    setFeedbackMessage(result.message);
 
-    setTimeout(() => {
-      window.location.href = mailtoUrl;
-      setStatus('success');
-    }, 600);
+    if (result.success) {
+      setFormState({ name: '', email: '', subject: '', message: '' });
+    }
   };
 
   return (
@@ -214,20 +210,32 @@ export default function ContactForm() {
             />
           </div>
 
+          {status === 'success' && (
+            <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm flex items-start gap-2.5 animate-fade-in">
+              <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="font-semibold block text-emerald-200">Message Sent Successfully!</strong>
+                <span>{feedbackMessage || 'Thank you for reaching out. Muhammad Talal will review your message shortly.'}</span>
+              </div>
+            </div>
+          )}
+
+          {status === 'error' && (
+            <div className="p-4 rounded-xl bg-rose-950/60 border border-rose-500/40 text-rose-300 text-xs sm:text-sm animate-fade-in">
+              {feedbackMessage || 'Unable to submit right now. Please email directly at talalilyas11@gmail.com.'}
+            </div>
+          )}
+
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full py-3 px-6 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-medium text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary-600/30 transition-all disabled:opacity-50"
+            className="w-full py-3.5 px-6 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary-600/30 transition-all disabled:opacity-50 hover:scale-[1.01] active:scale-95"
           >
             {status === 'submitting' ? (
-              <span>Preparing Mail...</span>
-            ) : status === 'success' ? (
-              <span className="flex items-center gap-2">
-                <Check className="w-4 h-4" /> Message Prompt Opened!
-              </span>
+              <span>Sending Inquiry...</span>
             ) : (
               <span className="flex items-center gap-2">
-                <Send className="w-4 h-4" /> Send Message
+                <Send className="w-4 h-4" /> Send Direct Inquiry
               </span>
             )}
           </button>
