@@ -39,14 +39,14 @@ export default function Hero() {
             {/* Profile Avatar + Name & Headline */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
               <div className="relative group shrink-0">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 via-accent-cyan to-primary-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-primary-400/80 bg-surface-200 shadow-xl">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-accent-cyan to-primary-600 rounded-full blur-md opacity-80 group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-primary-400 bg-surface-200 shadow-2xl">
                   <Image
                     src="/profile.png"
                     alt="Muhammad Talal - AI & Full-Stack React Engineer"
                     fill
-                    sizes="(max-width: 768px) 80px, 96px"
-                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 96px, 112px"
+                    className="object-cover object-center scale-105"
                     priority
                   />
                 </div>
