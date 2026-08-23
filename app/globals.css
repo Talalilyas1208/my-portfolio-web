@@ -29,11 +29,20 @@
 }
 
 .bg-radial-hero {
-  background: radial-gradient(circle at 50% -20%, rgba(37, 99, 235, 0.22), transparent 70%);
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.18), transparent 50%),
+    radial-gradient(circle at 20% 0%, rgba(6, 182, 212, 0.12), transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(139, 92, 246, 0.08), transparent 60%);
 }
 
 .bg-radial-card {
   background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(37, 99, 235, 0.08), transparent 40%);
+}
+
+.portrait-glow {
+  box-shadow: 
+    0 0 50px -10px rgba(37, 99, 235, 0.35),
+    0 0 100px -20px rgba(6, 182, 212, 0.2);
 }
 
 /* Custom Scrollbar */

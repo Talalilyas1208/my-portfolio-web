@@ -23,6 +23,8 @@ import {
   MessageSquare
 } from 'lucide-react';
 
+import LiveAgentTerminal from '@/components/LiveAgentTerminal';
+
 export default function HomePage() {
   const flagshipProject = projectsData.find((p) => p.isFlagship) || projectsData[0];
   const otherProjects = projectsData.filter((p) => !p.isFlagship);
@@ -34,7 +36,7 @@ export default function HomePage() {
 
       {/* Flagship Spotlight Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="projects">
-        <div className="relative">
+        <div className="relative space-y-8">
           {/* Subtle Glow backdrop */}
           <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-48 bg-primary-600/10 blur-3xl pointer-events-none"></div>
 
@@ -44,7 +46,23 @@ export default function HomePage() {
             description="The core differentiator: an autonomous closed-loop agent that continuously monitors source code, captures runtime regressions, prompts Google Gemini with AST context, and validates sandboxed fixes before committing."
           />
 
-          <ProjectCard project={flagshipProject} featured={true} />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-7">
+              <ProjectCard project={flagshipProject} featured={true} />
+            </div>
+            <div className="lg:col-span-5 space-y-3">
+              <div className="flex items-center justify-between px-1">
+                <span className="flex items-center gap-1.5 text-xs font-mono text-primary-300 font-semibold">
+                  <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
+                  Live Agent Execution Simulator
+                </span>
+                <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                  REAL-TIME
+                </span>
+              </div>
+              <LiveAgentTerminal />
+            </div>
+          </div>
         </div>
       </section>
 
