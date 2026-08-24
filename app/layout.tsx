@@ -31,12 +31,14 @@ export const metadata: Metadata = {
   description: `${personalData.shortBio} Leading AI & Full-Stack React Engineer specializing in Autonomous LLM Agents (Gemini & OpenAI), Self-Healing Code Loops, and sub-second React & Next.js web applications. Available worldwide for full-time engineering roles, contracting & consulting.`,
   keywords: [
     // Global Personal & Brand Keywords
+    'Muhammad Talal Ilyas',
     'Muhammad Talal',
+    'Talal Ilyas',
+    'Talal AI Portfolio',
     'Muhammad Talal AI Engineer',
+    'Muhammad Talal Full Stack Engineer',
     'Muhammad Talal Software Engineer',
     'Muhammad Talal React Developer',
-    'Muhammad Talal Portfolio',
-    'Talal Ilyas',
     // International AI & Agentic Systems Keywords
     'AI Engineer',
     'Autonomous AI Agents Developer',
@@ -69,16 +71,16 @@ export const metadata: Metadata = {
     type: 'profile',
     locale: 'en_US',
     url: siteUrl,
-    title: `${personalData.name} — AI & Full-Stack React Engineer (Worldwide)`,
+    title: `${personalData.name} — AI & Full-Stack React Engineer | Talal AI Portfolio`,
     description:
-      'Autonomous LLM agents, self-healing code pipelines, and high-performance React & Next.js web applications for engineering teams worldwide.',
-    siteName: `${personalData.name} Portfolio`,
+      'Official Talal AI Portfolio: Autonomous LLM agents, self-healing code pipelines, and high-performance React & Next.js web applications for engineering teams worldwide.',
+    siteName: `Talal AI Portfolio — ${personalData.name}`,
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: `${personalData.name} Portfolio — Worldwide AI & Full-Stack Engineer`,
+        alt: `Talal AI Portfolio — Muhammad Talal Ilyas`,
       },
     ],
   },

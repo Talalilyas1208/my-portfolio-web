@@ -75,7 +75,7 @@ export interface FAQItem {
 }
 
 export const personalData = {
-  name: 'Muhammad Talal',
+  name: 'Muhammad Talal Ilyas',
   title: 'AI & Full-Stack React Engineer | Agentic Systems & LLMs',
   shortBio:
     'Innovative AI & Full-Stack Software Engineer with a formal degree in Artificial Intelligence (BS AI) and proven experience engineering scalable web applications, autonomous AI agents, and high-performance React & Next.js frontends for global clients.',
@@ -87,7 +87,7 @@ export const personalData = {
   country: 'Worldwide',
   email: 'talalilyas11@gmail.com',
   phone: '+923000000000',
-  whatsapp: 'https://wa.me/923000000000?text=Hi%20Muhammad%20Talal,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project',
+  whatsapp: 'https://wa.me/923000000000?text=Hi%20Muhammad%20Talal%20Ilyas,%20I%20saw%20your%20Talal%20AI%20Portfolio%20and%20would%20like%20to%20discuss%20a%20project',
   github: 'https://github.com/Talalilyas1208',
   githubUsername: 'Talalilyas1208',
   linkedin: 'https://linkedin.com/in/talal-ilyas-76274531a',
@@ -117,24 +117,24 @@ export const personalData = {
 
 export const localFaqs: FAQItem[] = [
   {
-    question: 'Who is Muhammad Talal and what is his AI engineering expertise?',
+    question: 'Who is Muhammad Talal Ilyas and what is his AI engineering expertise?',
     answer:
-      'Muhammad Talal is a global AI & Full-Stack React Engineer holding a formal Bachelor of Science in Artificial Intelligence (BS AI). He specializes in engineering autonomous self-healing AI agents, Google Gemini & OpenAI LLM integrations, RAG pipelines, and high-performance React & Next.js web applications for international startups and enterprise teams worldwide.',
+      'Muhammad Talal Ilyas is an AI & Full-Stack React Engineer holding a formal Bachelor of Science in Artificial Intelligence (BS AI). On his official Talal AI Portfolio, he showcases autonomous self-healing AI agents, Google Gemini & OpenAI LLM integrations, and high-performance React & Next.js web applications for international tech startups worldwide.',
   },
   {
-    question: 'What AI and software development services does Muhammad Talal offer worldwide?',
+    question: 'What AI and software development services does Muhammad Talal Ilyas offer worldwide?',
     answer:
-      'Muhammad Talal offers autonomous AI agent development, multi-step LLM workflow orchestration, Google Gemini and OpenAI integrations, sub-second React/Next.js frontend architectures, complex Redux state normalization, and full-stack REST/GraphQL API systems available for global remote contracts and full-time engineering roles.',
+      'Muhammad Talal Ilyas offers autonomous AI agent development, multi-step LLM workflow orchestration, Google Gemini and OpenAI integrations, sub-second React/Next.js frontend architectures, complex Redux state normalization, and full-stack REST/GraphQL API systems available for global remote contracts and full-time engineering roles.',
   },
   {
-    question: 'How can international companies and clients hire Muhammad Talal?',
+    question: 'How can international companies and clients hire Muhammad Talal Ilyas?',
     answer:
-      'Global tech companies, recruiters, and engineering teams can contact Muhammad Talal directly via email at talalilyas11@gmail.com, WhatsApp, or connect on LinkedIn (linkedin.com/in/talal-ilyas-76274531a) and GitHub (github.com/Talalilyas1208). He operates across US, European, and Asian timezone overlaps with seamless asynchronous and synchronous communication.',
+      'Global tech companies, recruiters, and engineering teams can contact Muhammad Talal Ilyas directly via email at talalilyas11@gmail.com, WhatsApp, or connect on LinkedIn (linkedin.com/in/talal-ilyas-76274531a) and GitHub (github.com/Talalilyas1208). He operates across US, European, and Asian timezone overlaps with seamless asynchronous and synchronous communication.',
   },
   {
-    question: 'What makes Muhammad Talal unique compared to standard full-stack developers?',
+    question: 'What makes the Talal AI Portfolio unique compared to standard developer portfolios?',
     answer:
-      'Unlike traditional developers who focus solely on frontend templates, Muhammad Talal combines a formal AI degree with practical production software engineering—having built autonomous LLM agents that watch codebases, diagnose stack traces, and execute sandboxed test verification loops before committing code.',
+      'The Talal AI Portfolio highlights real-time self-healing code agents that observe breakages, prompt Google Gemini with AST context, and run sandboxed test verification loops before committing code—combining academic AI specialization with high-scale production React performance.',
   },
 ];
 

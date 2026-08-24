@@ -74,7 +74,7 @@ export default function Navbar() {
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-slate-100 tracking-tight group-hover:text-primary-400 transition-colors">
-                  Muhammad Talal
+                  Muhammad Talal Ilyas
                 </span>
                 <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
