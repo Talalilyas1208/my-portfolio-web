@@ -1,110 +1,184 @@
-# Muhammad Talal — Portfolio Website & Sargodha Google #1 SEO Engine
+<div align="center">
 
-> **AI & Full-Stack React Engineer | Agentic Systems & LLMs**  
-> *BS in Artificial Intelligence (BS AI) • Sargodha & Lahore, Punjab, Pakistan*
+  <!-- 3D Cyberpunk Gradient Header Banner -->
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0052D4,45:4364F7,80:00F0FF,100:6FB1FC&height=280&section=header&text=Muhammad%20Talal%20Ilyas&fontSize=44&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=AI%20%26%20Full-Stack%20React%20Engineer%20%7C%20Agentic%20Systems%20%26%20LLMs&descFontSize=19&descAlignY=58&descAlign=50" width="100%" alt="Header Banner" />
 
-A high-performance, fast, and SEO-optimized portfolio website built with **Next.js 14 (App Router)**, **TypeScript**, and **Tailwind CSS**. Optimized for Vercel edge deployment and **#1 Google Search Ranking in Sargodha and Pakistan**.
+  <!-- Animated Dynamic Typing Headline -->
+  <a href="https://talal-ai-portfolio.web.app/">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=21&duration=2600&pause=1000&color=00F0FF&center=true&vCenter=true&width=700&lines=Autonomous+LLM+Agents+%26+Self-Healing+Pipelines;Full-Stack+React+18+%26+Next.js+14+Architectures;Google+Gemini+1.5+Pro+%26+OpenAI+Integrations;Sub-Second+Performance+%26+Redux+Toolkit+State;Available+Worldwide+for+High-Impact+Roles" alt="Typing SVG" />
+  </a>
 
----
+  <br/><br/>
 
-## ⚡ Core Positioning & Engineering Differentiator
-Most candidates list *"built dashboards with React/Tailwind."* Muhammad Talal has engineered an **autonomous LLM agent that self-heals code** — monitoring codebases, detecting runtime and syntax regressions, prompting Google Gemini with AST context, and verifying test passes in isolated sandboxes before applying patches.
+  <!-- High-Contrast 3D Glassmorphic Action Badges -->
+  <p align="center">
+    <a href="https://talal-ai-portfolio.web.app/">
+      <img src="https://img.shields.io/badge/🌐_LIVE_PORTFOLIO-Talal_AI_Google_Cloud-00F0FF?style=for-the-badge&logo=google-cloud&logoColor=black&labelColor=0d1117" alt="Live Portfolio" />
+    </a>
+    &nbsp;
+    <a href="https://wa.me/923000000000?text=Hi%20Muhammad%20Talal%20Ilyas,%20I%20reviewed%20your%20GitHub%20and%20would%20like%20to%20hire%20you%20for%20a%20project">
+      <img src="https://img.shields.io/badge/💬_WHATSAPP-Instant_Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=0d1117" alt="WhatsApp" />
+    </a>
+    &nbsp;
+    <a href="https://linkedin.com/in/talal-ilyas-76274531a">
+      <img src="https://img.shields.io/badge/💼_LINKEDIN-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117" alt="LinkedIn" />
+    </a>
+    &nbsp;
+    <a href="mailto:talalilyas11@gmail.com">
+      <img src="https://img.shields.io/badge/✉️_EMAIL-Direct_Inquiry-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117" alt="Email" />
+    </a>
+  </p>
 
----
-
-## 📍 Sargodha Local & Global Technical SEO Architecture
-This portfolio is engineered with specialized local and regional SEO markup to dominate Google Search results for queries like:
-- `Muhammad Talal`
-- `Muhammad Talal Sargodha`
-- `Muhammad Talal Software Engineer`
-- `AI Engineer in Sargodha`
-- `React Developer in Sargodha`
-- `Top Software Engineer in Sargodha Punjab`
-- `Agentic AI & Full-Stack Developer Pakistan`
-
-### Built-in SEO & Schema Features:
-1. **Geo-Location Meta Tags:**
-   - Region: `PK-PB` (Punjab, Pakistan)
-   - Placename: `Sargodha, Punjab, Pakistan`
-   - Coordinates: `32.0836, 72.6711` (Sargodha ICBM)
-2. **Schema.org Structured Data (JSON-LD):**
-   - `Person` schema with Sargodha homeLocation, `sameAs` social authority, alumni of Superior University, and AI skillset.
-   - `ProfessionalService` / `LocalBusiness` schema targeting Sargodha, Lahore, Pakistan, and Worldwide Remote.
-   - `FAQPage` schema on homepage generating Google Rich Answer snippets.
-   - `SoftwareSourceCode` schema on all case study pages.
-   - `BreadcrumbList` schema for search index hierarchies.
-3. **OpenGraph & Twitter Cards:** Dynamic Edge social card generator (`app/opengraph-image.tsx`).
-4. **Auto-Generated XML Sitemap & Robots:** `app/sitemap.ts` (`/sitemap.xml`) and `app/robots.ts` (`/robots.txt`).
+</div>
 
 ---
 
-## 🚀 How to Make the Portfolio Live & Rank #1 on Google
+### 🚀 **Executive Summary & Client Value Proposition**
 
-### Step 1: Deploy Live to Vercel in 2 Minutes (Free)
-1. Initialize git and push your code to your GitHub account:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial portfolio commit with Sargodha SEO"
-   git branch -M main
-   git remote add origin https://github.com/Talalilyas1208/portfollio.git
-   git push -u origin main
-   ```
-2. Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
-3. Click **"Add New..."** -> **"Project"**.
-4. Select your `portfollio` repository and click **"Deploy"**.
-5. Your portfolio is now LIVE on a global Edge CDN with SSL (`https://portfollio.vercel.app` or your custom domain).
+> *"Most developers build static UI templates. I engineer **autonomous agentic pipelines** and **high-scale React frontends** that self-heal code, automate complex financial logic, and eliminate runtime bottlenecks."*
 
----
-
-### Step 2: Submit to Google Search Console for Sargodha Ranking
-1. Go to [Google Search Console](https://search.google.com/search-console).
-2. Add your live URL (e.g., `https://muhammadtalal.dev` or `https://talal-portfolio.vercel.app`).
-3. Verify ownership (via HTML tag or DNS record).
-4. In the left sidebar, click **"Sitemaps"**.
-5. Enter `sitemap.xml` and click **"Submit"**.
-6. Google's crawler will immediately index all 15 routes, parse the Sargodha Geo tags, and index your `Person` and `FAQPage` structured data.
-
----
-
-### Step 3: Local Development
-```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build production bundle
-npm run build
-
-# Start production server
-npm run start
+```yaml
+Name: Muhammad Talal Ilyas
+Title: AI & Full-Stack React Engineer | Agentic Systems & LLMs
+Education: Bachelor of Science in Artificial Intelligence (BS AI, 2023)
+Flagship: Autonomous Closed-Loop Self-Healing AI Code Agent (Gemini 1.5 Pro)
+Production Stack: React 18, Next.js 14, TypeScript, Redux Toolkit, Supabase, Node.js, Docker
+Hosting: Google Cloud Platform (SSD Edge CDN)
+Availability: Open for Full-Time Remote Roles & High-Impact Contracts Worldwide
 ```
 
 ---
 
-## 📂 Site Structure & Pages
+### 🌟 **Flagship Engineering Showcase**
 
-| Route | Content |
-| :--- | :--- |
-| `/` | **Home**: Hero with self-healing AI agent differentiator, live terminal simulator, flagship showcase, Sargodha local engineering spotlight, FAQ accordion, and CTA. |
-| `/projects` | **Projects Directory**: Complete grid with category filtering and case-study navigation. |
-| `/projects/autonomous-gemini-code-fixer` | **Flagship AI Case Study**: Architecture deep-dive, closed-loop testing, AST parsing, and Gemini 1.5 prompt strategy. |
-| `/projects/enterprise-billing-invoice-platform` | **Case Study**: High-frequency financial state management with Redux Toolkit. |
-| `/projects/poultry-farm-management-system` | **Case Study**: Type-safe agricultural portal with Zod validation and analytics. |
-| `/experience` | **Experience Timeline**: Precise Technologies, Tradexx LLC, Confiz, and BS in Artificial Intelligence from Superior University. |
-| `/skills` | **Skill Matrix**: Grouped by AI & Agentic Systems, Frontend Engineering, State & Networking, Backend & Databases, and DevOps. |
-| `/blog` | **Engineering Articles**: High-value technical write-ups and SEO takeaways. |
-| `/contact` | **Contact**: WhatsApp direct chat, email copy button, inquiry form, and live Lahore/Sargodha time. |
-| `/sitemap.xml` | Auto-generated XML sitemap for search engines. |
-| `/robots.txt` | Auto-generated crawlers directives. |
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <div align="center">
+        <h3>🤖 Autonomous Gemini Code-Fixer</h3>
+        <a href="https://talal-ai-portfolio.web.app/projects/autonomous-gemini-code-fixer">
+          <img src="https://img.shields.io/badge/⚡_EXPLORE_CASE_STUDY-00F0FF?style=for-the-badge&logo=google&logoColor=black" />
+        </a>
+      </div>
+      <br/>
+      <ul>
+        <li><b>Self-Healing Agent:</b> Observes codebase regressions in real time.</li>
+        <li><b>AST Scope Isolation:</b> Extracts context & prompts <b>Google Gemini 1.5 Pro</b> for candidate patches.</li>
+        <li><b>Sandbox Gate:</b> 100% Dockerized unit test verification before auto-commit.</li>
+        <li><b>Recovery Cycle:</b> ~2.8s end-to-end automated fix.</li>
+      </ul>
+      <p align="center">
+        <code>Python</code> • <code>Gemini 1.5 Pro</code> • <code>AST</code> • <code>Docker</code> • <code>PyTest</code>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <div align="center">
+        <h3>💳 Enterprise Billing & Invoice Platform</h3>
+        <a href="https://talal-ai-portfolio.web.app/projects/enterprise-billing-invoice-platform">
+          <img src="https://img.shields.io/badge/⚡_EXPLORE_CASE_STUDY-4364F7?style=for-the-badge&logo=react&logoColor=white" />
+        </a>
+      </div>
+      <br/>
+      <ul>
+        <li><b>Complex State Machine:</b> Multi-tier tax brackets & multi-currency reconciliation.</li>
+        <li><b>Normalized Redux Cache:</b> $O(1)$ client-side lookups with 0 race conditions.</li>
+        <li><b>Performance:</b> 20% reduction in client page load latency.</li>
+        <li><b>Data Integrity:</b> Atomic rollback on network mutation failures.</li>
+      </ul>
+      <p align="center">
+        <code>React 18</code> • <code>Redux Toolkit</code> • <code>TypeScript</code> • <code>Tailwind CSS</code>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 📬 Contact Muhammad Talal
-- **Location:** Sargodha & Lahore, Punjab, Pakistan
-- **Email:** [talalilyas11@gmail.com](mailto:talalilyas11@gmail.com)
-- **WhatsApp:** [Direct WhatsApp Connect](https://wa.me/923000000000)
-- **GitHub:** [github.com/Talalilyas1208](https://github.com/Talalilyas1208)
-- **LinkedIn:** [linkedin.com/in/talal-ilyas-76274531a](https://linkedin.com/in/talal-ilyas-76274531a)
+### 🏗️ **5-Stage Autonomous Agent Pipeline Architecture**
+
+```mermaid
+graph LR
+    A["👁️ Watcher Daemon<br/>(Monitors Codebase)"] --> B["🔍 AST Extractor<br/>(Scope & Stack Trace)"]
+    B --> C["🤖 Gemini 1.5 Pro<br/>(Candidate Patch Diff)"]
+    C --> D["🛡️ Docker Sandbox<br/>(Test Suite Gate)"]
+    D --> E["🚀 Auto Git Commit<br/>(Verified Source Merge)"]
+```
+
+---
+
+### 🛠️ **Technical Skill Matrix & Tooling**
+
+<div align="center">
+
+| Engineering Domain | Technologies, Libraries & Tools |
+| :--- | :--- |
+| **🧠 Agentic AI & LLMs** | `Google Gemini 1.5 Pro` `OpenAI GPT-4o` `LangChain` `RAG Architectures` `AST Code Parsers` `Prompt Engineering` |
+| **⚡ Frontend & React** | `React 18` `Next.js 14 (App Router)` `TypeScript` `JavaScript (ES6+)` `HTML5 / CSS3` `Tailwind CSS` |
+| **🔄 State & Data Flow** | `Redux Toolkit` `createSelector (Reselect)` `React Context API` `TanStack Query` `Zustand` |
+| **🗄️ Backend & Databases** | `Node.js` `Express.js` `Supabase` `PostgreSQL` `REST APIs` `GraphQL` |
+| **☁️ DevOps & Cloud** | `Google Cloud Platform` `Firebase Hosting` `Docker` `Vercel` `Git & GitHub Actions CI/CD` |
+
+</div>
+
+---
+
+### 📊 **3D GitHub Analytics & Activity Stream**
+
+<div align="center">
+
+  <table border="0">
+    <tr>
+      <td>
+        <img src="https://github-readme-stats.vercel.app/api?username=Talalilyas1208&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=4364F7&text_color=c9d1d9" height="180" alt="GitHub Stats" />
+      </td>
+      <td>
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=Talalilyas1208&theme=tokyonight&hide_border=true&background=0D1117&ring=00F0FF&fire=00F0FF&currStreakLabel=00F0FF" height="180" alt="GitHub Streak" />
+      </td>
+    </tr>
+  </table>
+
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Talalilyas1208&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00F0FF&text_color=c9d1d9" width="48%" alt="Top Languages" />
+
+</div>
+
+---
+
+### 🤝 **Why Engineering Teams & Clients Hire Me**
+
+```typescript
+interface ClientValueProposition {
+  communication: 'Asynchronous + Synchronous (US, EU, PK Timezone Overlaps)';
+  turnaroundVelocity: '+25% Faster Feature Delivery with Clean Modularity';
+  codeStandards: '100% Type-Safe TypeScript, Zero Runtime Drift, Sub-Second Performance';
+  aiCapability: 'Formal AI Degree (BS AI) + Production Self-Healing Loops';
+  contractAvailability: 'Immediate (Full-Time Remote / Contract)';
+}
+```
+
+---
+
+<div align="center">
+
+  ### 📬 **Let's Build Something High-Impact Together**
+
+  <p>
+    Looking for a <b>senior AI & full-stack React engineer</b> to lead product development or engineer autonomous agent pipelines?
+  </p>
+
+  <a href="https://talal-ai-portfolio.web.app/">
+    <img src="https://img.shields.io/badge/🌐_VISIT_TALAL_AI_PORTFOLIO-0052D4?style=for-the-badge&logo=google-chrome&logoColor=white" height="42" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://wa.me/923000000000?text=Hi%20Muhammad%20Talal%20Ilyas,%20I%20want%20to%20hire%20you%20for%20a%20project">
+    <img src="https://img.shields.io/badge/💬_CHAT_ON_WHATSAPP-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" height="42" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="mailto:talalilyas11@gmail.com">
+    <img src="https://img.shields.io/badge/✉️_DIRECT_EMAIL-EA4335?style=for-the-badge&logo=gmail&logoColor=white" height="42" />
+  </a>
+
+  <br/><br/>
+  
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0052D4,45:4364F7,80:00F0FF,100:6FB1FC&height=130&section=footer" width="100%" />
+
+</div>
