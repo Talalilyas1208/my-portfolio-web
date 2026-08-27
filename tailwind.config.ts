@@ -11,14 +11,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#0B0F17',
+        background: '#05070e',
         surface: {
-          50: '#1e293b',
-          100: '#151c28',
-          200: '#101622',
-          300: '#0d121c',
-          border: '#1E293B',
-          'border-subtle': '#162032',
+          50: '#182236',
+          100: '#111827',
+          200: '#0c1220',
+          300: '#080d18',
+          border: '#172238',
+          'border-subtle': '#131c2e',
         },
         primary: {
           50: '#EFF6FF',
@@ -37,6 +37,7 @@ const config: Config = {
           emerald: '#10B981',
           violet: '#8B5CF6',
           amber: '#F59E0B',
+          neon: '#00F0FF',
         },
       },
       fontFamily: {
@@ -46,7 +47,8 @@ const config: Config = {
       backgroundImage: {
         'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
         'mesh-glow': 'radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15), transparent 70%)',
-        'card-gradient': 'linear-gradient(180deg, rgba(21, 28, 40, 0.8) 0%, rgba(13, 18, 28, 0.95) 100%)',
+        'card-gradient': 'linear-gradient(180deg, rgba(16, 24, 40, 0.8) 0%, rgba(10, 16, 28, 0.95) 100%)',
+        'aurora-glow': 'radial-gradient(ellipse at top, rgba(37, 99, 235, 0.22) 0%, rgba(6, 182, 212, 0.12) 40%, rgba(139, 92, 246, 0.08) 70%, transparent 100%)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
