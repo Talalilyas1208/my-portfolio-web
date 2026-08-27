@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-surface-border bg-[#090D14] text-slate-400 relative overflow-hidden">
+    <footer className="border-t border-surface-border bg-[#05070e] text-slate-400 relative overflow-hidden">
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-primary-500/30 to-transparent"></div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
                 MT
               </div>
               <span className="font-semibold text-slate-100 text-lg">
-                Muhammad Talal
+                {personalData.name}
               </span>
             </div>
             <p className="text-sm text-slate-400 max-w-md leading-relaxed">

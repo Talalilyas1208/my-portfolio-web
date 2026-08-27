@@ -51,7 +51,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0B0F17]/90 backdrop-blur-md border-b border-surface-border shadow-lg shadow-black/30'
+          ? 'bg-[#05070e]/90 backdrop-blur-md border-b border-surface-border shadow-lg shadow-black/40'
           : 'bg-transparent border-b border-white/[0.04]'
       }`}
     >
@@ -155,7 +155,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-surface-border bg-[#0B0F17]/95 backdrop-blur-xl animate-fade-in">
+        <div className="lg:hidden border-b border-surface-border bg-[#05070e]/95 backdrop-blur-xl animate-fade-in">
           <div className="px-4 pt-2 pb-6 space-y-1.5 max-w-md mx-auto">
             <div className="p-3 mb-2 rounded-xl bg-surface-200/80 border border-white/[0.06] flex items-center justify-between">
               <div className="flex items-center gap-2">
