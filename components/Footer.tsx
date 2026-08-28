@@ -30,34 +30,34 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-surface-border bg-[#05070e] text-slate-400 relative overflow-hidden">
-      {/* Subtle top glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-primary-500/30 to-transparent"></div>
+    <footer className="border-t border-white/[0.1] bg-[#05070e]/80 backdrop-blur-2xl text-slate-400 relative overflow-hidden">
+      {/* Subtle top specular liquid glow line */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-surface-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-white/[0.08]">
           {/* Col 1: Bio & Positioning */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-primary-600/20 border border-primary-500/30 flex items-center justify-center font-mono font-bold text-primary-400 text-sm">
+              <div className="w-9 h-9 rounded-2xl liquid-pill-primary flex items-center justify-center font-mono font-bold text-cyan-300 text-sm">
                 MT
               </div>
-              <span className="font-semibold text-slate-100 text-lg">
+              <span className="font-bold text-slate-100 text-lg">
                 {personalData.name}
               </span>
             </div>
-            <p className="text-sm text-slate-400 max-w-md leading-relaxed">
-              AI & Full-Stack React Engineer with a formal degree in Artificial Intelligence (BS AI). Specializing in autonomous LLM agents, self-healing code loops, and high-performance React & Next.js architectures.
+            <p className="text-sm text-slate-300 max-w-md leading-relaxed font-sans">
+              AI &amp; Full-Stack React Engineer with a formal degree in Artificial Intelligence (BS AI). Specializing in autonomous LLM agents, self-healing code loops, and high-performance React &amp; Next.js architectures.
             </p>
-            <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-primary-400" />
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-400">
+              <span className="flex items-center gap-1.5 liquid-pill px-3 py-1 rounded-full text-slate-300">
+                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                 Pakistan (Lahore &amp; Sargodha)
               </span>
               {lahoreTime && (
-                <span className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-200 border border-white/[0.06]">
+                <span className="flex items-center gap-1.5 px-3 py-1 rounded-full liquid-pill-emerald text-emerald-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  {lahoreTime} PKT (Pakistan Standard Time)
+                  {lahoreTime} PKT
                 </span>
               )}
             </div>
@@ -68,35 +68,35 @@ export default function Footer() {
             <h4 className="text-xs font-mono uppercase tracking-wider text-slate-200 font-semibold">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/" className="hover:text-primary-400 transition-colors">
+                <Link href="/" className="hover:text-cyan-300 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-primary-400 transition-colors">
+                <Link href="/projects" className="hover:text-cyan-300 transition-colors">
                   Featured Projects
                 </Link>
               </li>
               <li>
-                <Link href="/experience" className="hover:text-primary-400 transition-colors">
-                  Experience & Education
+                <Link href="/experience" className="hover:text-cyan-300 transition-colors">
+                  Experience &amp; Education
                 </Link>
               </li>
               <li>
-                <Link href="/skills" className="hover:text-primary-400 transition-colors">
+                <Link href="/skills" className="hover:text-cyan-300 transition-colors">
                   Technical Skills
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-primary-400 transition-colors">
+                <Link href="/blog" className="hover:text-cyan-300 transition-colors">
                   Engineering Notes / Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-primary-400 transition-colors">
-                  Contact & Inquiries
+                <Link href="/contact" className="hover:text-cyan-300 transition-colors">
+                  Contact &amp; Inquiries
                 </Link>
               </li>
             </ul>
@@ -109,16 +109,16 @@ export default function Footer() {
             </h4>
             <Link
               href="/projects/autonomous-gemini-code-fixer"
-              className="block p-3 rounded-xl bg-surface-200/70 border border-white/[0.06] hover:border-primary-500/40 hover:bg-surface-200 transition-all group"
+              className="block p-3.5 rounded-2xl liquid-glass-subtle hover:border-cyan-400/40 transition-all group"
             >
               <div className="flex items-center gap-2 mb-1">
-                <Terminal className="w-3.5 h-3.5 text-primary-400" />
-                <span className="text-xs font-medium text-slate-200 group-hover:text-primary-400 transition-colors">
+                <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                <span className="text-xs font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors">
                   Autonomous Code-Fixer
                 </span>
               </div>
               <p className="text-[11px] text-slate-400 line-clamp-2">
-                Self-healing developer agent powered by Google Gemini API & AST parsing.
+                Self-healing developer agent powered by Google Gemini API &amp; AST parsing.
               </p>
             </Link>
 
@@ -128,7 +128,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="p-2.5 rounded-lg bg-surface-200 hover:bg-primary-600/20 hover:text-primary-400 text-slate-400 border border-white/[0.06] transition-all"
+                className="p-2.5 rounded-xl liquid-glass-subtle hover:border-white/25 text-slate-300 hover:text-white transition-all"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -137,14 +137,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="p-2.5 rounded-lg bg-surface-200 hover:bg-primary-600/20 hover:text-primary-400 text-slate-400 border border-white/[0.06] transition-all"
+                className="p-2.5 rounded-xl liquid-glass-subtle hover:border-white/25 text-slate-300 hover:text-white transition-all"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${personalData.email}`}
                 aria-label="Email"
-                className="p-2.5 rounded-lg bg-surface-200 hover:bg-primary-600/20 hover:text-primary-400 text-slate-400 border border-white/[0.06] transition-all"
+                className="p-2.5 rounded-xl liquid-glass-subtle hover:border-white/25 text-slate-300 hover:text-white transition-all"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -155,16 +155,16 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="flex items-center gap-2">
-            <span>© {new Date().getFullYear()} Muhammad Talal. Built with Next.js 14, TypeScript & Tailwind CSS.</span>
+            <span>© {new Date().getFullYear()} Muhammad Talal. Built with Next.js 14, TypeScript &amp; Liquid Glass UI.</span>
           </div>
 
           <div className="flex items-center gap-4">
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 text-slate-300 hover:text-cyan-300 transition-colors liquid-glass-subtle px-3 py-1.5 rounded-xl"
             >
               <span>Back to top</span>
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-3.5 h-3.5 text-cyan-400" />
             </button>
           </div>
         </div>

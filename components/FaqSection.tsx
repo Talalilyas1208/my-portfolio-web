@@ -36,17 +36,17 @@ export default function FaqSection() {
         description="Key information for recruiters, engineering leaders, and local clients looking to hire Muhammad Talal in Sargodha, Pakistan, or globally."
       />
 
-      <div className="space-y-3 max-w-4xl mx-auto">
+      <div className="space-y-3.5 max-w-4xl mx-auto">
         {localFaqs.map((faq, idx) => {
           const isOpen = openIndex === idx;
 
           return (
             <div
               key={idx}
-              className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+              className={`rounded-3xl transition-all duration-300 overflow-hidden border ${
                 isOpen
-                  ? 'bg-surface-200 border-primary-500/40 shadow-lg shadow-primary-950/30'
-                  : 'bg-surface-200/70 border-white/[0.06] hover:border-white/[0.15]'
+                  ? 'liquid-glass-accent border-cyan-400/40 shadow-liquid-glow'
+                  : 'liquid-glass-subtle hover:border-white/20'
               }`}
             >
               <button
@@ -55,18 +55,18 @@ export default function FaqSection() {
                 className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
                 aria-expanded={isOpen}
               >
-                <div className="flex items-center gap-3">
-                  <div className={`p-1.5 rounded-lg ${isOpen ? 'bg-primary-600/20 text-primary-400' : 'bg-surface-300 text-slate-400'}`}>
+                <div className="flex items-center gap-3.5">
+                  <div className={`p-2 rounded-2xl ${isOpen ? 'liquid-glass text-cyan-300' : 'liquid-glass-subtle text-slate-400'}`}>
                     <HelpCircle className="w-4 h-4 shrink-0" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-semibold text-slate-100">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-100">
                     {faq.question}
                   </h3>
                 </div>
 
                 <div
-                  className={`p-1 rounded-full text-slate-400 transition-transform duration-200 shrink-0 ${
-                    isOpen ? 'rotate-180 text-primary-400' : ''
+                  className={`p-1.5 rounded-full liquid-glass-subtle text-slate-400 transition-transform duration-300 shrink-0 ${
+                    isOpen ? 'rotate-180 text-cyan-300 border-cyan-400/40' : ''
                   }`}
                 >
                   <ChevronDown className="w-4 h-4" />
@@ -74,7 +74,7 @@ export default function FaqSection() {
               </button>
 
               {isOpen && (
-                <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/[0.04]">
+                <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-200 leading-relaxed border-t border-white/[0.08] font-sans">
                   <p>{faq.answer}</p>
                 </div>
               )}

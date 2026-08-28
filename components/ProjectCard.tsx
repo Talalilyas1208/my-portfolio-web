@@ -18,27 +18,27 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
 
   return (
     <div
-      className={`group relative rounded-2xl transition-all duration-300 ${
+      className={`group relative rounded-3xl liquid-glass-interactive transition-all duration-500 ${
         isFlagship
-          ? 'bg-gradient-to-b from-[#141d2e] to-[#0d1424] border border-primary-500/30 hover:border-primary-400 shadow-xl shadow-primary-950/40 p-6 sm:p-8 lg:p-10'
-          : 'bg-surface-200/90 border border-white/[0.07] hover:border-primary-500/40 hover:bg-surface-200 shadow-lg p-6 sm:p-7'
+          ? 'liquid-glass-accent p-6 sm:p-8 lg:p-10 shadow-liquid-glow-lg'
+          : 'liquid-glass p-6 sm:p-7 shadow-liquid-glass'
       }`}
     >
       {/* Top badges */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
         <div className="flex items-center gap-2">
           {isFlagship ? (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-gradient-to-r from-primary-600 to-accent-cyan text-white shadow-sm">
-              <Sparkles className="w-3.5 h-3.5" />
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-bold liquid-pill-primary text-cyan-200">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-300 animate-pulse" />
               Flagship Autonomous AI Agent
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-surface-100 text-slate-300 border border-white/[0.08]">
-              <Layers className="w-3 h-3 text-primary-400" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium liquid-pill text-slate-300">
+              <Layers className="w-3 h-3 text-cyan-400" />
               {project.category}
             </span>
           )}
-          <span className="text-xs font-mono text-slate-500">
+          <span className="text-xs font-mono text-slate-400">
             {project.period}
           </span>
         </div>
@@ -48,7 +48,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           <button
             type="button"
             onClick={() => dispatch(openQuickPreview(project.slug))}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono text-primary-300 hover:text-white bg-primary-600/15 hover:bg-primary-600/30 border border-primary-500/30 transition-all"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-mono text-cyan-300 hover:text-white liquid-glass-subtle hover:border-cyan-400/50 transition-all"
             title="Instant 0ms Quick Preview"
           >
             <Eye className="w-3.5 h-3.5" />
@@ -60,7 +60,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.08] transition-colors"
+              className="p-2 rounded-xl liquid-glass-subtle text-slate-400 hover:text-white hover:border-white/20 transition-all"
               aria-label={`GitHub repo for ${project.title}`}
             >
               <Github className="w-4 h-4" />
@@ -73,7 +73,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       <div className="space-y-4">
         <div>
           <h3
-            className={`font-bold text-slate-100 group-hover:text-primary-400 transition-colors ${
+            className={`font-bold text-slate-100 group-hover:text-cyan-300 transition-colors ${
               isFlagship ? 'text-2xl sm:text-3xl' : 'text-xl'
             }`}
           >
@@ -81,7 +81,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
               {project.title}
             </Link>
           </h3>
-          <p className="text-xs sm:text-sm text-primary-400/90 font-mono mt-1">
+          <p className="text-xs sm:text-sm text-cyan-400/90 font-mono mt-1">
             {project.subtitle}
           </p>
         </div>
@@ -90,25 +90,25 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           {project.summary}
         </p>
 
-        {/* Key differentiator callout */}
+        {/* Key differentiator callout (Liquid Glass Accent Box) */}
         {project.keyDifferentiator && (
-          <div className="p-3.5 rounded-xl bg-[#0a1120]/80 border border-primary-500/20 text-xs sm:text-sm text-slate-300">
-            <span className="font-semibold text-primary-400 font-mono block mb-1">
+          <div className="p-4 rounded-2xl liquid-glass-subtle border border-cyan-500/30 text-xs sm:text-sm text-slate-200">
+            <span className="font-semibold text-cyan-300 font-mono block mb-1">
               ⚡ Engineering Differentiator:
             </span>
-            <p className="leading-normal">{project.keyDifferentiator}</p>
+            <p className="leading-relaxed">{project.keyDifferentiator}</p>
           </div>
         )}
 
-        {/* Metrics Grid */}
+        {/* Metrics Grid (Liquid Glass Tiles) */}
         {project.metrics && project.metrics.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
             {project.metrics.map((metric, idx) => (
               <div
                 key={idx}
-                className="p-2.5 rounded-lg bg-surface-300/80 border border-white/[0.04] text-center"
+                className="p-3 rounded-2xl liquid-glass-subtle text-center"
               >
-                <div className="text-base sm:text-lg font-bold font-mono text-slate-100">
+                <div className="text-base sm:text-lg font-bold font-mono text-gradient-cyan">
                   {metric.value}
                 </div>
                 <div className="text-[10px] sm:text-[11px] text-slate-400 font-sans truncate">
@@ -119,13 +119,13 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
           </div>
         )}
 
-        {/* Tech Stack Pills */}
+        {/* Tech Stack Pills (Liquid Frosted Tags) */}
         <div className="pt-2">
           <div className="flex flex-wrap gap-1.5">
             {project.techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 rounded-md text-xs font-mono bg-white/[0.04] text-slate-300 border border-white/[0.05]"
+                className="px-2.5 py-1 rounded-xl text-xs font-mono liquid-glass-subtle text-slate-300 hover:text-white transition-colors"
               >
                 {tech}
               </span>
@@ -134,17 +134,17 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         </div>
 
         {/* Action Button */}
-        <div className="pt-4 flex items-center justify-between border-t border-white/[0.06]">
+        <div className="pt-4 flex items-center justify-between border-t border-white/[0.08]">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-400 group-hover:text-primary-300 group-hover:translate-x-1 transition-all"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:text-cyan-300 group-hover:translate-x-1.5 transition-all"
           >
             <span>Read Complete Case Study</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
 
           {isFlagship && (
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400">
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 liquid-pill-emerald px-2.5 py-0.5 rounded-full">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               Autonomous Loop Active
             </span>

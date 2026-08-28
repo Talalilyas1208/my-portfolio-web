@@ -39,27 +39,27 @@ export default function ContactForm() {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
       {/* Left Column: Direct Info & Quick Copy */}
       <div className="lg:col-span-5 space-y-6">
-        <div className="p-6 sm:p-8 rounded-2xl bg-surface-200/90 border border-white/[0.06] space-y-6">
+        <div className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-6 border border-white/[0.14]">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-medium liquid-pill-emerald text-emerald-300 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               Available for Full-Time & Contract Roles
             </div>
             <h3 className="text-xl font-bold text-slate-100">
               Let&apos;s build something intelligent.
             </h3>
-            <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+            <p className="text-sm text-slate-300 mt-2 leading-relaxed font-sans">
               Based in <strong>Sargodha &amp; Lahore, Pakistan</strong> and serving engineering teams worldwide. Available for autonomous AI agent pipelines, React/Next.js architectures, and full-stack development.
             </p>
           </div>
 
           {/* Location Callout */}
-          <div className="p-3.5 rounded-xl bg-surface-300/80 border border-white/[0.05] flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-primary-600/10 text-primary-400">
+          <div className="p-4 rounded-2xl liquid-glass-subtle flex items-center gap-3">
+            <div className="p-2.5 rounded-xl liquid-glass text-cyan-300">
               <MapPin className="w-4 h-4" />
             </div>
             <div>
-              <div className="text-xs font-mono font-semibold text-slate-200">
+              <div className="text-xs font-mono font-semibold text-slate-100">
                 Sargodha, Punjab, Pakistan
               </div>
               <div className="text-[11px] text-slate-400">
@@ -75,29 +75,29 @@ export default function ContactForm() {
               href={personalData.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30 hover:border-emerald-400 text-emerald-300 transition-all group"
+              className="flex items-center justify-between p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 hover:border-emerald-400 text-emerald-200 transition-all group shadow-[0_4px_20px_rgba(16,185,129,0.15)]"
             >
               <div className="flex items-center gap-2.5">
                 <MessageSquare className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-semibold">Chat directly on WhatsApp</span>
               </div>
-              <span className="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">
+              <span className="text-[10px] font-mono liquid-pill-emerald text-emerald-300 px-2.5 py-0.5 rounded-full">
                 Quick Response
               </span>
             </a>
           </div>
 
           {/* Email Copy Card */}
-          <div className="p-4 rounded-xl bg-surface-300 border border-white/[0.05] space-y-2">
+          <div className="p-4.5 rounded-2xl liquid-glass-subtle space-y-2">
             <span className="text-xs font-mono text-slate-400">Direct Email</span>
             <div className="flex items-center justify-between gap-2">
-              <span className="text-sm sm:text-base font-mono font-medium text-slate-200 truncate">
+              <span className="text-sm sm:text-base font-mono font-medium text-cyan-300 truncate">
                 {personalData.email}
               </span>
               <button
                 type="button"
                 onClick={copyEmail}
-                className="p-2 rounded-lg bg-surface-100 hover:bg-primary-600/20 text-slate-300 hover:text-primary-400 border border-white/[0.06] transition-all shrink-0"
+                className="p-2 rounded-xl liquid-glass text-slate-300 hover:text-cyan-300 hover:border-cyan-400/40 transition-all shrink-0"
                 title="Copy email to clipboard"
                 aria-label="Copy email"
               >
@@ -123,18 +123,18 @@ export default function ContactForm() {
                 href={personalData.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 p-3 rounded-xl bg-surface-300 hover:bg-surface-100 text-slate-200 border border-white/[0.05] transition-all group"
+                className="flex items-center gap-2.5 p-3.5 rounded-2xl liquid-glass-subtle hover:border-white/25 text-slate-200 transition-all group"
               >
-                <Github className="w-4 h-4 text-primary-400 group-hover:scale-110 transition-transform" />
+                <Github className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-medium">GitHub</span>
               </a>
               <a
                 href={personalData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 p-3 rounded-xl bg-surface-300 hover:bg-surface-100 text-slate-200 border border-white/[0.05] transition-all group"
+                className="flex items-center gap-2.5 p-3.5 rounded-2xl liquid-glass-subtle hover:border-white/25 text-slate-200 transition-all group"
               >
-                <Linkedin className="w-4 h-4 text-primary-400 group-hover:scale-110 transition-transform" />
+                <Linkedin className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-medium">LinkedIn</span>
               </a>
             </div>
@@ -146,12 +146,12 @@ export default function ContactForm() {
       <div className="lg:col-span-7">
         <form
           onSubmit={handleSubmit}
-          className="p-6 sm:p-8 rounded-2xl bg-surface-200/90 border border-white/[0.06] space-y-5"
+          className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-5 border border-white/[0.14]"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label htmlFor="name" className="block text-xs font-mono text-slate-300">
-                Your Name <span className="text-primary-400">*</span>
+                Your Name <span className="text-cyan-400">*</span>
               </label>
               <input
                 id="name"
@@ -160,13 +160,13 @@ export default function ContactForm() {
                 value={formState.name}
                 onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                 placeholder="e.g. Alex Henderson"
-                className="w-full px-4 py-2.5 rounded-xl bg-surface-300 border border-white/[0.06] text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                className="w-full px-4 py-3 rounded-2xl liquid-glass-subtle border border-white/[0.1] text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all"
               />
             </div>
 
             <div className="space-y-2">
               <label htmlFor="email" className="block text-xs font-mono text-slate-300">
-                Your Email <span className="text-primary-400">*</span>
+                Your Email <span className="text-cyan-400">*</span>
               </label>
               <input
                 id="email"
@@ -175,14 +175,14 @@ export default function ContactForm() {
                 value={formState.email}
                 onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                 placeholder="alex@company.com"
-                className="w-full px-4 py-2.5 rounded-xl bg-surface-300 border border-white/[0.06] text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                className="w-full px-4 py-3 rounded-2xl liquid-glass-subtle border border-white/[0.1] text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all"
               />
             </div>
           </div>
 
           <div className="space-y-2">
             <label htmlFor="subject" className="block text-xs font-mono text-slate-300">
-              Subject <span className="text-primary-400">*</span>
+              Subject <span className="text-cyan-400">*</span>
             </label>
             <input
               id="subject"
@@ -191,13 +191,13 @@ export default function ContactForm() {
               value={formState.subject}
               onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
               placeholder="e.g. AI Agent Project / React Developer Opportunity"
-              className="w-full px-4 py-2.5 rounded-xl bg-surface-300 border border-white/[0.06] text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+              className="w-full px-4 py-3 rounded-2xl liquid-glass-subtle border border-white/[0.1] text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all"
             />
           </div>
 
           <div className="space-y-2">
             <label htmlFor="message" className="block text-xs font-mono text-slate-300">
-              Message <span className="text-primary-400">*</span>
+              Message <span className="text-cyan-400">*</span>
             </label>
             <textarea
               id="message"
@@ -206,12 +206,12 @@ export default function ContactForm() {
               value={formState.message}
               onChange={(e) => setFormState({ ...formState, message: e.target.value })}
               placeholder="Describe your project, engineering requirements, or open role..."
-              className="w-full px-4 py-2.5 rounded-xl bg-surface-300 border border-white/[0.06] text-slate-200 placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-y"
+              className="w-full px-4 py-3 rounded-2xl liquid-glass-subtle border border-white/[0.1] text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all resize-y"
             />
           </div>
 
           {status === 'success' && (
-            <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm flex items-start gap-2.5 animate-fade-in">
+            <div className="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-500/50 text-emerald-300 text-xs sm:text-sm flex items-start gap-2.5 animate-fade-in shadow-[0_4px_20px_rgba(16,185,129,0.2)]">
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <strong className="font-semibold block text-emerald-200">Message Sent Successfully!</strong>
@@ -221,7 +221,7 @@ export default function ContactForm() {
           )}
 
           {status === 'error' && (
-            <div className="p-4 rounded-xl bg-rose-950/60 border border-rose-500/40 text-rose-300 text-xs sm:text-sm animate-fade-in">
+            <div className="p-4 rounded-2xl bg-rose-950/60 border border-rose-500/50 text-rose-300 text-xs sm:text-sm animate-fade-in">
               {feedbackMessage || 'Unable to submit right now. Please email directly at talalilyas11@gmail.com.'}
             </div>
           )}
@@ -229,7 +229,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full py-3.5 px-6 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary-600/30 transition-all disabled:opacity-50 hover:scale-[1.01] active:scale-95"
+            className="w-full py-4 px-6 rounded-2xl liquid-btn-primary text-white font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {status === 'submitting' ? (
               <span>Sending Inquiry...</span>

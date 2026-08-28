@@ -49,20 +49,23 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#05070e]/90 backdrop-blur-md border-b border-surface-border shadow-lg shadow-black/40'
-          : 'bg-transparent border-b border-white/[0.04]'
+          ? 'py-2 sm:py-3 bg-[#05070e]/80 backdrop-blur-2xl border-b border-white/[0.12] shadow-[0_10px_35px_rgba(0,0,0,0.65)]'
+          : 'py-3 sm:py-4 bg-transparent border-b border-white/[0.05]'
       }`}
     >
+      {/* Top subtle liquid edge reflection line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo / Brand Name */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-2xl p-1.5 transition-all"
           >
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary-500/60 shadow-md shadow-primary-500/20 group-hover:border-primary-400 group-hover:scale-105 transition-all duration-300">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary-400/70 shadow-[0_0_20px_rgba(59,130,246,0.4)] group-hover:border-accent-cyan group-hover:scale-105 transition-all duration-300">
               <Image
                 src="/profile.png"
                 alt="Muhammad Talal"
@@ -73,10 +76,10 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-slate-100 tracking-tight group-hover:text-primary-400 transition-colors">
+                <span className="font-bold text-slate-100 tracking-tight group-hover:text-primary-300 transition-colors">
                   Muhammad Talal Ilyas
                 </span>
-                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium liquid-pill-emerald text-emerald-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
                   BS AI
                 </span>
@@ -87,8 +90,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-surface-200/60 border border-white/[0.06] px-3 py-1.5 rounded-full backdrop-blur-md">
+          {/* Desktop Navigation Links (Floating Liquid Pill) */}
+          <nav className="hidden lg:flex items-center gap-1.5 liquid-glass px-3 py-1.5 rounded-full shadow-liquid-glass">
             {navLinks.map((link) => {
               const isActive =
                 link.href === '/'
@@ -100,27 +103,27 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
+                  className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative ${
                     isActive
-                      ? 'bg-primary-600/20 text-primary-400 border border-primary-500/30 shadow-sm'
-                      : 'text-slate-300 hover:text-white hover:bg-white/[0.05]'
+                      ? 'liquid-pill-primary text-white font-semibold shadow-sm'
+                      : 'text-slate-300 hover:text-white hover:bg-white/[0.08]'
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-primary-400' : 'text-slate-400'}`} />
-                  {link.name}
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-300' : 'text-slate-400'}`} />
+                  <span>{link.name}</span>
                 </Link>
               );
             })}
           </nav>
 
           {/* Action CTAs & Socials */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
             <a
               href={personalData.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.06] border border-transparent hover:border-white/[0.08] transition-all"
+              className="p-2 rounded-xl liquid-glass-subtle text-slate-300 hover:text-white hover:border-white/25 transition-all"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -129,13 +132,13 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.06] border border-transparent hover:border-white/[0.08] transition-all"
+              className="p-2 rounded-xl liquid-glass-subtle text-slate-300 hover:text-white hover:border-white/25 transition-all"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium text-white bg-primary-600 hover:bg-primary-500 rounded-lg shadow-sm shadow-primary-600/30 transition-all active:scale-95"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white liquid-btn-primary rounded-xl"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Hire Me</span>
@@ -146,21 +149,21 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
-            className="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.06] border border-white/[0.08] focus:outline-none"
+            className="lg:hidden p-2.5 rounded-xl liquid-glass-subtle text-slate-300 hover:text-white focus:outline-none"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu (Liquid Glass) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-surface-border bg-[#05070e]/95 backdrop-blur-xl animate-fade-in">
-          <div className="px-4 pt-2 pb-6 space-y-1.5 max-w-md mx-auto">
-            <div className="p-3 mb-2 rounded-xl bg-surface-200/80 border border-white/[0.06] flex items-center justify-between">
+        <div className="lg:hidden border-b border-white/[0.12] bg-[#05070e]/95 backdrop-blur-3xl animate-fade-in shadow-2xl">
+          <div className="px-4 pt-3 pb-6 space-y-2 max-w-md mx-auto">
+            <div className="p-3.5 mb-3 rounded-2xl liquid-glass-subtle flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span className="text-xs text-slate-300 font-medium">Available for AI & React Roles</span>
+                <span className="text-xs text-slate-200 font-medium">Available for AI & React Roles</span>
               </div>
               <span className="text-[11px] font-mono text-slate-400">Pakistan 🇵🇰</span>
             </div>
@@ -176,28 +179,28 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                  className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-medium transition-all ${
                     isActive
-                      ? 'bg-primary-600/20 text-primary-400 border border-primary-500/30'
-                      : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
+                      ? 'liquid-pill-primary text-white font-semibold'
+                      : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-4 h-4 text-cyan-400" />
                     <span>{link.name}</span>
                   </div>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-primary-400"></span>}
+                  {isActive && <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></span>}
                 </Link>
               );
             })}
 
-            <div className="pt-4 mt-3 border-t border-surface-border flex items-center justify-between">
+            <div className="pt-4 mt-3 border-t border-white/[0.08] flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <a
                   href={personalData.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-surface-200 text-slate-300 hover:text-white border border-white/[0.06]"
+                  className="p-2.5 rounded-xl liquid-glass text-slate-200 hover:text-white"
                   aria-label="GitHub"
                 >
                   <Github className="w-4 h-4" />
@@ -206,7 +209,7 @@ export default function Navbar() {
                   href={personalData.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-surface-200 text-slate-300 hover:text-white border border-white/[0.06]"
+                  className="p-2.5 rounded-xl liquid-glass text-slate-200 hover:text-white"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
@@ -214,7 +217,7 @@ export default function Navbar() {
               </div>
               <Link
                 href="/contact"
-                className="flex-1 ml-3 py-2.5 text-center text-xs font-semibold text-white bg-primary-600 rounded-xl hover:bg-primary-500 transition-colors"
+                className="flex-1 py-3 text-center text-xs font-semibold text-white liquid-btn-primary rounded-xl"
               >
                 Get in Touch
               </Link>

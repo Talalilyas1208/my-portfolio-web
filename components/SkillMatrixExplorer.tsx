@@ -18,9 +18,9 @@ export default function SkillMatrixExplorer() {
   const selectedGroup = skillGroupsData.find((g) => g.category === activeCategory) || skillGroupsData[0];
 
   return (
-    <div className="p-6 sm:p-8 rounded-3xl bg-surface-200/80 border border-white/[0.08] shadow-2xl space-y-6">
-      {/* Category Tabs */}
-      <div className="flex flex-wrap gap-2 border-b border-white/[0.06] pb-4">
+    <div className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-6 border border-white/[0.14]">
+      {/* Category Tabs (Liquid Glass Pills) */}
+      <div className="flex flex-wrap gap-2.5 border-b border-white/[0.08] pb-5">
         {skillGroupsData.map((group) => {
           const Icon = iconsMap[group.category] || Sparkles;
           const isActive = activeCategory === group.category;
@@ -29,13 +29,13 @@ export default function SkillMatrixExplorer() {
             <button
               key={group.category}
               onClick={() => setActiveCategory(group.category)}
-              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-medium transition-all duration-300 ${
                 isActive
-                  ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/30 font-semibold'
-                  : 'bg-surface-300 text-slate-300 hover:text-white hover:bg-surface-100 border border-white/[0.04]'
+                  ? 'liquid-pill-primary text-white font-semibold shadow-liquid-glow scale-[1.02]'
+                  : 'liquid-glass-subtle text-slate-300 hover:text-white hover:border-white/20'
               }`}
             >
-              <Icon className="w-4 h-4" />
+              <Icon className={`w-4 h-4 ${isActive ? 'text-cyan-300' : 'text-slate-400'}`} />
               <span>{group.category}</span>
             </button>
           );
@@ -43,33 +43,33 @@ export default function SkillMatrixExplorer() {
       </div>
 
       {/* Selected Category Content */}
-      <div className="space-y-4 animate-fade-in">
+      <div className="space-y-5 animate-fade-in">
         <div>
-          <h4 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+          <h4 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
             <span>{selectedGroup.category}</span>
           </h4>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
+          <p className="text-xs sm:text-sm text-slate-300 mt-1">
             {selectedGroup.description}
           </p>
         </div>
 
-        {/* Skills Grid */}
+        {/* Skills Grid (Liquid Glass Tiles) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-2">
           {selectedGroup.skills.map((skill) => (
             <div
               key={skill.name}
-              className="p-4 rounded-2xl bg-[#090d16] border border-white/[0.06] hover:border-primary-500/40 transition-all flex flex-col justify-between space-y-2 group"
+              className="p-4.5 rounded-2xl liquid-glass-subtle liquid-glass-interactive flex flex-col justify-between space-y-2 group hover:border-cyan-400/40"
             >
               <div className="flex items-start justify-between gap-2">
-                <span className="font-semibold text-slate-100 text-sm group-hover:text-primary-400 transition-colors">
+                <span className="font-semibold text-slate-100 text-sm group-hover:text-cyan-300 transition-colors">
                   {skill.name}
                 </span>
-                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-primary-600/15 text-primary-300 border border-primary-500/20 shrink-0">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium liquid-pill-primary text-cyan-200 shrink-0">
                   {skill.level}
                 </span>
               </div>
               {skill.highlight && (
-                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                <p className="text-xs text-slate-300 leading-relaxed font-sans">
                   {skill.highlight}
                 </p>
               )}

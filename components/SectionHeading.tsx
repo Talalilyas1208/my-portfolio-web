@@ -18,16 +18,16 @@ export default function SectionHeading({
   return (
     <div className={`space-y-3 mb-10 md:mb-14 ${isCenter ? 'text-center max-w-3xl mx-auto' : 'max-w-3xl'}`}>
       {eyebrow && (
-        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-primary-600/10 text-primary-400 border border-primary-500/20 ${isCenter ? 'mx-auto' : ''}`}>
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-400"></span>
+        <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold liquid-pill text-cyan-200 ${isCenter ? 'mx-auto' : ''}`}>
+          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]"></span>
           {eyebrow}
         </div>
       )}
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
         {title}
       </h2>
       {description && (
-        <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-sans">
           {description}
         </p>
       )}

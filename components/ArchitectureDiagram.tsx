@@ -67,23 +67,23 @@ export default function ArchitectureDiagram() {
   const [activeStep, setActiveStep] = useState(3);
 
   return (
-    <div className="p-6 sm:p-8 rounded-3xl bg-surface-200/80 border border-primary-500/30 shadow-2xl space-y-8">
+    <div className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-8 border border-white/[0.14]">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.06] pb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-primary-600/10 text-primary-400 border border-primary-500/20 mb-2">
-            <Cpu className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-primary text-cyan-200 mb-2">
+            <Cpu className="w-3.5 h-3.5 text-cyan-300" />
             <span>Autonomous Closed-Loop Pipeline Architecture</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             How The Self-Healing AI Code Agent Operates
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-xl">
+          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
             Click on any pipeline stage below to inspect the architectural responsibilities, data flow, and technologies.
           </p>
         </div>
 
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface-300 text-xs font-mono text-emerald-400 border border-emerald-500/20 shrink-0">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl liquid-pill-emerald text-xs font-mono text-emerald-300 shrink-0">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Zero Human Intervention Required</span>
         </div>
@@ -99,14 +99,14 @@ export default function ArchitectureDiagram() {
             <button
               key={s.id}
               onClick={() => setActiveStep(s.id)}
-              className={`p-3 sm:p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between space-y-3 ${
+              className={`p-3.5 sm:p-4 rounded-2xl text-left transition-all duration-300 flex flex-col justify-between space-y-3 ${
                 isActive
-                  ? 'bg-primary-600/20 border-2 border-primary-500 shadow-lg shadow-primary-950/60 scale-[1.02]'
-                  : 'bg-surface-300/80 border border-white/[0.06] hover:bg-surface-300 hover:border-white/[0.12]'
+                  ? 'liquid-glass-accent border-2 border-cyan-400 shadow-liquid-glow scale-[1.03]'
+                  : 'liquid-glass-subtle hover:border-white/20 hover:scale-[1.01]'
               }`}
             >
               <div className="flex items-center justify-between w-full">
-                <div className={`p-2 rounded-xl border ${s.color}`}>
+                <div className={`p-2 rounded-xl liquid-glass ${s.color}`}>
                   <Icon className="w-4 h-4" />
                 </div>
                 <span className="text-[10px] font-mono text-slate-400">{s.tag}</span>
@@ -117,20 +117,20 @@ export default function ArchitectureDiagram() {
         })}
       </div>
 
-      {/* Active Stage Detailed Breakdown Panel */}
+      {/* Active Stage Detailed Breakdown Panel (Liquid Glass Card) */}
       {(() => {
         const current = steps.find((s) => s.id === activeStep) || steps[0];
         const Icon = current.icon;
 
         return (
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#090e18] border border-primary-500/30 space-y-4 animate-fade-in">
+          <div className="p-6 rounded-2xl liquid-glass-subtle border border-cyan-500/30 space-y-4 animate-fade-in shadow-liquid-glow">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className={`p-2.5 rounded-xl border ${current.color}`}>
-                  <Icon className="w-5 h-5" />
+                <div className={`p-3 rounded-2xl liquid-glass ${current.color}`}>
+                  <Icon className="w-5 h-5 text-cyan-300" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-accent-cyan uppercase tracking-wider">
+                  <div className="text-xs font-mono text-cyan-300 uppercase tracking-wider font-semibold">
                     Stage {current.id} of 5 &bull; {current.tag}
                   </div>
                   <h4 className="text-lg font-bold text-white">{current.title}</h4>
@@ -141,7 +141,7 @@ export default function ArchitectureDiagram() {
                 {current.tech.map((t) => (
                   <span
                     key={t}
-                    className="px-2.5 py-1 rounded-lg text-xs font-mono bg-surface-300 text-slate-300 border border-white/[0.06]"
+                    className="px-3 py-1 rounded-xl text-xs font-mono liquid-glass text-slate-200"
                   >
                     {t}
                   </span>
@@ -149,7 +149,7 @@ export default function ArchitectureDiagram() {
               </div>
             </div>
 
-            <p className="text-sm text-slate-300 leading-relaxed font-sans">
+            <p className="text-sm text-slate-200 leading-relaxed font-sans">
               {current.description}
             </p>
           </div>
