@@ -231,49 +231,50 @@
     0 15px 35px -5px rgba(16, 185, 129, 0.6);
 }
 
-/* Liquid Floating Orbs in Background */
+/* Liquid Floating Orbs in Background (Hardware-Accelerated & Zero-Blur Penalty) */
 .liquid-orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(90px);
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.45;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .liquid-orb-1 {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 80%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(6, 182, 212, 0.08) 45%, transparent 70%);
   top: 5%;
   left: 10%;
-  animation: liquidFloat 16s ease-in-out infinite alternate;
+  animation: liquidFloat 24s ease-in-out infinite alternate;
 }
 
 .liquid-orb-2 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(37, 99, 235, 0.12) 50%, transparent 80%);
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(37, 99, 235, 0.06) 45%, transparent 70%);
   top: 30%;
   right: 5%;
-  animation: liquidFloat 20s ease-in-out 3s infinite alternate-reverse;
+  animation: liquidFloat 28s ease-in-out 3s infinite alternate-reverse;
 }
 
 .liquid-orb-3 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(16, 185, 129, 0.12) 50%, transparent 80%);
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, rgba(16, 185, 129, 0.06) 45%, transparent 70%);
   top: 60%;
-  left: 20%;
-  animation: liquidFloat 18s ease-in-out 6s infinite alternate;
+  left: 15%;
+  animation: liquidFloat 26s ease-in-out 6s infinite alternate;
 }
 
 .liquid-orb-4 {
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 80%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(139, 92, 246, 0.08) 45%, transparent 70%);
   top: 85%;
   right: 15%;
-  animation: liquidFloat 22s ease-in-out 1s infinite alternate-reverse;
+  animation: liquidFloat 30s ease-in-out 1s infinite alternate-reverse;
 }
 
 /* Glass text utilities */

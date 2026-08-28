@@ -16,8 +16,8 @@ export interface Project {
   summary: string;
   overview: string;
   category: 'AI & Agentic Systems' | 'Frontend Engineering' | 'Full-Stack';
-  period: string;
-  role: string;
+  period?: string;
+  role?: string;
   isFlagship?: boolean;
   keyDifferentiator?: string;
   metrics: ProjectMetric[];
@@ -105,4 +105,15 @@ export interface InquiryMessage {
   subject: string;
   message: string;
   created_at?: string;
+}
+
+export interface ArticlePreview {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  status: string;
+  outline?: string[];
 }
