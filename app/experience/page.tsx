@@ -25,12 +25,12 @@ export default function ExperiencePage() {
         {personalData.stats.map((stat, idx) => (
           <div
             key={idx}
-            className="p-5 rounded-2xl bg-surface-200/90 border border-white/[0.06] text-center"
+            className="p-5 rounded-3xl liquid-glass-subtle text-center"
           >
-            <div className="text-xl sm:text-2xl font-bold font-mono text-primary-400 mb-1">
+            <div className="text-xl sm:text-2xl font-bold font-mono text-gradient-cyan mb-1">
               {stat.value}
             </div>
-            <div className="text-xs text-slate-400 font-sans">
+            <div className="text-xs text-slate-300 font-sans">
               {stat.label}
             </div>
           </div>

@@ -23,48 +23,48 @@ export default function BlogPage() {
         {articlesData.map((article, idx) => (
           <article
             key={idx}
-            className="p-6 sm:p-8 rounded-2xl bg-surface-200/90 border border-white/[0.06] hover:border-primary-500/30 transition-all space-y-4"
+            className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass space-y-4 border border-white/[0.12] hover:border-cyan-400/30 transition-all duration-300"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <span
-                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono font-medium ${
+                  className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-mono font-medium ${
                     article.status === 'Published'
-                      ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                      : 'bg-primary-600/10 text-primary-400 border border-primary-500/20'
+                      ? 'liquid-pill-emerald text-emerald-300'
+                      : 'liquid-pill-primary text-cyan-200'
                   }`}
                 >
                   {article.status}
                 </span>
-                <span className="text-xs font-mono text-slate-500 flex items-center gap-1">
-                  <Calendar className="w-3 h-3" />
+                <span className="text-xs font-mono text-slate-400 flex items-center gap-1">
+                  <Calendar className="w-3.5 h-3.5 text-cyan-400" />
                   {article.date}
                 </span>
               </div>
               <span className="text-xs font-mono text-slate-400 flex items-center gap-1">
-                <Clock className="w-3 h-3" />
+                <Clock className="w-3.5 h-3.5 text-cyan-400" />
                 {article.readTime}
               </span>
             </div>
 
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-100 hover:text-primary-400 transition-colors">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-100 hover:text-cyan-300 transition-colors">
               {article.title}
             </h2>
 
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed font-sans">
               {article.description}
             </p>
 
             {/* Article Outline / Key Takeaways */}
             {article.outline && article.outline.length > 0 && (
-              <div className="p-4 rounded-xl bg-surface-300/80 border border-white/[0.04] space-y-2">
-                <span className="text-xs font-mono text-primary-400 font-semibold uppercase tracking-wider block">
-                  Article Breakdown & Takeaways:
+              <div className="p-5 rounded-2xl liquid-glass-subtle space-y-2 border border-white/[0.08]">
+                <span className="text-xs font-mono text-cyan-300 font-semibold uppercase tracking-wider block">
+                  Article Breakdown &amp; Takeaways:
                 </span>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-400">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
                   {article.outline.map((point, pIdx) => (
                     <li key={pIdx} className="flex items-start gap-2">
-                      <span className="w-1 h-1 rounded-full bg-primary-400 mt-1.5 shrink-0"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 shrink-0 shadow-[0_0_4px_#22d3ee]"></span>
                       <span>{point}</span>
                     </li>
                   ))}
@@ -73,12 +73,12 @@ export default function BlogPage() {
             )}
 
             {/* Tags & Actions */}
-            <div className="pt-3 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.05]">
+            <div className="pt-3 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.08]">
               <div className="flex flex-wrap gap-1.5">
                 {article.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.03] text-slate-400 border border-white/[0.05]"
+                    className="px-2.5 py-0.5 rounded-xl text-[11px] font-mono liquid-glass-subtle text-slate-300"
                   >
                     #{tag}
                   </span>
@@ -88,13 +88,13 @@ export default function BlogPage() {
               {article.slug === 'building-autonomous-self-healing-code-agents-with-gemini' ? (
                 <a
                   href="/projects/autonomous-gemini-code-fixer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-400 hover:text-primary-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
                   <span>Explore Associated Case Study</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               ) : (
-                <span className="text-xs font-mono text-slate-500">Full paper publishing soon</span>
+                <span className="text-xs font-mono text-slate-400">Full paper publishing soon</span>
               )}
             </div>
           </article>

@@ -40,7 +40,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="projects">
         <div className="relative space-y-8">
           {/* Subtle Glow backdrop */}
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-48 bg-primary-600/10 blur-3xl pointer-events-none"></div>
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-48 bg-primary-600/15 blur-3xl pointer-events-none"></div>
 
           <SectionHeading
             eyebrow="Flagship AI Agent"
@@ -54,11 +54,11 @@ export default function HomePage() {
             </div>
             <div className="lg:col-span-5 space-y-3">
               <div className="flex items-center justify-between px-1">
-                <span className="flex items-center gap-1.5 text-xs font-mono text-primary-300 font-semibold">
-                  <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
+                <span className="flex items-center gap-1.5 text-xs font-mono text-cyan-300 font-semibold">
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                   Live Agent Execution Simulator
                 </span>
-                <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                <span className="text-[10px] font-mono text-emerald-300 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
                   REAL-TIME
                 </span>
               </div>
@@ -77,21 +77,21 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-primary-600/10 text-primary-400 border border-primary-500/20 mb-3">
-              <Layers className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold liquid-pill text-cyan-300 mb-3">
+              <Layers className="w-3.5 h-3.5 text-cyan-400" />
               Production Case Studies
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               Interactive Project Portfolio
             </h2>
-            <p className="text-sm text-slate-400 mt-1 max-w-xl">
+            <p className="text-sm text-slate-300 mt-1 max-w-xl font-sans">
               Search by technology or filter by engineering category. Click &ldquo;Quick Preview&rdquo; for instant architecture metrics.
             </p>
           </div>
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
           >
             <span>View All Detailed Case Studies</span>
             <ArrowRight className="w-4 h-4" />
@@ -116,7 +116,7 @@ export default function HomePage() {
               description="Proven track record in high-velocity startup and agency environments, combining practical React frontend performance with a formal Artificial Intelligence degree."
             />
 
-            <div className="p-5 rounded-2xl bg-surface-200/80 border border-emerald-500/20 space-y-3">
+            <div className="p-6 rounded-3xl liquid-glass border border-emerald-500/30 space-y-3 shadow-[0_10px_30px_rgba(16,185,129,0.1)]">
               <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-semibold">
                 <GraduationCap className="w-4 h-4" />
                 <span>Academic Distinction</span>
@@ -139,7 +139,7 @@ export default function HomePage() {
 
             <Link
               href="/experience"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
             >
               <span>View Full Experience Timeline</span>
               <ArrowRight className="w-4 h-4" />
@@ -151,34 +151,34 @@ export default function HomePage() {
             {experienceData.map((exp, idx) => (
               <div
                 key={idx}
-                className="p-6 sm:p-7 rounded-2xl bg-surface-200/90 border border-white/[0.06] hover:border-primary-500/30 transition-all space-y-4"
+                className="p-6 sm:p-7 rounded-3xl liquid-glass-subtle liquid-glass-interactive space-y-4 hover:border-cyan-400/35"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.05] pb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-4">
                   <div>
                     <h3 className="text-lg font-bold text-slate-100">
                       {exp.role}
                     </h3>
-                    <div className="text-sm text-primary-400 font-mono flex items-center gap-2">
+                    <div className="text-sm text-cyan-400 font-mono flex items-center gap-2">
                       <Briefcase className="w-3.5 h-3.5" />
                       <span>{exp.company}</span>
                       <span className="text-slate-600">&bull;</span>
                       <span className="text-slate-400 text-xs">{exp.location}</span>
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-slate-400 bg-surface-300 px-3 py-1 rounded-full border border-white/[0.05] self-start sm:self-auto">
+                  <span className="text-xs font-mono text-slate-300 liquid-pill px-3 py-1 rounded-full self-start sm:self-auto">
                     {exp.period}
                   </span>
                 </div>
 
-                <p className="text-sm text-slate-300 mb-3 leading-relaxed">
+                <p className="text-sm text-slate-300 mb-3 leading-relaxed font-sans">
                   {exp.description}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.05]">
+                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.08]">
                   {exp.techStack.slice(0, 5).map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.03] text-slate-400"
+                      className="px-2.5 py-0.5 rounded-xl text-[11px] font-mono liquid-glass-subtle text-slate-300"
                     >
                       {tech}
                     </span>
@@ -202,19 +202,19 @@ export default function HomePage() {
         <SkillMatrixExplorer />
       </section>
 
-      {/* Local Sargodha & Pakistan Engineering Spotlight (Crucial for Local Google Ranking) */}
+      {/* Local Sargodha & Pakistan Engineering Spotlight */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#0e1626] via-surface-200/90 to-[#0e1626] border border-primary-500/30 space-y-6">
+        <div className="p-8 sm:p-10 rounded-3xl liquid-glass border border-cyan-500/30 shadow-liquid-glass-lg space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                <MapPin className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-medium liquid-pill-emerald text-emerald-300">
+                <MapPin className="w-3.5 h-3.5 text-emerald-400" />
                 🌐 Worldwide Remote &bull; Global AI &amp; React Engineering
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 Global AI &amp; Full-Stack React Software Engineering
               </h2>
-              <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
+              <p className="text-sm text-slate-300 max-w-2xl leading-relaxed font-sans">
                 Looking for world-class software &amp; AI engineering talent for your team or startup? Muhammad Talal delivers cutting-edge autonomous AI pipelines, Google Gemini &amp; OpenAI integrations, and modern React 18/Next.js 14 web applications with 100% type safety and sub-second Core Web Vitals across US, European, and Asian timezones.
               </p>
             </div>
@@ -224,14 +224,14 @@ export default function HomePage() {
                 href={personalData.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs shadow-lg shadow-emerald-900/40 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl liquid-btn-emerald text-white font-medium text-xs shadow-lg shadow-emerald-900/40"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Connect</span>
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-medium text-xs shadow-lg shadow-primary-900/40 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl liquid-btn-primary text-white font-medium text-xs shadow-lg shadow-primary-900/40"
               >
                 <Mail className="w-4 h-4" />
                 <span>Email Consultation</span>
@@ -246,29 +246,29 @@ export default function HomePage() {
         <FaqSection />
       </section>
 
-      {/* Call To Action Banner */}
+      {/* Call To Action Banner (Liquid Glass Accent Banner) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-primary-950/80 via-[#101828] to-primary-950/80 border border-primary-500/30 p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
+        <div className="rounded-3xl liquid-glass-accent p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-liquid-glass-lg border border-cyan-500/40">
+          <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none"></div>
 
           <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              Available for Full-Time & Contract Roles
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium liquid-pill-emerald text-emerald-300">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Available for Full-Time &amp; Contract Roles
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
               Ready to build high-performance AI systems and React applications?
             </h2>
 
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-sans">
               Let&apos;s discuss how I can bring autonomous agent workflows, sub-second React frontend architectures, and end-to-end type safety to your team.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <Link
                 href="/contact"
-                className="px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm shadow-lg shadow-primary-600/30 transition-all hover:scale-105 active:scale-95"
+                className="px-6 py-3.5 rounded-2xl liquid-btn-primary text-white font-semibold text-sm"
               >
                 Get In Touch
               </Link>
@@ -276,7 +276,7 @@ export default function HomePage() {
                 href={personalData.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-surface-200 hover:bg-surface-100 text-slate-200 font-semibold text-sm border border-white/[0.08] transition-all"
+                className="px-6 py-3.5 rounded-2xl liquid-btn-secondary text-slate-200 hover:text-white font-semibold text-sm"
               >
                 View GitHub Repositories
               </a>
