@@ -68,6 +68,12 @@ const config: Config = {
         'liquid-float-delayed': 'liquidFloat 9s ease-in-out 3s infinite',
         'liquid-float-slow': 'liquidFloat 12s ease-in-out 1.5s infinite',
         'liquid-shimmer': 'liquidShimmer 3s ease-in-out infinite',
+        'orbit-cw-25': 'orbitCW 25s linear infinite',
+        'orbit-ccw-25': 'orbitCCW 25s linear infinite',
+        'orbit-cw-45': 'orbitCW 45s linear infinite',
+        'orbit-ccw-45': 'orbitCCW 45s linear infinite',
+        'orbit-cw-70': 'orbitCW 70s linear infinite',
+        'orbit-ccw-70': 'orbitCCW 70s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -85,6 +91,14 @@ const config: Config = {
         liquidShimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        orbitCW: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        orbitCCW: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
         },
       },
     },

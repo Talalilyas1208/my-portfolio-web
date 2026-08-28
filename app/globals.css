@@ -300,3 +300,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* CAD Blueprint Grid Lines */
+.bg-blueprint-grid {
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 40px);
+  background-size: 40px 40px, 40px 40px;
+}
+
+/* Orbit Hover Pause */
+.orbit-container:hover .orbit-track,
+.orbit-container:hover .orbit-badge {
+  animation-play-state: paused !important;
+}
