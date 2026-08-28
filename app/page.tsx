@@ -30,6 +30,13 @@ import TechOrbitSystem from '@/components/TechOrbitSystem';
 import CompetencyRadarChart from '@/components/CompetencyRadarChart';
 import DialMetricGauges from '@/components/DialMetricGauges';
 import TechnicalRulerDivider from '@/components/TechnicalRulerDivider';
+import {
+  SkillMatrix3DSection,
+  ArchDiagram3DSection,
+  ProjectCards3DSection,
+  Timeline3DSection,
+  MetricsDashboard3DSection,
+} from '@/components/three/ThreeDSections';
 
 export default function HomePage() {
   const flagshipProject = projectsData.find((p) => p.isFlagship) || projectsData[0];
@@ -43,6 +50,7 @@ export default function HomePage() {
       {/* CAD Ruler & 3D Dial Metric Gauges */}
       <TechnicalRulerDivider station="STA 100" label="ENGINEERING CALIBRATION" />
       <DialMetricGauges />
+      <MetricsDashboard3DSection />
 
       {/* Flagship Spotlight Section */}
       <TechnicalRulerDivider station="STA 200" label="AUTONOMOUS AI AGENT" />
@@ -81,6 +89,7 @@ export default function HomePage() {
       <TechnicalRulerDivider station="STA 300" label="SYSTEMS TOPOLOGY" />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ArchitectureDiagram />
+        <ArchDiagram3DSection />
       </section>
 
       {/* Concentric Planetary Tech Orbit Component */}
@@ -99,6 +108,7 @@ export default function HomePage() {
 
         <CompetencyRadarChart />
         <SkillMatrixExplorer />
+        <SkillMatrix3DSection />
       </section>
 
       {/* Featured Projects Grid & Redux Explorer */}
@@ -132,6 +142,7 @@ export default function HomePage() {
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
+        <ProjectCards3DSection />
       </section>
 
       {/* Work Experience & Education Snapshot */}
@@ -218,6 +229,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+        <Timeline3DSection />
       </section>
 
       {/* Local Sargodha & Pakistan Engineering Spotlight */}
