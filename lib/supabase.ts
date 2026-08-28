@@ -2,8 +2,12 @@ import { createClient } from '@supabase/supabase-js';
 import { InquiryMessage, Project, ArticlePreview } from '@/types/portfolio';
 import { projectsData, articlesData } from '@/data/portfolioData';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gfphmtvqskbdkywkhdzs.supabase.co';
+const supabaseAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  'sb_publishable_tUuqWCivJ4L57gGUAz8E8g_jXNLJtOc';
 
 // Singleton Supabase client
 export const supabase = (supabaseUrl && supabaseAnonKey)
