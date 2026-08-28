@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,18 +8,6 @@ import ProjectQuickPreviewModal from '@/components/ProjectQuickPreviewModal';
 import SmoothMouseGlow from '@/components/SmoothMouseGlow';
 import ReduxTelemetryDock from '@/components/ReduxTelemetryDock';
 import { personalData } from '@/data/portfolioData';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  display: 'swap',
-});
 
 const siteUrl = 'https://talal-ai-portfolio.web.app';
 
@@ -227,7 +214,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} dark`}>
+    <html lang="en" className="dark">
       <head>
         <meta name="google-site-verification" content="i0ICyyGSnIlk8hz_i9TDhxW8VOlQGvpLhtijsPfdbtY" />
         <JsonLd data={personJsonLd} />
