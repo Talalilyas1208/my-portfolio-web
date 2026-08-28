@@ -2,6 +2,9 @@ import React from 'react';
 import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import SkillBadge from '@/components/SkillBadge';
+import CompetencyRadarChart from '@/components/CompetencyRadarChart';
+import TechOrbitSystem from '@/components/TechOrbitSystem';
+import TechnicalRulerDivider from '@/components/TechnicalRulerDivider';
 import { skillGroupsData } from '@/data/portfolioData';
 import { Cpu, Bot, Layout, Database, Network, Wrench, Sparkles, CheckCircle2 } from 'lucide-react';
 
@@ -39,7 +42,16 @@ export default function SkillsPage() {
         </p>
       </div>
 
+      {/* Interactive 6-Axis Competency Radar Chart */}
+      <TechnicalRulerDivider station="STA 100" label="MULTIAXIAL RADAR" />
+      <CompetencyRadarChart />
+
+      {/* Concentric Planetary Tech Orbit */}
+      <TechnicalRulerDivider station="STA 200" label="ORBITAL STACK" />
+      <TechOrbitSystem />
+
       {/* Grouped Skills Grid */}
+      <TechnicalRulerDivider station="STA 300" label="TAXONOMY MATRIX" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skillGroupsData.map((group, idx) => {
           const Icon = categoryIcons[group.category] || Cpu;

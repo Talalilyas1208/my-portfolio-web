@@ -26,17 +26,26 @@ import {
 import LiveAgentTerminal from '@/components/LiveAgentTerminal';
 import ArchitectureDiagram from '@/components/ArchitectureDiagram';
 import SkillMatrixExplorer from '@/components/SkillMatrixExplorer';
+import TechOrbitSystem from '@/components/TechOrbitSystem';
+import CompetencyRadarChart from '@/components/CompetencyRadarChart';
+import DialMetricGauges from '@/components/DialMetricGauges';
+import TechnicalRulerDivider from '@/components/TechnicalRulerDivider';
 
 export default function HomePage() {
   const flagshipProject = projectsData.find((p) => p.isFlagship) || projectsData[0];
   const otherProjects = projectsData.filter((p) => !p.isFlagship);
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-20">
+    <div className="space-y-16 sm:space-y-24 pb-20">
       {/* Hero Section */}
       <Hero />
 
+      {/* CAD Ruler & 3D Dial Metric Gauges */}
+      <TechnicalRulerDivider station="STA 100" label="ENGINEERING CALIBRATION" />
+      <DialMetricGauges />
+
       {/* Flagship Spotlight Section */}
+      <TechnicalRulerDivider station="STA 200" label="AUTONOMOUS AI AGENT" />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="projects">
         <div className="relative space-y-8">
           {/* Subtle Glow backdrop */}
@@ -56,10 +65,10 @@ export default function HomePage() {
               <div className="flex items-center justify-between px-1">
                 <span className="flex items-center gap-1.5 text-xs font-mono text-cyan-300 font-semibold">
                   <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                  Live Agent Execution Simulator
+                  Multi-File IDE Workbench
                 </span>
                 <span className="text-[10px] font-mono text-emerald-300 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
-                  REAL-TIME
+                  LIVE WORKBENCH
                 </span>
               </div>
               <LiveAgentTerminal />
@@ -68,12 +77,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Interactive System Architecture Visualizer */}
+      {/* Interactive 5-Tier System Architecture Visualizer */}
+      <TechnicalRulerDivider station="STA 300" label="SYSTEMS TOPOLOGY" />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ArchitectureDiagram />
       </section>
 
+      {/* Concentric Planetary Tech Orbit Component */}
+      <TechnicalRulerDivider station="STA 400" label="PLANETARY TECH ORBIT" />
+      <TechOrbitSystem />
+
+      {/* 6-Axis Interactive Competency Radar Chart & Matrix */}
+      <TechnicalRulerDivider station="STA 500" label="COMPETENCY RADAR" />
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <SectionHeading
+          eyebrow="Interactive Competency Matrix"
+          title="Multiaxial Competency Radar & Deep Skill Matrix"
+          description="Evaluate technical capabilities across autonomous AI workflows, React frontend engineering, Redux state normalization, and distributed cloud microservices."
+          align="center"
+        />
+
+        <CompetencyRadarChart />
+        <SkillMatrixExplorer />
+      </section>
+
       {/* Featured Projects Grid & Redux Explorer */}
+      <TechnicalRulerDivider station="STA 600" label="PRODUCTION CASE STUDIES" />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
@@ -106,6 +135,7 @@ export default function HomePage() {
       </section>
 
       {/* Work Experience & Education Snapshot */}
+      <TechnicalRulerDivider station="STA 700" label="TRACK RECORD & ACADEMIA" />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Summary */}
@@ -188,18 +218,6 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Interactive Skills Matrix Explorer */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <SectionHeading
-          eyebrow="Interactive Competency Matrix"
-          title="Technical Stack, AI Tooling & Frameworks"
-          description="Explore skills across Agentic AI, React frontend architecture, Redux state management, backend APIs, and cloud DevOps."
-          align="center"
-        />
-
-        <SkillMatrixExplorer />
       </section>
 
       {/* Local Sargodha & Pakistan Engineering Spotlight */}
