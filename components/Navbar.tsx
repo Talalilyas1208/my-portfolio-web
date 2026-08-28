@@ -51,12 +51,12 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'py-2 sm:py-3 bg-[#05070e]/80 backdrop-blur-2xl border-b border-white/[0.12] shadow-[0_10px_35px_rgba(0,0,0,0.65)]'
-          : 'py-3 sm:py-4 bg-transparent border-b border-white/[0.05]'
+          ? 'py-2.5 sm:py-3 bg-[#080d22]/75 backdrop-blur-2xl border-b border-white/[0.18] shadow-[0_12px_40px_rgba(0,0,0,0.55)]'
+          : 'py-3.5 sm:py-4 bg-transparent border-b border-white/[0.08]'
       }`}
     >
-      {/* Top subtle liquid edge reflection line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+      {/* Top specular liquid edge reflection line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">

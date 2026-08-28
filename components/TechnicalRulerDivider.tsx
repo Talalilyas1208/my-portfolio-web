@@ -25,7 +25,7 @@ export default function TechnicalRulerDivider({
       {/* Center continuous hairline with diamond crosshair */}
       <div className="flex-1 mx-4 sm:mx-8 flex items-center justify-center relative">
         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.15] to-transparent"></div>
-        <div className="absolute flex items-center gap-2 px-3 py-0.5 rounded-full bg-[#05070e] border border-white/[0.1] text-[9px] font-mono text-slate-400 tracking-widest uppercase">
+        <div className="absolute flex items-center gap-2 px-3 py-0.5 rounded-full bg-[#080d22]/90 backdrop-blur-md border border-white/[0.18] text-[9px] font-mono text-slate-300 tracking-widest uppercase shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
           <svg viewBox="0 0 16 16" fill="none" className="w-2.5 h-2.5 text-cyan-400 animate-pulse">
             <path d="M8 0L16 8L8 16L0 8Z" stroke="currentColor" strokeWidth="1.5" />
           </svg>
