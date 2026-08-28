@@ -1,7 +1,18 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectActiveWorkbenchFile,
+  selectWorkbenchStep,
+  selectWorkbenchPlaying,
+  setWorkbenchFile,
+  setWorkbenchStep,
+  toggleWorkbenchPlaying,
+  selectSoundEnabled,
+} from '@/store/slices/interactiveSlice';
+import { sounds } from '@/lib/soundEffects';
 import { 
   Bot, 
   CheckCircle2, 
@@ -147,10 +158,13 @@ ENTRYPOINT ["/bin/bash", "-c", "npm test -- --runInBand --bail"]`,
 ];
 
 export default function LiveAgentTerminal() {
-  const [activeTab, setActiveTab] = useState<string>('agent');
-  const [copied, setCopied] = useState<boolean>(false);
-  const [step, setStep] = useState<number>(3);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const dispatch = useDispatch();
+  const activeTab = useSelector(selectActiveWorkbenchFile);
+  const step = useSelector(selectWorkbenchStep);
+  const isPlaying = useSelector(selectWorkbenchPlaying);
+  const soundEnabled = useSelector(selectSoundEnabled);
+
+  const [copied, setCopied] = React.useState<boolean>(false);
 
   const currentFile = files.find((f) => f.id === activeTab) || files[0];
 
@@ -158,15 +172,25 @@ export default function LiveAgentTerminal() {
   useEffect(() => {
     if (!isPlaying) return;
     const interval = setInterval(() => {
-      setStep((prev) => (prev >= 4 ? 1 : prev + 1));
+      const nextStep = step >= 4 ? 1 : step + 1;
+      dispatch(setWorkbenchStep(nextStep));
+      if (soundEnabled) {
+        sounds.playBlip();
+      }
     }, 3200);
     return () => clearInterval(interval);
-  }, [isPlaying]);
+  }, [isPlaying, step, dispatch, soundEnabled]);
 
   const copyCode = () => {
     navigator.clipboard.writeText(currentFile.code);
     setCopied(true);
+    if (soundEnabled) sounds.playClick();
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleTabChange = (fileId: string) => {
+    dispatch(setWorkbenchFile(fileId));
+    if (soundEnabled) sounds.playClick();
   };
 
   return (
@@ -184,8 +208,11 @@ export default function LiveAgentTerminal() {
 
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setIsPlaying(!isPlaying)}
-            className="flex items-center gap-1.5 text-[11px] text-slate-300 hover:text-white px-2.5 py-1 rounded-xl liquid-glass-subtle transition-all"
+            onClick={() => {
+              dispatch(toggleWorkbenchPlaying());
+              if (soundEnabled) sounds.playClick();
+            }}
+            className="flex items-center gap-1.5 text-[11px] text-slate-300 hover:text-white px-2.5 py-1 rounded-xl liquid-glass-subtl transition-all"
             title={isPlaying ? 'Pause auto-simulation' : 'Resume auto-simulation'}
           >
             {isPlaying ? (
@@ -219,7 +246,7 @@ export default function LiveAgentTerminal() {
           return (
             <button
               key={file.id}
-              onClick={() => setActiveTab(file.id)}
+              onClick={() => handleTabChange(file.id)}
               className={`px-3 py-1.5 rounded-t-xl text-[11px] font-mono transition-all flex items-center gap-1.5 shrink-0 ${
                 isActive
                   ? 'liquid-glass border-b-0 text-cyan-300 font-semibold shadow-liquid-glow'

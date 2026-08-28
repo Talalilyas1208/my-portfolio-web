@@ -1,6 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectActiveRadarAxis,
+  setRadarAxis,
+  selectSoundEnabled,
+} from '@/store/slices/interactiveSlice';
+import { sounds } from '@/lib/soundEffects';
 import { Bot, Cpu, Network, Database, Wrench, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface CompetencyAxis {
@@ -71,7 +78,18 @@ const axes: CompetencyAxis[] = [
 ];
 
 export default function CompetencyRadarChart() {
-  const [activeAxis, setActiveAxis] = useState<string>('ai-agents');
+  const dispatch = useDispatch();
+  const activeAxis = useSelector(selectActiveRadarAxis);
+  const soundEnabled = useSelector(selectSoundEnabled);
+
+  const handleSelectAxis = (axisId: string, idx: number) => {
+    if (activeAxis !== axisId) {
+      dispatch(setRadarAxis(axisId));
+      if (soundEnabled) {
+        sounds.playSweep(450 + idx * 70);
+      }
+    }
+  };
 
   // Radar geometry calculations (Center: 210, 210 | Radius: 160)
   const cx = 210;
@@ -108,14 +126,14 @@ export default function CompetencyRadarChart() {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold liquid-pill text-cyan-300 mb-2">
             <Sparkles className="w-3.5 h-3.5" />
-            Multiaxial Competency Radar
+            Multiaxial Competency Radar &bull; Redux Synchronized
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             6-Axis Technical Proficiency Matrix
           </h3>
         </div>
         <div className="text-xs font-mono text-slate-400 bg-[#05070e]/60 px-3.5 py-1.5 rounded-2xl border border-white/[0.08] self-start md:self-auto">
-          Interactive SVG &bull; Hover to evaluate
+          State Synced &bull; Hover to evaluate
         </div>
       </div>
 
@@ -131,7 +149,7 @@ export default function CompetencyRadarChart() {
                 <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.15" />
               </linearGradient>
               <filter id="vertexGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feGaussianBlur stdDeviation="4" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
                   <feMergeNode in="SourceGraphic" />
@@ -181,8 +199,8 @@ export default function CompetencyRadarChart() {
                   y1={cy}
                   x2={x}
                   y2={y}
-                  stroke={isSelected ? 'rgba(34, 211, 238, 0.6)' : 'rgba(255, 255, 255, 0.1)'}
-                  strokeWidth={isSelected ? '1.5' : '1'}
+                  stroke={isSelected ? 'rgba(34, 211, 238, 0.8)' : 'rgba(255, 255, 255, 0.1)'}
+                  strokeWidth={isSelected ? '2' : '1'}
                   strokeDasharray={isSelected ? 'none' : '3 3'}
                 />
               );
@@ -195,30 +213,30 @@ export default function CompetencyRadarChart() {
               stroke="#22D3EE"
               strokeWidth="2.5"
               strokeLinejoin="round"
-              className="transition-all duration-500"
+              className="transition-all duration-500 ease-out"
             />
 
             {/* Vertex Nodes & Interactive Labels */}
             {axes.map((axis, i) => {
               const { x, y } = getCoordinates(i, axis.score);
-              const labelPos = getCoordinates(i, 120);
+              const labelPos = getCoordinates(i, 122);
               const isSelected = activeAxis === axis.id;
 
               return (
                 <g
                   key={axis.id}
-                  onClick={() => setActiveAxis(axis.id)}
-                  onMouseEnter={() => setActiveAxis(axis.id)}
+                  onClick={() => handleSelectAxis(axis.id, i)}
+                  onMouseEnter={() => handleSelectAxis(axis.id, i)}
                   className="cursor-pointer"
                 >
                   {/* Vertex Point */}
                   <circle
                     cx={x}
                     cy={y}
-                    r={isSelected ? '6' : '4'}
+                    r={isSelected ? '7' : '4'}
                     fill={isSelected ? '#22D3EE' : '#3B82F6'}
                     stroke="#FFFFFF"
-                    strokeWidth={isSelected ? '2' : '1'}
+                    strokeWidth={isSelected ? '2.5' : '1'}
                     filter={isSelected ? 'url(#vertexGlow)' : undefined}
                     className="transition-all duration-300"
                   />
@@ -230,7 +248,7 @@ export default function CompetencyRadarChart() {
                     textAnchor="middle"
                     dominantBaseline="middle"
                     fill={isSelected ? '#22D3EE' : 'rgba(203, 213, 225, 0.8)'}
-                    fontSize={isSelected ? '10' : '9'}
+                    fontSize={isSelected ? '10.5' : '9'}
                     fontWeight={isSelected ? 'bold' : 'normal'}
                     fontFamily="monospace"
                     className="transition-all duration-200"
@@ -245,18 +263,18 @@ export default function CompetencyRadarChart() {
 
         {/* Right: Interactive Axis List & Live Inspector */}
         <div className="lg:col-span-6 space-y-3">
-          {axes.map((axis) => {
+          {axes.map((axis, idx) => {
             const isSelected = activeAxis === axis.id;
             const Icon = axis.icon;
 
             return (
               <div
                 key={axis.id}
-                onMouseEnter={() => setActiveAxis(axis.id)}
-                onClick={() => setActiveAxis(axis.id)}
+                onMouseEnter={() => handleSelectAxis(axis.id, idx)}
+                onClick={() => handleSelectAxis(axis.id, idx)}
                 className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer border ${
                   isSelected
-                    ? 'liquid-glass-accent border-cyan-400/50 shadow-liquid-glow scale-[1.01]'
+                    ? 'liquid-glass-accent border-cyan-400/60 shadow-liquid-glow scale-[1.02]'
                     : 'liquid-glass-subtle hover:border-white/20'
                 }`}
               >

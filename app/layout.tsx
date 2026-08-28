@@ -6,6 +6,8 @@ import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import { ReduxProvider } from '@/store/provider';
 import ProjectQuickPreviewModal from '@/components/ProjectQuickPreviewModal';
+import SmoothMouseGlow from '@/components/SmoothMouseGlow';
+import ReduxTelemetryDock from '@/components/ReduxTelemetryDock';
 import { personalData } from '@/data/portfolioData';
 
 const inter = Inter({
@@ -241,11 +243,13 @@ export default function RootLayout({
         </div>
 
         <ReduxProvider>
+          <SmoothMouseGlow />
           <div className="relative z-10 flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-grow">{children}</main>
             <Footer />
             <ProjectQuickPreviewModal />
+            <ReduxTelemetryDock />
           </div>
         </ReduxProvider>
       </body>

@@ -1,6 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectActiveOrbitTech,
+  selectOrbitPaused,
+  setOrbitTech,
+  toggleOrbitPause,
+  selectSoundEnabled,
+} from '@/store/slices/interactiveSlice';
+import { sounds } from '@/lib/soundEffects';
 import { Sparkles, Cpu, Bot, Code2, Database, Shield, Zap, Terminal } from 'lucide-react';
 
 interface TechItem {
@@ -38,8 +47,22 @@ const outerOrbitTechs: TechItem[] = [
   { name: 'Redis Cache', category: 'In-Memory Store' },
 ];
 
+const allTechs = [...innerOrbitTechs, ...middleOrbitTechs, ...outerOrbitTechs];
+
 export default function TechOrbitSystem() {
-  const [activeTech, setActiveTech] = useState<TechItem | null>(null);
+  const dispatch = useDispatch();
+  const activeTechName = useSelector(selectActiveOrbitTech);
+  const orbitPaused = useSelector(selectOrbitPaused);
+  const soundEnabled = useSelector(selectSoundEnabled);
+
+  const activeTech = allTechs.find((t) => t.name === activeTechName) || null;
+
+  const handleTechHover = (tech: TechItem | null) => {
+    dispatch(setOrbitTech(tech ? tech.name : null));
+    if (tech && soundEnabled) {
+      sounds.playClick();
+    }
+  };
 
   return (
     <section className="relative py-16 overflow-hidden select-none">
@@ -51,19 +74,19 @@ export default function TechOrbitSystem() {
         <div className="space-y-2 max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-pill text-cyan-300">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            Planetary Tech Orbit
+            Planetary Tech Orbit &bull; Redux Synchronized
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             Integrated Technology Universe
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
-            Concentric planetary rings rotating across AI agents, React architecture, and containerized backend systems. Hover over any node to inspect capabilities.
+            Concentric planetary rings rotating across AI agents, React architecture, and containerized backend systems. Hover over any node to dispatch live Redux telemetry.
           </p>
         </div>
 
         {/* Desktop Interactive Orbit (Hidden on mobile) */}
         <div className="hidden lg:flex items-center justify-center pt-8 pb-12">
-          <div className="orbit-container relative w-[680px] h-[680px] flex items-center justify-center">
+          <div className={`orbit-container relative w-[680px] h-[680px] flex items-center justify-center ${orbitPaused ? 'orbit-paused' : ''}`}>
             {/* Background CAD grid alignment lines */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
@@ -78,10 +101,14 @@ export default function TechOrbitSystem() {
 
             {/* Central Glowing Core Badge */}
             <div className="absolute z-30 flex flex-col items-center justify-center">
-              <div className="relative flex items-center justify-center">
+              <div 
+                onClick={() => dispatch(toggleOrbitPause())}
+                className="relative flex items-center justify-center cursor-pointer group"
+                title="Click to toggle orbit pause state"
+              >
                 {/* Pulse Ping Rings */}
                 <div className="absolute w-28 h-28 rounded-full bg-cyan-400/20 animate-ping pointer-events-none"></div>
-                <div className="w-20 h-20 rounded-full liquid-glass border border-cyan-400/60 shadow-liquid-glow flex flex-col items-center justify-center text-center backdrop-blur-2xl">
+                <div className="w-20 h-20 rounded-full liquid-glass border border-cyan-400/60 shadow-liquid-glow flex flex-col items-center justify-center text-center backdrop-blur-2xl group-hover:scale-105 transition-transform">
                   <span className="font-mono font-extrabold text-xl text-gradient-liquid tracking-wider">
                     MT
                   </span>
@@ -94,7 +121,7 @@ export default function TechOrbitSystem() {
                 {activeTech ? (
                   <span className="text-cyan-300 font-semibold">{activeTech.name} &bull; {activeTech.category}</span>
                 ) : (
-                  <span>Hover to Inspect</span>
+                  <span>Hover node or click core to pause</span>
                 )}
               </div>
             </div>
@@ -105,6 +132,7 @@ export default function TechOrbitSystem() {
                 const angle = (idx / innerOrbitTechs.length) * 2 * Math.PI;
                 const x = 130 * Math.cos(angle);
                 const y = 130 * Math.sin(angle);
+                const isSelected = activeTechName === tech.name;
 
                 return (
                   <div
@@ -112,13 +140,17 @@ export default function TechOrbitSystem() {
                     style={{
                       transform: `translate(${x}px, ${y}px)`,
                     }}
-                    onMouseEnter={() => setActiveTech(tech)}
-                    onMouseLeave={() => setActiveTech(null)}
+                    onMouseEnter={() => handleTechHover(tech)}
+                    onMouseLeave={() => handleTechHover(null)}
                     className="absolute"
                   >
-                    {/* Counter-rotating badge so text remains horizontal */}
+                    {/* Counter-rotating badge */}
                     <div className="orbit-badge animate-orbit-ccw-25">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-primary text-cyan-100 hover:scale-110 hover:border-cyan-300 transition-all cursor-pointer shadow-liquid-glow">
+                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold transition-all cursor-pointer ${
+                        isSelected 
+                          ? 'liquid-pill-primary text-cyan-100 scale-125 border-cyan-300 shadow-liquid-glow-lg' 
+                          : 'liquid-pill text-slate-200 hover:scale-110 hover:border-cyan-300'
+                      }`}>
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
                         {tech.name}
                       </span>
@@ -134,6 +166,7 @@ export default function TechOrbitSystem() {
                 const angle = (idx / middleOrbitTechs.length) * 2 * Math.PI;
                 const x = 215 * Math.cos(angle);
                 const y = 215 * Math.sin(angle);
+                const isSelected = activeTechName === tech.name;
 
                 return (
                   <div
@@ -141,12 +174,16 @@ export default function TechOrbitSystem() {
                     style={{
                       transform: `translate(${x}px, ${y}px)`,
                     }}
-                    onMouseEnter={() => setActiveTech(tech)}
-                    onMouseLeave={() => setActiveTech(null)}
+                    onMouseEnter={() => handleTechHover(tech)}
+                    onMouseLeave={() => handleTechHover(null)}
                     className="absolute"
                   >
                     <div className="orbit-badge animate-orbit-cw-45">
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-mono font-medium liquid-glass text-slate-200 hover:scale-110 hover:border-white/40 transition-all cursor-pointer">
+                      <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-mono font-medium transition-all cursor-pointer ${
+                        isSelected
+                          ? 'liquid-glass-accent text-white scale-120 border-cyan-400 shadow-liquid-glow'
+                          : 'liquid-glass text-slate-200 hover:scale-110 hover:border-white/40'
+                      }`}>
                         {tech.name}
                       </span>
                     </div>
@@ -161,6 +198,7 @@ export default function TechOrbitSystem() {
                 const angle = (idx / outerOrbitTechs.length) * 2 * Math.PI;
                 const x = 300 * Math.cos(angle);
                 const y = 300 * Math.sin(angle);
+                const isSelected = activeTechName === tech.name;
 
                 return (
                   <div
@@ -168,12 +206,16 @@ export default function TechOrbitSystem() {
                     style={{
                       transform: `translate(${x}px, ${y}px)`,
                     }}
-                    onMouseEnter={() => setActiveTech(tech)}
-                    onMouseLeave={() => setActiveTech(null)}
+                    onMouseEnter={() => handleTechHover(tech)}
+                    onMouseLeave={() => handleTechHover(null)}
                     className="absolute"
                   >
                     <div className="orbit-badge animate-orbit-ccw-70">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono liquid-glass-subtle text-slate-300 hover:scale-110 hover:border-cyan-400/40 transition-all cursor-pointer">
+                      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono transition-all cursor-pointer ${
+                        isSelected
+                          ? 'liquid-glass-accent text-cyan-200 scale-120 border-cyan-300 shadow-liquid-glow'
+                          : 'liquid-glass-subtle text-slate-300 hover:scale-110 hover:border-cyan-400/40'
+                      }`}>
                         {tech.name}
                       </span>
                     </div>
@@ -186,10 +228,15 @@ export default function TechOrbitSystem() {
 
         {/* Mobile / Tablet Responsive Fallback Grid */}
         <div className="flex lg:hidden flex-wrap justify-center gap-2 pt-4">
-          {[...innerOrbitTechs, ...middleOrbitTechs, ...outerOrbitTechs].map((tech) => (
+          {allTechs.map((tech) => (
             <span
               key={tech.name}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl text-xs font-mono liquid-glass-subtle text-slate-200 border border-white/[0.08]"
+              onClick={() => handleTechHover(tech)}
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl text-xs font-mono border transition-all ${
+                activeTechName === tech.name
+                  ? 'liquid-pill-primary text-cyan-200 border-cyan-400'
+                  : 'liquid-glass-subtle text-slate-200 border-white/[0.08]'
+              }`}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
               {tech.name}

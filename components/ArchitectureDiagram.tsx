@@ -1,6 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectActiveArchNode,
+  selectActiveArchTier,
+  setArchNode,
+  setArchTier,
+  selectSoundEnabled,
+} from '@/store/slices/interactiveSlice';
+import { sounds } from '@/lib/soundEffects';
 import { 
   Layers, 
   Cpu, 
@@ -220,10 +229,26 @@ const nodes: ArchNode[] = [
 ];
 
 export default function ArchitectureDiagram() {
-  const [selectedNodeId, setSelectedNodeId] = useState<string>('code-fixer-service');
-  const [selectedTier, setSelectedTier] = useState<string>('ALL');
+  const dispatch = useDispatch();
+  const selectedNodeId = useSelector(selectActiveArchNode);
+  const selectedTier = useSelector(selectActiveArchTier);
+  const soundEnabled = useSelector(selectSoundEnabled);
 
   const activeNode = nodes.find((n) => n.id === selectedNodeId) || nodes[0];
+
+  const handleSelectNode = (nodeId: string) => {
+    dispatch(setArchNode(nodeId));
+    if (soundEnabled) {
+      sounds.playClick();
+    }
+  };
+
+  const handleSelectTier = (tier: string) => {
+    dispatch(setArchTier(tier));
+    if (soundEnabled) {
+      sounds.playClick();
+    }
+  };
 
   return (
     <div className="p-6 sm:p-10 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-8 border border-white/[0.14]">
@@ -232,7 +257,7 @@ export default function ArchitectureDiagram() {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold liquid-pill text-cyan-300 mb-2">
             <Layers className="w-3.5 h-3.5" />
-            Full-Stack &amp; AI Systems Topology
+            Full-Stack &amp; AI Systems Topology &bull; Redux Synchronized
           </div>
           <h3 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
             5-Tier Production Cloud &amp; AI Architecture
@@ -251,7 +276,7 @@ export default function ArchitectureDiagram() {
       {/* Tier Filter Pills */}
       <div className="flex flex-wrap gap-2">
         <button
-          onClick={() => setSelectedTier('ALL')}
+          onClick={() => handleSelectTier('ALL')}
           className={`px-3.5 py-1.5 rounded-2xl text-xs font-mono font-semibold transition-all ${
             selectedTier === 'ALL'
               ? 'liquid-pill-primary text-white shadow-liquid-glow'
@@ -263,7 +288,7 @@ export default function ArchitectureDiagram() {
         {tiers.map((t) => (
           <button
             key={t}
-            onClick={() => setSelectedTier(t)}
+            onClick={() => handleSelectTier(t)}
             className={`px-3 py-1.5 rounded-2xl text-xs font-mono transition-all ${
               selectedTier === t
                 ? 'liquid-pill-primary text-white shadow-liquid-glow font-semibold'
@@ -308,8 +333,8 @@ export default function ArchitectureDiagram() {
                     return (
                       <div
                         key={node.id}
-                        onClick={() => setSelectedNodeId(node.id)}
-                        onMouseEnter={() => setSelectedNodeId(node.id)}
+                        onClick={() => handleSelectNode(node.id)}
+                        onMouseEnter={() => handleSelectNode(node.id)}
                         className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer border flex flex-col justify-between space-y-2 ${
                           isSelected
                             ? 'liquid-glass-accent border-cyan-400/60 shadow-liquid-glow scale-[1.02]'
