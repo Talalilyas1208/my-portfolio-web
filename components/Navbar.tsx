@@ -51,8 +51,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'py-2.5 sm:py-3 bg-[#080d22]/75 backdrop-blur-2xl border-b border-white/[0.18] shadow-[0_12px_40px_rgba(0,0,0,0.55)]'
-          : 'py-3.5 sm:py-4 bg-transparent border-b border-white/[0.08]'
+          ? 'py-2.5 sm:py-3 bg-[#0f172a]/85 backdrop-blur-2xl border-b border-slate-700/60 shadow-[0_10px_35px_rgba(0,0,0,0.5)]'
+          : 'py-3.5 sm:py-4 bg-transparent border-b border-white/[0.06]'
       }`}
     >
       {/* Top specular liquid edge reflection line */}

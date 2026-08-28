@@ -232,15 +232,14 @@ export default function RootLayout({
         <meta name="google-site-verification" content="i0ICyyGSnIlk8hz_i9TDhxW8VOlQGvpLhtijsPfdbtY" />
         <JsonLd data={personJsonLd} />
       </head>
-      <body className="min-h-screen bg-[#070a18] text-slate-100 font-sans flex flex-col antialiased relative overflow-x-hidden selection:bg-indigo-500 selection:text-white">
-        {/* Ambient Floating Multicolor Liquid Glass Orbs (Global Fluid Backdrop) */}
+      <body className="min-h-screen bg-[#0f172a] text-slate-100 font-sans flex flex-col antialiased relative overflow-x-hidden selection:bg-blue-600 selection:text-white">
+        {/* Ambient Precision Radial Glows & Blueprint CAD Grid Backdrop (Dayan Ibrar Ref) */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
           <div className="liquid-orb liquid-orb-1" />
           <div className="liquid-orb liquid-orb-2" />
           <div className="liquid-orb liquid-orb-3" />
           <div className="liquid-orb liquid-orb-4" />
-          <div className="liquid-orb liquid-orb-5" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-25" />
+          <div className="absolute inset-0 bg-blueprint-grid opacity-35" />
         </div>
 
         <ReduxProvider>

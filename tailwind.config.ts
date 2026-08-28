@@ -11,14 +11,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#05070e',
+        background: '#0f172a',
+        'background-secondary': '#020617',
         surface: {
-          50: '#182236',
-          100: '#111827',
-          200: '#0c1220',
-          300: '#080d18',
-          border: '#172238',
-          'border-subtle': '#131c2e',
+          50: '#334155',
+          100: '#1e293b',
+          200: '#0f172a',
+          300: '#020617',
+          border: '#334155',
+          'border-subtle': '#1e293b',
         },
         primary: {
           50: '#EFF6FF',
@@ -33,9 +34,11 @@ const config: Config = {
           900: '#1E3A8A',
         },
         accent: {
+          DEFAULT: '#2563EB',
+          dark: '#1D4ED8',
           cyan: '#06B6D4',
           emerald: '#10B981',
-          violet: '#8B5CF6',
+          violet: '#6366F1',
           amber: '#F59E0B',
           neon: '#00F0FF',
         },
