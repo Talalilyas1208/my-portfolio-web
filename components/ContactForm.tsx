@@ -12,9 +12,20 @@ export default function ContactForm() {
     email: '',
     subject: '',
     message: '',
+    company_hp: '', // Honeypot field for bot trapping
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [feedbackMessage, setFeedbackMessage] = useState('');
+  const [cooldownRemaining, setCooldownRemaining] = useState<number>(0);
+
+  // Rate limiting cooldown timer effect
+  React.useEffect(() => {
+    if (cooldownRemaining <= 0) return;
+    const timer = setInterval(() => {
+      setCooldownRemaining((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [cooldownRemaining]);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(personalData.email);
@@ -24,14 +35,36 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot check: If bot filled the hidden trap field, silently abort
+    if (formState.company_hp) {
+      setStatus('success');
+      setFeedbackMessage('Your message was received.');
+      return;
+    }
+
+    // Client-side rate-limiting cooldown check (60 seconds)
+    if (cooldownRemaining > 0) {
+      setStatus('error');
+      setFeedbackMessage(`Rate limit reached. Please wait ${cooldownRemaining}s before submitting again.`);
+      return;
+    }
+
     setStatus('submitting');
 
-    const result = await submitContactInquiry(formState);
+    const result = await submitContactInquiry({
+      name: formState.name.trim(),
+      email: formState.email.trim(),
+      subject: formState.subject.trim(),
+      message: formState.message.trim(),
+    });
+
     setStatus(result.success ? 'success' : 'error');
     setFeedbackMessage(result.message);
 
     if (result.success) {
-      setFormState({ name: '', email: '', subject: '', message: '' });
+      setFormState({ name: '', email: '', subject: '', message: '', company_hp: '' });
+      setCooldownRemaining(60); // 60s cooldown against spam bursts
     }
   };
 
@@ -148,6 +181,20 @@ export default function ContactForm() {
           onSubmit={handleSubmit}
           className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-5 border border-white/[0.14]"
         >
+          {/* Honeypot Bot Trap (Invisible to humans, catches automated bots) */}
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="company_hp">Company URL</label>
+            <input
+              id="company_hp"
+              type="text"
+              name="company_hp"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formState.company_hp}
+              onChange={(e) => setFormState({ ...formState, company_hp: e.target.value })}
+            />
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label htmlFor="name" className="block text-xs font-mono text-slate-300">
@@ -157,6 +204,7 @@ export default function ContactForm() {
                 id="name"
                 type="text"
                 required
+                maxLength={80}
                 value={formState.name}
                 onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                 placeholder="e.g. Alex Henderson"
@@ -172,6 +220,7 @@ export default function ContactForm() {
                 id="email"
                 type="email"
                 required
+                maxLength={254}
                 value={formState.email}
                 onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                 placeholder="alex@company.com"
@@ -188,6 +237,7 @@ export default function ContactForm() {
               id="subject"
               type="text"
               required
+              maxLength={120}
               value={formState.subject}
               onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
               placeholder="e.g. AI Agent Project / React Developer Opportunity"
@@ -196,13 +246,19 @@ export default function ContactForm() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="message" className="block text-xs font-mono text-slate-300">
-              Message <span className="text-cyan-400">*</span>
-            </label>
+            <div className="flex items-center justify-between">
+              <label htmlFor="message" className="block text-xs font-mono text-slate-300">
+                Message <span className="text-cyan-400">*</span>
+              </label>
+              <span className="text-[10px] font-mono text-slate-400">
+                {formState.message.length} / 3000
+              </span>
+            </div>
             <textarea
               id="message"
               required
               rows={5}
+              maxLength={3000}
               value={formState.message}
               onChange={(e) => setFormState({ ...formState, message: e.target.value })}
               placeholder="Describe your project, engineering requirements, or open role..."
@@ -228,11 +284,15 @@ export default function ContactForm() {
 
           <button
             type="submit"
-            disabled={status === 'submitting'}
-            className="w-full py-4 px-6 rounded-2xl liquid-btn-primary text-white font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50"
+            disabled={status === 'submitting' || cooldownRemaining > 0}
+            className="w-full py-4 px-6 rounded-2xl liquid-btn-primary text-white font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
           >
             {status === 'submitting' ? (
               <span>Sending Inquiry...</span>
+            ) : cooldownRemaining > 0 ? (
+              <span className="flex items-center gap-2 font-mono text-slate-200">
+                <Clock className="w-4 h-4 text-cyan-300 animate-spin" /> Cooldown Active ({cooldownRemaining}s)
+              </span>
             ) : (
               <span className="flex items-center gap-2">
                 <Send className="w-4 h-4" /> Send Direct Inquiry

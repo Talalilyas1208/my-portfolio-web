@@ -2,19 +2,18 @@ import { createClient } from '@supabase/supabase-js';
 import { InquiryMessage, Project, ArticlePreview } from '@/types/portfolio';
 import { projectsData, articlesData } from '@/data/portfolioData';
 
-const supabaseUrl =
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gfphmtvqskbdkywkhdzs.supabase.co';
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey =
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  'sb_publishable_tUuqWCivJ4L57gGUAz8E8g_jXNLJtOc';
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 
-// Singleton Supabase client
-export const supabase = (supabaseUrl && supabaseAnonKey)
-  ? createClient(supabaseUrl, supabaseAnonKey, {
-      auth: { persistSession: false },
-    })
-  : null;
+// Singleton Supabase client (only created if valid environment variables are set)
+export const supabase =
+  supabaseUrl && supabaseAnonKey
+    ? createClient(supabaseUrl, supabaseAnonKey, {
+        auth: { persistSession: false },
+      })
+    : null;
 
 // In-memory runtime cache for 0ms latency
 const memoryCache = {
@@ -84,14 +83,36 @@ export async function fetchArticlesFromDb(): Promise<ArticlePreview[]> {
 export async function submitContactInquiry(
   inquiry: InquiryMessage
 ): Promise<{ success: boolean; message: string }> {
+  // Defensive input sanitization & boundary validation
+  const sanitizedName = (inquiry.name || '').trim().slice(0, 80);
+  const sanitizedEmail = (inquiry.email || '').trim().toLowerCase().slice(0, 254);
+  const sanitizedSubject = (inquiry.subject || '').trim().slice(0, 120);
+  const sanitizedMessage = (inquiry.message || '').trim().slice(0, 3000);
+
+  // Email validation regex (RFC 5322 standard check)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!sanitizedEmail || !emailRegex.test(sanitizedEmail)) {
+    return {
+      success: false,
+      message: 'Please provide a valid email address.',
+    };
+  }
+
+  if (!sanitizedName || !sanitizedMessage) {
+    return {
+      success: false,
+      message: 'Name and message are required fields.',
+    };
+  }
+
   try {
     if (supabase) {
       const { error } = await supabase.from('inquiries').insert([
         {
-          name: inquiry.name,
-          email: inquiry.email,
-          subject: inquiry.subject,
-          message: inquiry.message,
+          name: sanitizedName,
+          email: sanitizedEmail,
+          subject: sanitizedSubject,
+          message: sanitizedMessage,
           created_at: new Date().toISOString(),
         },
       ]);
@@ -99,8 +120,8 @@ export async function submitContactInquiry(
       if (error) {
         console.warn('Supabase insert warning:', error.message);
         return {
-          success: true,
-          message: 'Inquiry received and cached! Muhammad Talal will respond shortly.',
+          success: false,
+          message: 'Unable to deliver message right now. Please reach out directly via WhatsApp or email!',
         };
       }
 
@@ -109,21 +130,16 @@ export async function submitContactInquiry(
         message: 'Your message was delivered securely to Muhammad Talal via Supabase Database!',
       };
     } else {
-      // Graceful offline fallback
-      if (typeof window !== 'undefined') {
-        const existing = JSON.parse(localStorage.getItem('talal_inquiries') || '[]');
-        existing.push({ ...inquiry, timestamp: new Date().toISOString() });
-        localStorage.setItem('talal_inquiries', JSON.stringify(existing));
-      }
+      // Safe offline fallback without leaking PII to unencrypted client localStorage
       return {
         success: true,
-        message: 'Message captured! You can also connect directly via WhatsApp or Email.',
+        message: 'Thank you! For immediate priority response, please also connect directly via WhatsApp or Email.',
       };
     }
   } catch (err: any) {
     return {
-      success: true,
-      message: 'Message logged! Muhammad Talal has received your details.',
+      success: false,
+      message: 'Submission error. Please email directly at talalilyas11@gmail.com.',
     };
   }
 }
