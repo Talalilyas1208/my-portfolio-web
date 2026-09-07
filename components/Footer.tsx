@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/[0.1] bg-[#05070e]/80 backdrop-blur-2xl text-slate-400 relative overflow-hidden">
+    <footer className="border-t border-white/[0.1] bg-[#05070e]/80 backdrop-blur-2xl text-slate-300 relative overflow-hidden">
       {/* Subtle top specular liquid glow line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
 
@@ -117,7 +117,7 @@ export default function Footer() {
                   Autonomous Code-Fixer
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 line-clamp-2">
+              <p className="text-[11px] text-slate-300 line-clamp-2">
                 Self-healing developer agent powered by Google Gemini API &amp; AST parsing.
               </p>
             </Link>

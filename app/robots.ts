@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://talalai.vercel.app';
+  const baseUrl = 'https://talal-ai-portfolio.web.app';
 
   return {
     rules: [
