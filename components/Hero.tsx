@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { personalData } from '@/data/portfolioData';
 import { 
   Sparkles, 
@@ -19,9 +20,18 @@ import {
   Cpu
 } from 'lucide-react';
 
+const HeroScene3D = dynamic(() => import('@/components/three/HeroScene3D'), { ssr: false });
+
 export default function Hero() {
+  const [show3D, setShow3D] = useState(false);
+  useEffect(() => {
+    import('@/lib/webglDetect').then(({ should3DRender }) => setShow3D(should3DRender()));
+  }, []);
+
   return (
     <section className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden bg-radial-hero">
+      {/* 3D Hero Scene */}
+      {show3D && <HeroScene3D />}
       {/* Subtle Background Grid Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none"></div>
 

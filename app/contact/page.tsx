@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import ContactForm from '@/components/ContactForm';
 import { personalData } from '@/data/portfolioData';
+import ContactPortal3DSection from '@/components/three/ContactPortal3DSection';
 
 export const metadata: Metadata = {
   title: 'Contact Muhammad Talal — Sargodha & Global Remote',
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="pt-28 sm:pt-36 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div className="relative pt-28 sm:pt-36 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <ContactPortal3DSection />
       <SectionHeading
         eyebrow="Get In Touch &bull; Sargodha & Remote"
         title="Start a Conversation"
