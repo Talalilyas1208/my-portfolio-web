@@ -21,35 +21,35 @@ export default function ArchitectureNodeCard({
       onClick={() => onSelect(node.id)}
       className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer border relative group ${
         isSelected
-          ? 'liquid-glass-accent border-cyan-400 shadow-liquid-glow-lg scale-105 z-20'
+          ? 'liquid-glass-accent border-cyan-500 shadow-liquid-glow-lg scale-105 z-20'
           : isConnected
-          ? 'liquid-glass border-cyan-500/50 shadow-liquid-glow'
-          : 'liquid-glass-subtle hover:border-white/30 hover:scale-[1.02]'
+          ? 'liquid-glass border-cyan-400/50 shadow-sm'
+          : 'liquid-glass-subtle hover:border-slate-300 hover:scale-[1.02]'
       }`}
     >
       <div className="flex items-center gap-3">
         <div
           className={`p-2 rounded-xl transition-all ${
             isSelected
-              ? 'liquid-glass text-cyan-300 scale-110'
-              : 'liquid-glass-subtle text-slate-300 group-hover:text-cyan-300'
+              ? 'liquid-glass text-cyan-700 scale-110'
+              : 'liquid-glass-subtle text-slate-600 group-hover:text-cyan-700'
           }`}
         >
           <Icon className="w-4 h-4" />
         </div>
         <div className="min-w-0 flex-1">
-          <div className="text-xs font-bold font-mono text-slate-100 truncate">
+          <div className="text-xs font-bold font-mono text-slate-900 truncate">
             {node.name}
           </div>
-          <div className="text-[10px] text-cyan-400/80 font-mono truncate">
+          <div className="text-[10px] text-cyan-700 font-mono truncate font-medium">
             {node.subtext}
           </div>
         </div>
       </div>
 
-      <div className="mt-2.5 pt-2 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-slate-400">
+      <div className="mt-2.5 pt-2 border-t border-slate-200/80 flex items-center justify-between text-[10px] font-mono text-slate-500">
         <span>{node.protocol}</span>
-        <span className="text-emerald-400 font-semibold">{node.latency}</span>
+        <span className="text-emerald-700 font-semibold">{node.latency}</span>
       </div>
     </div>
   );

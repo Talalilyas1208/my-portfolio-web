@@ -20,16 +20,16 @@ export default function SkillCategoryCard({ group }: { group: SkillGroup }) {
       className={`p-6 sm:p-8 rounded-3xl transition-all duration-300 ${
         isAiGroup
           ? 'liquid-glass-accent md:col-span-2 shadow-liquid-glow-lg border-cyan-400/40'
-          : 'liquid-glass shadow-liquid-glass hover:border-cyan-400/30'
+          : 'liquid-glass shadow-liquid-glass hover:border-cyan-400/40'
       }`}
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className="p-2.5 rounded-2xl liquid-glass text-cyan-300">
+        <div className="p-2.5 rounded-2xl liquid-glass text-cyan-600">
           <Icon className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-slate-100">{group.category}</h3>
-          <p className="text-xs text-slate-400 font-mono">{group.description}</p>
+          <h3 className="text-lg font-bold text-slate-900">{group.category}</h3>
+          <p className="text-xs text-slate-600 font-mono">{group.description}</p>
         </div>
       </div>
 

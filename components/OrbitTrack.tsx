@@ -48,11 +48,11 @@ export default function OrbitTrack({
               <span
                 className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono transition-all cursor-pointer ${fontSize} ${
                   isSelected
-                    ? 'liquid-pill-primary text-cyan-100 scale-125 border-cyan-300 shadow-liquid-glow-lg'
-                    : 'liquid-glass text-slate-200 hover:scale-110 hover:border-cyan-300'
+                    ? 'liquid-pill-primary text-cyan-800 scale-125 border-cyan-400 shadow-md font-bold'
+                    : 'liquid-glass text-slate-800 hover:scale-110 hover:border-cyan-400 font-medium'
                 }`}
               >
-                {showIndicator && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />}
+                {showIndicator && <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />}
                 {tech.name}
               </span>
             </div>

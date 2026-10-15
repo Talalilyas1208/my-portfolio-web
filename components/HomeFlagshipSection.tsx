@@ -26,10 +26,10 @@ export default function HomeFlagshipSection() {
             </div>
             <div className="lg:col-span-5 space-y-3">
               <div className="flex items-center justify-between px-1">
-                <span className="flex items-center gap-1.5 text-xs font-mono text-cyan-600 font-semibold">
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-500" /> Multi-File IDE Workbench
+                <span className="flex items-center gap-1.5 text-xs font-mono text-cyan-700 font-semibold">
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-600" /> Multi-File IDE Workbench
                 </span>
-                <span className="text-[10px] font-mono text-emerald-300 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
+                <span className="text-[10px] font-mono text-emerald-800 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
                   LIVE WORKBENCH
                 </span>
               </div>

@@ -37,14 +37,14 @@ export default function OrbitRingRays({ activeTech, onHover }: OrbitRingRaysProp
           title="Click to toggle orbit pause state"
         >
           <div className="absolute w-28 h-28 rounded-full bg-cyan-400/20 animate-ping pointer-events-none" />
-          <div className="w-20 h-20 rounded-full liquid-glass border border-cyan-400/60 shadow-liquid-glow flex flex-col items-center justify-center text-center backdrop-blur-2xl group-hover:scale-105 transition-transform">
+          <div className="w-20 h-20 rounded-full liquid-glass border border-cyan-400/60 shadow-sm flex flex-col items-center justify-center text-center backdrop-blur-2xl group-hover:scale-105 transition-transform">
             <span className="font-mono font-extrabold text-xl text-gradient-liquid tracking-wider">MT</span>
-            <span className="text-[9px] font-mono text-cyan-300 font-bold uppercase tracking-widest mt-0.5">BS AI</span>
+            <span className="text-[9px] font-mono text-cyan-700 font-bold uppercase tracking-widest mt-0.5">BS AI</span>
           </div>
         </div>
-        <div className="mt-3 px-3 py-1 rounded-full liquid-glass text-[11px] font-mono text-slate-200 min-h-[26px]">
+        <div className="mt-3 px-3 py-1 rounded-full liquid-glass text-[11px] font-mono text-slate-700 min-h-[26px]">
           {activeTech ? (
-            <span className="text-cyan-300 font-semibold">{activeTech.name} &bull; {activeTech.category}</span>
+            <span className="text-cyan-700 font-semibold">{activeTech.name} &bull; {activeTech.category}</span>
           ) : (
             <span>Hover node or click core to pause</span>
           )}
