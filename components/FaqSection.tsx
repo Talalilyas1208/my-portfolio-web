@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { localFaqs, personalData } from '@/data/portfolioData';
-import { ChevronDown, HelpCircle, Sparkles, MapPin } from 'lucide-react';
+import { localFaqs } from '@/data/portfolioData';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import JsonLd from '@/components/JsonLd';
 
@@ -45,8 +45,8 @@ export default function FaqSection() {
               key={idx}
               className={`rounded-3xl transition-all duration-300 overflow-hidden border ${
                 isOpen
-                  ? 'liquid-glass-accent border-cyan-400/40 shadow-liquid-glow'
-                  : 'liquid-glass-subtle hover:border-white/20'
+                  ? 'liquid-glass-accent border-cyan-400/50 shadow-liquid-glow'
+                  : 'liquid-glass-subtle hover:border-slate-300'
               }`}
             >
               <button
@@ -56,17 +56,17 @@ export default function FaqSection() {
                 aria-expanded={isOpen}
               >
                 <div className="flex items-center gap-3.5">
-                  <div className={`p-2 rounded-2xl ${isOpen ? 'liquid-glass text-cyan-300' : 'liquid-glass-subtle text-slate-400'}`}>
+                  <div className={`p-2 rounded-2xl ${isOpen ? 'liquid-glass text-cyan-700' : 'liquid-glass-subtle text-slate-500'}`}>
                     <HelpCircle className="w-4 h-4 shrink-0" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-slate-100">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900">
                     {faq.question}
                   </h3>
                 </div>
 
                 <div
-                  className={`p-1.5 rounded-full liquid-glass-subtle text-slate-400 transition-transform duration-300 shrink-0 ${
-                    isOpen ? 'rotate-180 text-cyan-300 border-cyan-400/40' : ''
+                  className={`p-1.5 rounded-full liquid-glass-subtle text-slate-500 transition-transform duration-300 shrink-0 ${
+                    isOpen ? 'rotate-180 text-cyan-700 border-cyan-400/40' : ''
                   }`}
                 >
                   <ChevronDown className="w-4 h-4" />
@@ -74,7 +74,7 @@ export default function FaqSection() {
               </button>
 
               {isOpen && (
-                <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-200 leading-relaxed border-t border-white/[0.08] font-sans">
+                <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-200/80 font-sans">
                   <p>{faq.answer}</p>
                 </div>
               )}

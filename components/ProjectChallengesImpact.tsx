@@ -7,11 +7,11 @@ export default function ProjectChallengesImpact({ project }: { project: Project 
   return (
     <>
       <div className="p-6 sm:p-8 rounded-3xl liquid-glass space-y-4">
-        <h3 className="text-xl font-bold text-white">Key Capabilities &amp; Features</h3>
+        <h3 className="text-xl font-bold text-slate-900">Key Capabilities &amp; Features</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
           {project.keyFeatures.map((feat, idx) => (
-            <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0 shadow-[0_0_6px_#22d3ee]"></span>
+            <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2 shrink-0 shadow-[0_0_6px_#06b6d4]"></span>
               <span>{feat}</span>
             </div>
           ))}
@@ -25,15 +25,15 @@ export default function ProjectChallengesImpact({ project }: { project: Project 
         <div className="space-y-4">
           {project.challengesAndSolutions.map((item, idx) => (
             <div key={idx} className="p-6 rounded-3xl liquid-glass space-y-3">
-              <div className="flex items-start gap-2 text-sm font-semibold text-rose-300">
-                <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-rose-950/60 border border-rose-500/40 text-rose-300 shrink-0">
+              <div className="flex items-start gap-2 text-sm font-semibold text-rose-700">
+                <span className="font-mono text-xs px-2.5 py-0.5 rounded-full bg-rose-50 border border-rose-300 text-rose-700 shrink-0">
                   Challenge #{idx + 1}
                 </span>
                 <span>{item.challenge}</span>
               </div>
-              <div className="flex items-start gap-2 text-xs sm:text-sm text-emerald-300 pl-3 border-l-2 border-emerald-500/50 mt-2">
-                <span className="leading-relaxed text-slate-200">
-                  <strong className="text-emerald-400 font-medium">Applied Solution: </strong>
+              <div className="flex items-start gap-2 text-xs sm:text-sm text-emerald-700 pl-3 border-l-2 border-emerald-500/50 mt-2">
+                <span className="leading-relaxed text-slate-700">
+                  <strong className="text-emerald-700 font-semibold">Applied Solution: </strong>
                   {item.solution}
                 </span>
               </div>
@@ -43,13 +43,13 @@ export default function ProjectChallengesImpact({ project }: { project: Project 
       </div>
 
       <div className="p-6 sm:p-8 rounded-3xl liquid-glass border border-cyan-500/30 shadow-liquid-glass-lg space-y-4">
-        <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-wider">
-          <TrendingUp className="w-4 h-4 text-cyan-400" /> Measurable Engineering Impact
+        <div className="flex items-center gap-2 text-cyan-800 font-mono text-xs font-bold uppercase tracking-wider">
+          <TrendingUp className="w-4 h-4 text-cyan-600" /> Measurable Engineering Impact
         </div>
         <div className="space-y-2.5">
           {project.outcomesAndImpact.map((outcome, idx) => (
-            <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-100">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+            <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-800">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
               <span>{outcome}</span>
             </div>
           ))}

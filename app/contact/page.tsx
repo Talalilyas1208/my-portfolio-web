@@ -7,7 +7,7 @@ import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 export const metadata: Metadata = {
   title: 'Contact Muhammad Talal — Sargodha & Global Remote',
   description:
-    'Get in touch with Muhammad Talal in Sargodha, Pakistan or for global remote roles in AI engineering, autonomous agent pipelines, React development, or technical consulting.',
+    'Get in touch with Muhammad Talal , Pakistan or for global remote roles in AI engineering, autonomous agent pipelines, React development, or technical consulting.',
 };
 
 export default function ContactPage() {

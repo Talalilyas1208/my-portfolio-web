@@ -63,7 +63,7 @@ export default function ContactForm() {
       <div className="lg:col-span-7">
         <form
           onSubmit={handleSubmit}
-          className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-5 border border-white/[0.14]"
+          className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-5 border border-slate-200/80"
         >
           <div className="hidden" aria-hidden="true">
             <input

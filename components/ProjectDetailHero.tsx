@@ -14,15 +14,15 @@ export default function ProjectDetailHero({ project }: { project: Project }) {
         >
           <ArrowLeft className="w-4 h-4" /> <span>Back to all projects</span>
         </Link>
-        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-medium liquid-glass text-slate-300">
+        <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-pill text-slate-800">
           {project.category}
         </span>
       </div>
 
       <div className="space-y-6">
         {project.isFlagship && (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold liquid-pill-primary text-cyan-200">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-300" /> Flagship Autonomous AI Agent Architecture
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold liquid-pill-primary text-cyan-800">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-700" /> Flagship Autonomous AI Agent Architecture
           </div>
         )}
 
@@ -30,7 +30,7 @@ export default function ProjectDetailHero({ project }: { project: Project }) {
           {project.title}
         </h1>
 
-        <p className="text-lg sm:text-xl text-cyan-600 font-mono font-medium leading-relaxed">
+        <p className="text-lg sm:text-xl text-cyan-700 font-mono font-medium leading-relaxed">
           {project.subtitle}
         </p>
 
@@ -40,9 +40,9 @@ export default function ProjectDetailHero({ project }: { project: Project }) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl liquid-glass text-slate-100 font-medium text-xs hover:border-cyan-400"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl liquid-btn-secondary text-slate-800 font-medium text-xs hover:border-cyan-400"
             >
-              <Github className="w-4 h-4 text-cyan-400" /> <span>View Source on GitHub</span>
+              <Github className="w-4 h-4 text-cyan-600" /> <span>View Source on GitHub</span>
             </a>
           )}
           <span className="text-xs font-mono text-slate-500">Timeline: {project.period}</span>
@@ -50,18 +50,18 @@ export default function ProjectDetailHero({ project }: { project: Project }) {
 
         <div className="flex flex-wrap gap-2 pt-2">
           {project.techStack.map((tech) => (
-            <span key={tech} className="px-3 py-1 rounded-xl text-xs font-mono liquid-glass text-slate-200">
+            <span key={tech} className="px-3 py-1 rounded-xl text-xs font-mono liquid-glass-subtle text-slate-700">
               {tech}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="p-6 sm:p-8 rounded-3xl liquid-glass-accent shadow-liquid-glow space-y-2 border border-cyan-500/40">
-        <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider">
-          <Zap className="w-4 h-4 text-cyan-300" /> The Key Engineering Differentiator
+      <div className="p-6 sm:p-8 rounded-3xl liquid-glass-accent shadow-sm space-y-2 border border-cyan-400/40">
+        <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-700 uppercase tracking-wider">
+          <Zap className="w-4 h-4 text-cyan-600" /> The Key Engineering Differentiator
         </div>
-        <p className="text-base sm:text-lg text-slate-100 font-medium leading-relaxed font-sans">
+        <p className="text-base sm:text-lg text-slate-800 font-medium leading-relaxed font-sans">
           {project.keyDifferentiator}
         </p>
       </div>

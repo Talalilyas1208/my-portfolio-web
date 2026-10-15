@@ -52,7 +52,7 @@ export default function LiveAgentTerminal() {
   };
 
   return (
-    <div className="relative rounded-3xl liquid-glass shadow-liquid-glass-lg overflow-hidden font-mono text-xs border border-white/[0.14] space-y-0">
+    <div className="relative rounded-3xl liquid-glass shadow-liquid-glass-lg overflow-hidden font-mono text-xs border border-slate-200/90 space-y-0">
       <WorkbenchWindowChrome
         fileName={currentFile.name}
         isPlaying={isPlaying}
@@ -74,11 +74,11 @@ export default function LiveAgentTerminal() {
         </pre>
       </div>
 
-      <div className="px-5 py-3 bg-white/[0.03] border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs backdrop-blur-md">
-        <span className="text-slate-400 text-[11px] truncate">{currentFile.description}</span>
+      <div className="px-5 py-3 bg-slate-100/90 border-t border-slate-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs backdrop-blur-md">
+        <span className="text-slate-600 text-[11px] truncate font-medium">{currentFile.description}</span>
         <Link
           href="/projects/autonomous-gemini-code-fixer"
-          className="text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1 text-[11px] transition-colors shrink-0"
+          className="text-cyan-700 hover:text-cyan-600 font-semibold flex items-center gap-1 text-[11px] transition-colors shrink-0"
         >
           <span>Explore Pipeline</span>
           <ArrowRight className="w-3.5 h-3.5" />

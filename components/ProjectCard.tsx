@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="space-y-4">
         <div>
           <h3
-            className={`font-bold text-slate-100 group-hover:text-cyan-300 transition-colors ${
+            className={`font-bold text-slate-900 group-hover:text-cyan-600 transition-colors ${
               isFlagship ? 'text-2xl sm:text-3xl' : 'text-xl'
             }`}
           >
@@ -36,18 +36,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.title}
             </Link>
           </h3>
-          <p className="text-xs sm:text-sm text-cyan-400/90 font-mono mt-1">
+          <p className="text-xs sm:text-sm text-cyan-700 font-mono font-medium mt-1">
             {project.subtitle}
           </p>
         </div>
 
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
           {project.summary}
         </p>
 
         {project.keyDifferentiator && (
-          <div className="p-4 rounded-2xl liquid-glass-subtle border border-cyan-500/30 text-xs sm:text-sm text-slate-200">
-            <span className="font-semibold text-cyan-300 font-mono block mb-1">
+          <div className="p-4 rounded-2xl liquid-glass-subtle border border-cyan-400/40 text-xs sm:text-sm text-slate-800">
+            <span className="font-semibold text-cyan-700 font-mono block mb-1">
               ⚡ Engineering Differentiator:
             </span>
             <p className="leading-relaxed">{project.keyDifferentiator}</p>
@@ -61,7 +61,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 rounded-xl text-xs font-mono liquid-glass-subtle text-slate-300 hover:text-white transition-colors"
+                className="px-2.5 py-1 rounded-xl text-xs font-mono liquid-glass-subtle text-slate-700 hover:text-slate-900 transition-colors"
               >
                 {tech}
               </span>
@@ -69,18 +69,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        <div className="pt-4 flex items-center justify-between border-t border-white/[0.08]">
+        <div className="pt-4 flex items-center justify-between border-t border-slate-200/80">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:text-cyan-300 group-hover:translate-x-1.5 transition-all"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 group-hover:text-cyan-600 group-hover:translate-x-1.5 transition-all"
           >
             <span>Read Complete Case Study</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
 
           {isFlagship && (
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 liquid-pill-emerald px-2.5 py-0.5 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-700 liquid-pill-emerald px-2.5 py-0.5 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               Autonomous Loop Active
             </span>
           )}

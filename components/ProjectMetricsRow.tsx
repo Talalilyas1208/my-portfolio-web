@@ -15,7 +15,7 @@ export default function ProjectMetricsRow({ metrics }: { metrics?: MetricItem[] 
           <div className="text-base sm:text-lg font-bold font-mono text-gradient-cyan">
             {metric.value}
           </div>
-          <div className="text-[10px] sm:text-[11px] text-slate-400 font-sans truncate">
+          <div className="text-[10px] sm:text-[11px] text-slate-600 font-medium font-sans truncate">
             {metric.label}
           </div>
         </div>
