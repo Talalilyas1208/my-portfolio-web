@@ -61,7 +61,7 @@ export default function SmoothMouseGlow() {
       className="fixed top-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0 opacity-40 will-change-transform contain-strict"
       style={{
         background:
-          'radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, rgba(59, 130, 246, 0.05) 45%, transparent 70%)',
+          'radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, rgba(99, 102, 241, 0.04) 40%, transparent 70%)',
         transform: 'translate3d(-500px, -500px, 0)',
       }}
     />
