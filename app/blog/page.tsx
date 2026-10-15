@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import ArticleCard from '@/components/ArticleCard';
+import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 import { articlesData } from '@/data/portfolioData';
 
 export const metadata: Metadata = {
@@ -21,7 +22,9 @@ export default function BlogPage() {
 
       <div className="space-y-8">
         {articlesData.map((article, idx) => (
-          <ArticleCard key={idx} article={article} />
+          <SmoothLazyReveal key={idx} delayMs={idx * 80}>
+            <ArticleCard article={article} />
+          </SmoothLazyReveal>
         ))}
       </div>
     </div>

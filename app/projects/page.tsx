@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import InteractiveProjectExplorer from '@/components/InteractiveProjectExplorer';
-import { Sparkles, Layers, Bot, Code } from 'lucide-react';
+import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 
 export const metadata: Metadata = {
   title: 'Projects & Case Studies',
@@ -19,7 +19,9 @@ export default function ProjectsPage() {
         description="Search in real-time or filter by engineering domain. Click 'Quick Preview' for instant 0ms architecture metrics, or explore the complete case study."
       />
 
-      <InteractiveProjectExplorer />
+      <SmoothLazyReveal>
+        <InteractiveProjectExplorer />
+      </SmoothLazyReveal>
     </div>
   );
 }

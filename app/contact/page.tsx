@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import ContactForm from '@/components/ContactForm';
-import { personalData } from '@/data/portfolioData';
+import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 
 export const metadata: Metadata = {
   title: 'Contact Muhammad Talal — Sargodha & Global Remote',
@@ -19,7 +19,9 @@ export default function ContactPage() {
         description="I am actively exploring AI engineering and full-stack React opportunities (in Sargodha, Pakistan, and worldwide remote). Reach out directly via WhatsApp, email, or message form."
       />
 
-      <ContactForm />
+      <SmoothLazyReveal>
+        <ContactForm />
+      </SmoothLazyReveal>
     </div>
   );
 }

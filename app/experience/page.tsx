@@ -2,8 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import SectionHeading from '@/components/SectionHeading';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
+import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 import { personalData } from '@/data/portfolioData';
-import { Briefcase, Award, TrendingUp, Layers, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Experience & Education',
@@ -20,25 +20,22 @@ export default function ExperiencePage() {
         description="A blend of high-velocity software engineering in production React applications, AI automation workflows, and a formal 4-year degree in Artificial Intelligence."
       />
 
-      {/* Career Metrics Bar */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        {personalData.stats.map((stat, idx) => (
-          <div
-            key={idx}
-            className="p-5 rounded-3xl liquid-glass-subtle text-center"
-          >
-            <div className="text-xl sm:text-2xl font-bold font-mono text-gradient-cyan mb-1">
-              {stat.value}
+      <SmoothLazyReveal>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {personalData.stats.map((stat, idx) => (
+            <div key={idx} className="p-5 rounded-3xl liquid-glass-subtle text-center">
+              <div className="text-xl sm:text-2xl font-bold font-mono text-gradient-cyan mb-1">
+                {stat.value}
+              </div>
+              <div className="text-xs text-slate-300 font-sans">{stat.label}</div>
             </div>
-            <div className="text-xs text-slate-300 font-sans">
-              {stat.label}
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </SmoothLazyReveal>
 
-      {/* Experience Timeline */}
-      <ExperienceTimeline />
+      <SmoothLazyReveal>
+        <ExperienceTimeline />
+      </SmoothLazyReveal>
     </div>
   );
 }
