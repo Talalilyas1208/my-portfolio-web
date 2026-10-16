@@ -23,8 +23,8 @@ export default function NavBrand() {
           <span className="font-bold text-slate-900 tracking-tight group-hover:text-primary-600 transition-colors">
             {personalData.name}
           </span>
-          <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium liquid-pill-emerald text-emerald-300">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse" />
+          <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-mono font-medium liquid-pill-emerald text-emerald-800">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse" />
             BS AI
           </span>
         </div>

@@ -34,9 +34,9 @@ export default function InteractiveProjectExplorer() {
         </div>
       ) : (
         <div className="p-12 text-center rounded-3xl liquid-glass-subtle space-y-4">
-          <p className="text-slate-300 text-sm">
-            No projects found matching &ldquo;<span className="text-cyan-400 font-semibold">{searchQuery}</span>&rdquo; in category{' '}
-            <span className="text-white font-medium">{selectedCategory}</span>.
+          <p className="text-slate-600 text-sm">
+            No projects found matching &ldquo;<span className="text-cyan-700 font-semibold">{searchQuery}</span>&rdquo; in category{' '}
+            <span className="text-slate-900 font-medium">{selectedCategory}</span>.
           </p>
           <button
             onClick={() => {

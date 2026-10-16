@@ -27,7 +27,7 @@ export default function ExperiencePage() {
               <div className="text-xl sm:text-2xl font-bold font-mono text-gradient-cyan mb-1">
                 {stat.value}
               </div>
-              <div className="text-xs text-slate-300 font-sans">{stat.label}</div>
+              <div className="text-xs text-slate-600 font-sans">{stat.label}</div>
             </div>
           ))}
         </div>

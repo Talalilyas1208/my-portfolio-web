@@ -9,7 +9,7 @@ export default function ExperienceTimeline() {
     <div className="space-y-16">
       <div>
         <div className="flex items-center gap-3 mb-8">
-          <div className="p-2.5 rounded-2xl liquid-glass text-cyan-300">
+          <div className="p-2.5 rounded-2xl liquid-glass text-cyan-700">
             <Briefcase className="w-5 h-5" />
           </div>
           <div>

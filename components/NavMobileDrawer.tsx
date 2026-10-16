@@ -19,10 +19,10 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
       <div className="px-4 pt-3 pb-6 space-y-2 max-w-md mx-auto">
         <div className="p-3.5 mb-3 rounded-2xl liquid-glass flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs text-slate-200 font-medium">Available for AI &amp; React Roles</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-xs text-slate-700 font-medium">Available for AI &amp; React Roles</span>
           </div>
-          <span className="text-[11px] font-mono text-slate-400">Pakistan 🇵🇰</span>
+          <span className="text-[11px] font-mono text-slate-500">Pakistan 🇵🇰</span>
         </div>
 
         {navItems.map((link) => {
@@ -37,7 +37,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
               onClick={onClose}
               className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-medium transition-all ${
                 isActive
-                  ? 'liquid-pill-primary text-white font-semibold'
+                  ? 'liquid-pill-primary text-cyan-900 font-semibold'
                   : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
@@ -45,7 +45,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
                 <Icon className="w-4 h-4 text-cyan-600" />
                 <span>{link.name}</span>
               </div>
-              {isActive && <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />}
+              {isActive && <span className="w-2 h-2 rounded-full bg-cyan-500 shadow-[0_0_8px_#22d3ee]" />}
             </Link>
           );
         })}
@@ -56,7 +56,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
               href={personalData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl liquid-glass text-slate-200 hover:text-white"
+              className="p-2.5 rounded-xl liquid-glass text-slate-700 hover:text-slate-900"
               aria-label="GitHub"
             >
               <Github className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
               href={personalData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl liquid-glass text-slate-200 hover:text-white"
+              className="p-2.5 rounded-xl liquid-glass text-slate-700 hover:text-slate-900"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />

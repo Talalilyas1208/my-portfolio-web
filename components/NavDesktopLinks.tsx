@@ -28,11 +28,11 @@ export default function NavDesktopLinks() {
             href={link.href}
             className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative ${
               isActive
-                ? 'liquid-pill-primary text-white font-semibold shadow-sm'
-                : 'text-slate-300 hover:text-white hover:bg-white/[0.08]'
+                ? 'liquid-pill-primary text-cyan-900 font-semibold shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
             }`}
           >
-            <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-300' : 'text-slate-400'}`} />
+            <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-600' : 'text-slate-500'}`} />
             <span>{link.name}</span>
           </Link>
         );

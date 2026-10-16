@@ -30,8 +30,8 @@ export default function TechOrbitSystem() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
         <div className="space-y-2 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-glass text-cyan-300">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-glass text-cyan-700">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
             Planetary Tech Orbit &bull; Redux Synchronized
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -53,11 +53,11 @@ export default function TechOrbitSystem() {
               onClick={() => handleTechHover(tech)}
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl text-xs font-mono border transition-all ${
                 activeTechName === tech.name
-                  ? 'liquid-pill-primary text-cyan-200 border-cyan-400'
-                  : 'liquid-glass text-slate-200 border-white/[0.08]'
+                  ? 'liquid-pill-primary text-cyan-800 border-cyan-400 font-semibold'
+                  : 'liquid-glass text-slate-700 border-slate-200/80'
               }`}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
               {tech.name}
             </span>
           ))}

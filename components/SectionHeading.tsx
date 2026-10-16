@@ -18,8 +18,8 @@ export default function SectionHeading({
   return (
     <div className={`space-y-3 mb-10 md:mb-14 ${isCenter ? 'text-center max-w-3xl mx-auto' : 'max-w-3xl'}`}>
       {eyebrow && (
-        <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold liquid-pill text-cyan-200 ${isCenter ? 'mx-auto' : ''}`}>
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]"></span>
+        <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold liquid-pill text-cyan-700 ${isCenter ? 'mx-auto' : ''}`}>
+          <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse shadow-[0_0_8px_#22d3ee]"></span>
           {eyebrow}
         </div>
       )}

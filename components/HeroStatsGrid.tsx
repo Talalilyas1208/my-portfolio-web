@@ -12,7 +12,7 @@ export default function HeroStatsGrid() {
           <div className="text-xl sm:text-2xl font-bold font-mono text-gradient-cyan">
             {stat.value}
           </div>
-          <div className="text-xs text-slate-300 font-medium mt-1">
+          <div className="text-xs text-slate-600 font-medium mt-1">
             {stat.label}
           </div>
         </div>

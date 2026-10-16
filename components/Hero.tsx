@@ -15,10 +15,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-mono font-medium liquid-glass text-cyan-200 shadow-md">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-mono font-medium liquid-glass text-cyan-800 shadow-md">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
               <span>Available Worldwide for AI &amp; React Roles</span>
             </div>
@@ -34,12 +34,12 @@ export default function Hero() {
 
             <div className="p-5 sm:p-6 rounded-3xl liquid-glass-accent shadow-liquid-glow-lg relative overflow-hidden group">
               <div className="absolute -right-8 -top-8 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl group-hover:bg-cyan-500/30 transition duration-700" />
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider mb-2">
-                <Sparkles className="w-4 h-4 text-cyan-300 animate-pulse" />
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-700 uppercase tracking-wider mb-2">
+                <Sparkles className="w-4 h-4 text-cyan-600 animate-pulse" />
                 The Core Differentiator
               </div>
-              <p className="text-sm sm:text-base text-slate-100 font-medium leading-relaxed">
-                Most developers build UI dashboards with React. I have also engineered an <strong className="text-cyan-300 font-semibold underline decoration-cyan-400/50 underline-offset-2">autonomous LLM agent that self-heals code</strong> in real-time — observing breakages, prompting Gemini with AST context, and validating sandboxed test passes before applying patches.
+              <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
+                Most developers build UI dashboards with React. I have also engineered an <strong className="text-cyan-800 font-semibold underline decoration-cyan-500/50 underline-offset-2">autonomous LLM agent that self-heals code</strong> in real-time — observing breakages, prompting Gemini with AST context, and validating sandboxed test passes before applying patches.
               </p>
             </div>
 
@@ -58,16 +58,16 @@ export default function Hero() {
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl liquid-glass text-slate-200 hover:text-white font-medium text-sm shadow-md"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl liquid-glass text-slate-700 hover:text-slate-900 font-medium text-sm shadow-md"
               >
-                <Layers className="w-4 h-4 text-cyan-400" />
+                <Layers className="w-4 h-4 text-cyan-600" />
                 <span>Explore Projects</span>
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-2xl liquid-glass-subtle text-slate-200 hover:text-white font-medium text-sm shadow-md"
+                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-2xl liquid-glass-subtle text-slate-700 hover:text-slate-900 font-medium text-sm shadow-md"
               >
-                <Mail className="w-4 h-4 text-slate-300" />
+                <Mail className="w-4 h-4 text-slate-500" />
                 <span>Contact</span>
               </Link>
             </div>

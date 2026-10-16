@@ -34,14 +34,14 @@ export default function ArchitectureDiagram() {
   };
 
   return (
-    <div className="p-6 sm:p-10 rounded-3xl liquid-glass border border-white/[0.14] shadow-liquid-glass-lg space-y-8 select-none">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
+    <div className="p-6 sm:p-10 rounded-3xl liquid-glass border border-slate-200/80 shadow-liquid-glass-lg space-y-8 select-none">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold liquid-glass text-cyan-300 mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold liquid-glass text-cyan-700 mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
             5-Tier Full-Stack &amp; AI Systems Schematic &bull; Redux Synchronized
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
             Production Distributed Architecture
           </h3>
         </div>
@@ -53,8 +53,8 @@ export default function ArchitectureDiagram() {
               onClick={() => handleSelectTier(tier)}
               className={`px-3 py-1 rounded-xl text-[10px] font-mono transition-all ${
                 selectedTier === tier
-                  ? 'liquid-pill-primary text-cyan-200 border-cyan-400 font-bold'
-                  : 'liquid-glass-subtle text-slate-400 hover:text-white'
+                  ? 'liquid-pill-primary text-cyan-800 border-cyan-400 font-bold'
+                  : 'liquid-glass-subtle text-slate-600 hover:text-slate-900'
               }`}
             >
               {tier}
@@ -68,7 +68,7 @@ export default function ArchitectureDiagram() {
           const tierNodes = archNodes.filter((n) => n.tier === tier);
           return (
             <div key={tier} className="space-y-3">
-              <div className="text-[10px] font-mono font-bold text-cyan-400/90 tracking-wider px-1">
+              <div className="text-[10px] font-mono font-bold text-cyan-700 tracking-wider px-1">
                 {tier}
               </div>
               <div className="space-y-3">

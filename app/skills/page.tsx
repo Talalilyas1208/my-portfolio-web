@@ -33,11 +33,11 @@ export default function SkillsPage() {
       />
 
       <div className="p-6 sm:p-8 rounded-3xl liquid-glass-accent shadow-liquid-glow space-y-3 border border-cyan-500/40">
-        <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider">
-          <Sparkles className="w-4 h-4 text-cyan-300 animate-pulse" />
+        <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-700 uppercase tracking-wider">
+          <Sparkles className="w-4 h-4 text-cyan-600 animate-pulse" />
           Primary Specialization: AI Agents &amp; Modern React
         </div>
-        <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-sans">
+        <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans">
           Holding a formal Bachelor of Science in Artificial Intelligence (BS AI), Talal bridges the gap between raw LLM capabilities (Gemini, OpenAI) and production software systems—building autonomous agents that don&apos;t just chat, but execute, verify, and heal code deterministically.
         </p>
       </div>
