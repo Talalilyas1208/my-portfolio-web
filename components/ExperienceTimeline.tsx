@@ -9,16 +9,16 @@ export default function ExperienceTimeline() {
     <div className="space-y-16">
       <div>
         <div className="flex items-center gap-3 mb-8">
-          <div className="p-2.5 rounded-2xl liquid-glass text-cyan-300">
+          <div className="p-2.5 rounded-2xl liquid-glass text-violet-300">
             <Briefcase className="w-5 h-5" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-slate-900">Engineering Work History</h3>
-            <p className="text-xs text-slate-500 font-mono">Chronological track record in AI systems &amp; React frontends</p>
+            <h3 className="text-xl font-bold text-white">Engineering Work History</h3>
+            <p className="text-xs text-slate-400 font-mono">Chronological track record in AI systems &amp; React frontends</p>
           </div>
         </div>
 
-        <div className="relative pl-6 sm:pl-8 border-l border-slate-300 space-y-10">
+        <div className="relative pl-6 sm:pl-8 border-l border-violet-500/40 space-y-10">
           {experienceData.map((item, idx) => (
             <ExperienceItemCard key={idx} item={item} />
           ))}

@@ -12,6 +12,7 @@ const metricItems: MetricGaugeItem[] = [
     icon: Award,
     dialType: 'degree',
     badge: 'DISTINCTION',
+    theme: 'violet',
   },
   {
     id: 'speedo',
@@ -22,6 +23,7 @@ const metricItems: MetricGaugeItem[] = [
     icon: Zap,
     dialType: 'speedo',
     badge: 'SUB-4.2S',
+    theme: 'cyan',
   },
   {
     id: 'chrono',
@@ -32,6 +34,7 @@ const metricItems: MetricGaugeItem[] = [
     icon: ShieldCheck,
     dialType: 'chrono',
     badge: 'ZERO-BUG',
+    theme: 'emerald',
   },
   {
     id: 'pulse',
@@ -42,6 +45,7 @@ const metricItems: MetricGaugeItem[] = [
     icon: Layers,
     dialType: 'pulse',
     badge: 'LIVE PROD',
+    theme: 'amber',
   },
 ];
 

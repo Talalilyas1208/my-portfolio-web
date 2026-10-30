@@ -30,31 +30,31 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-200/80 bg-white/80 backdrop-blur-2xl text-slate-600 relative overflow-hidden shadow-[0_-10px_30px_rgba(0,0,0,0.03)]">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent pointer-events-none" />
+    <footer className="border-t border-white/[0.08] bg-[#050811]/90 backdrop-blur-2xl text-slate-300 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-violet-400/50 to-cyan-400/50 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-slate-200/80">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-white/[0.08]">
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-2xl liquid-pill-primary flex items-center justify-center font-mono font-bold text-cyan-800 text-sm">
+              <div className="w-9 h-9 rounded-2xl liquid-pill-violet flex items-center justify-center font-mono font-bold text-violet-300 text-sm">
                 MT
               </div>
-              <span className="font-bold text-slate-900 text-lg">
+              <span className="font-bold text-white text-lg">
                 {personalData.name}
               </span>
             </div>
-            <p className="text-sm text-slate-600 max-w-md leading-relaxed font-sans">
+            <p className="text-sm text-slate-300 max-w-md leading-relaxed font-sans">
               AI &amp; Full-Stack React Engineer with a formal degree in Artificial Intelligence (BS AI). Specializing in autonomous LLM agents, self-healing code loops, and high-performance React &amp; Next.js architectures.
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-500">
-              <span className="flex items-center gap-1.5 liquid-pill px-3 py-1 rounded-full text-slate-700 font-medium">
-                <MapPin className="w-3.5 h-3.5 text-cyan-600" />
+            <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-400">
+              <span className="flex items-center gap-1.5 liquid-pill px-3 py-1 rounded-full text-slate-200 font-medium">
+                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                 Pakistan (Lahore &amp; Sargodha)
               </span>
               {lahoreTime && (
-                <span className="flex items-center gap-1.5 px-3 py-1 rounded-full liquid-pill-emerald text-emerald-800 font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="flex items-center gap-1.5 px-3 py-1 rounded-full liquid-pill-emerald text-emerald-300 font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   {lahoreTime} PKT
                 </span>
               )}
@@ -65,13 +65,13 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <span className="text-slate-500">© {new Date().getFullYear()} Muhammad Talal. Built with Next.js 14, TypeScript &amp; Liquid Glass UI.</span>
+          <span className="text-slate-400">© {new Date().getFullYear()} Muhammad Talal. Built with Next.js 14, TypeScript &amp; Prismatic Neural UI.</span>
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-slate-700 hover:text-cyan-700 transition-colors liquid-glass-subtle px-3 py-1.5 rounded-xl font-medium"
+            className="flex items-center gap-1.5 text-slate-200 hover:text-cyan-300 transition-colors liquid-glass-subtle px-3.5 py-1.5 rounded-xl font-medium"
           >
             <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5 text-cyan-600" />
+            <ArrowUp className="w-3.5 h-3.5 text-cyan-400" />
           </button>
         </div>
       </div>
