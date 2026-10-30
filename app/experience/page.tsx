@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     'Professional software engineering work history and academic foundation in Artificial Intelligence of Muhammad Talal.',
 };
 
+const statGrads = ['text-gradient-violet', 'text-gradient-cyan', 'text-gradient-emerald', 'text-gradient-amber'];
+
 export default function ExperiencePage() {
   return (
     <div className="pt-28 sm:pt-36 pb-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -24,10 +26,10 @@ export default function ExperiencePage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {personalData.stats.map((stat, idx) => (
             <div key={idx} className="p-5 rounded-3xl liquid-glass-subtle text-center">
-              <div className="text-xl sm:text-2xl font-bold font-mono text-gradient-cyan mb-1">
+              <div className={`text-xl sm:text-2xl font-bold font-mono ${statGrads[idx % statGrads.length]} mb-1`}>
                 {stat.value}
               </div>
-              <div className="text-xs text-slate-600 font-sans">{stat.label}</div>
+              <div className="text-xs text-slate-300 font-sans">{stat.label}</div>
             </div>
           ))}
         </div>

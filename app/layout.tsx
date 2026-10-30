@@ -36,7 +36,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="i0ICyyGSnIlk8hz_i9TDhxW8VOlQGvpLhtijsPfdbtY" />
         <JsonLd data={personJsonLd} />
       </head>
-      <body className="min-h-screen bg-white text-slate-900 font-sans flex flex-col antialiased relative overflow-x-hidden selection:bg-blue-600 selection:text-white">
+      <body className="min-h-screen bg-[#060913] text-slate-100 font-sans flex flex-col antialiased relative overflow-x-hidden selection:bg-violet-500 selection:text-white">
         <AmbientBackdrop />
         <ReduxProvider>
           <SmoothMouseGlow />

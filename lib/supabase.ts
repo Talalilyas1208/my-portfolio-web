@@ -105,6 +105,18 @@ export async function submitContactInquiry(
     };
   }
 
+  const triggerDirectFallback = () => {
+    if (typeof window !== 'undefined') {
+      const subjectText = encodeURIComponent(
+        sanitizedSubject || `Portfolio Inquiry from ${sanitizedName}`
+      );
+      const bodyText = encodeURIComponent(
+        `Hi Muhammad Talal,\n\n${sanitizedMessage}\n\n---\nFrom: ${sanitizedName}\nEmail: ${sanitizedEmail}`
+      );
+      window.location.href = `mailto:talalilyas11@gmail.com?subject=${subjectText}&body=${bodyText}`;
+    }
+  };
+
   try {
     if (supabase) {
       const { error } = await supabase.from('inquiries').insert([
@@ -119,9 +131,11 @@ export async function submitContactInquiry(
 
       if (error) {
         console.warn('Supabase insert warning:', error.message);
+        triggerDirectFallback();
         return {
-          success: false,
-          message: 'Unable to deliver message right now. Please reach out directly via WhatsApp or email!',
+          success: true,
+          message:
+            'Inquiry ready! Your email client has been opened to send directly to Muhammad Talal, or you can connect via WhatsApp.',
         };
       }
 
@@ -130,16 +144,19 @@ export async function submitContactInquiry(
         message: 'Your message was delivered securely to Muhammad Talal via Supabase Database!',
       };
     } else {
-      // Safe offline fallback without leaking PII to unencrypted client localStorage
+      triggerDirectFallback();
       return {
         success: true,
-        message: 'Thank you! For immediate priority response, please also connect directly via WhatsApp or Email.',
+        message:
+          'Inquiry ready! Your email client has been opened to send directly to Muhammad Talal, or you can connect via WhatsApp.',
       };
     }
   } catch (err: any) {
+    triggerDirectFallback();
     return {
-      success: false,
-      message: 'Submission error. Please email directly at talalilyas11@gmail.com.',
+      success: true,
+      message:
+        'Inquiry ready! Your email client has been opened to send directly to Muhammad Talal, or you can connect via WhatsApp.',
     };
   }
 }

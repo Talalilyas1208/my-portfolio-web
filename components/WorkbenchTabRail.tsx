@@ -8,26 +8,34 @@ interface WorkbenchTabRailProps {
   onTabChange: (fileId: string) => void;
 }
 
+const tabAccents: Record<string, string> = {
+  agent: 'text-violet-400',
+  redux: 'text-cyan-400',
+  fastapi: 'text-emerald-400',
+  docker: 'text-amber-400',
+};
+
 export default function WorkbenchTabRail({
   files,
   activeTab,
   onTabChange,
 }: WorkbenchTabRailProps) {
   return (
-    <div className="flex flex-wrap gap-1 px-3 pt-2 bg-slate-100/60 border-b border-slate-200/90 overflow-x-auto">
+    <div className="flex flex-wrap gap-1 px-3 pt-2 bg-[#070b18]/90 border-b border-white/[0.08] overflow-x-auto">
       {files.map((file) => {
         const isActive = activeTab === file.id;
+        const accent = tabAccents[file.id] || 'text-cyan-400';
         return (
           <button
             key={file.id}
             onClick={() => onTabChange(file.id)}
             className={`px-3 py-1.5 rounded-t-xl text-[11px] font-mono transition-all flex items-center gap-1.5 shrink-0 ${
               isActive
-                ? 'liquid-glass border-b-0 text-cyan-800 font-bold shadow-sm'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
+                ? 'liquid-pill-violet border-b-0 text-white font-bold shadow-sm'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]'
             }`}
           >
-            <FileCode className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-700' : 'text-slate-400'}`} />
+            <FileCode className={`w-3.5 h-3.5 ${isActive ? accent : 'text-slate-500'}`} />
             <span>{file.tabLabel}</span>
           </button>
         );

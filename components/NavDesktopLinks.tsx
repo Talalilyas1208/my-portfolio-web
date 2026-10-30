@@ -4,12 +4,12 @@ import { usePathname } from 'next/navigation';
 import { Terminal, Layers, Briefcase, Cpu, BookOpen, Mail } from 'lucide-react';
 
 export const navItems = [
-  { name: 'Home', href: '/', icon: Terminal },
-  { name: 'Projects', href: '/projects', icon: Layers },
-  { name: 'Experience', href: '/experience', icon: Briefcase },
-  { name: 'Skills', href: '/skills', icon: Cpu },
-  { name: 'Articles', href: '/blog', icon: BookOpen },
-  { name: 'Contact', href: '/contact', icon: Mail },
+  { name: 'Home', href: '/', icon: Terminal, accent: 'text-cyan-400' },
+  { name: 'Projects', href: '/projects', icon: Layers, accent: 'text-violet-400' },
+  { name: 'Experience', href: '/experience', icon: Briefcase, accent: 'text-emerald-400' },
+  { name: 'Skills', href: '/skills', icon: Cpu, accent: 'text-amber-400' },
+  { name: 'Articles', href: '/blog', icon: BookOpen, accent: 'text-rose-400' },
+  { name: 'Contact', href: '/contact', icon: Mail, accent: 'text-sky-400' },
 ];
 
 export default function NavDesktopLinks() {
@@ -28,11 +28,11 @@ export default function NavDesktopLinks() {
             href={link.href}
             className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 relative ${
               isActive
-                ? 'liquid-pill-primary text-cyan-900 font-semibold shadow-sm'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                ? 'liquid-pill-violet text-white font-semibold shadow-sm'
+                : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
             }`}
           >
-            <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-600' : 'text-slate-500'}`} />
+            <Icon className={`w-3.5 h-3.5 ${isActive ? link.accent : 'text-slate-400'}`} />
             <span>{link.name}</span>
           </Link>
         );
