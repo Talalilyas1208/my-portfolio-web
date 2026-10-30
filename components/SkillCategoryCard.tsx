@@ -12,33 +12,33 @@ const categoryIcons: Record<string, React.ElementType> = {
 };
 
 const categoryAccents: Record<string, string> = {
-  'AI & Agentic Systems': 'text-violet-300',
-  'Frontend Engineering': 'text-cyan-300',
-  'State & Networking': 'text-amber-300',
-  'Backend & Databases': 'text-emerald-300',
-  'Tools & DevOps': 'text-rose-300',
+  'AI & Agentic Systems': 'liquid-pill-violet text-violet-800',
+  'Frontend Engineering': 'liquid-pill-primary text-indigo-800',
+  'State & Networking': 'liquid-pill-amber text-amber-800',
+  'Backend & Databases': 'liquid-pill-emerald text-emerald-800',
+  'Tools & DevOps': 'liquid-pill-rose text-rose-800',
 };
 
 export default function SkillCategoryCard({ group }: { group: SkillGroup }) {
   const Icon = categoryIcons[group.category] || Cpu;
   const isAiGroup = group.category === 'AI & Agentic Systems';
-  const iconColor = categoryAccents[group.category] || 'text-cyan-300';
+  const iconStyle = categoryAccents[group.category] || 'liquid-pill-violet text-violet-800';
 
   return (
     <div
       className={`p-6 sm:p-8 rounded-3xl transition-all duration-300 ${
         isAiGroup
-          ? 'liquid-glass-accent md:col-span-2 shadow-liquid-glow-lg border-violet-400/40'
-          : 'liquid-glass shadow-liquid-glass hover:border-violet-400/40'
+          ? 'liquid-glass-accent md:col-span-2 shadow-md border-violet-300'
+          : 'liquid-glass shadow-sm hover:border-violet-300'
       }`}
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className={`p-2.5 rounded-2xl liquid-glass ${iconColor}`}>
+        <div className={`p-2.5 rounded-2xl ${iconStyle}`}>
           <Icon className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="text-lg font-bold text-white">{group.category}</h3>
-          <p className="text-xs text-slate-300 font-mono">{group.description}</p>
+          <h3 className="text-lg font-bold text-slate-950">{group.category}</h3>
+          <p className="text-xs text-slate-700 font-mono">{group.description}</p>
         </div>
       </div>
 

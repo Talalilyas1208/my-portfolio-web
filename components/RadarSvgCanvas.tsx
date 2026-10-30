@@ -29,27 +29,23 @@ export default function RadarSvgCanvas({ axes, activeAxis, onSelectAxis }: Radar
       <svg viewBox="0 0 420 420" className="w-full max-w-[380px] sm:max-w-[420px] select-none">
         <defs>
           <linearGradient id="radarFillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.35" />
-            <stop offset="45%" stopColor="#8B5CF6" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#EC4899" stopOpacity="0.22" />
+            <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.22" />
+            <stop offset="50%" stopColor="#059669" stopOpacity="0.16" />
+            <stop offset="100%" stopColor="#D97706" stopOpacity="0.16" />
           </linearGradient>
           <linearGradient id="radarStrokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#22D3EE" />
-            <stop offset="50%" stopColor="#A855F7" />
-            <stop offset="100%" stopColor="#10B981" />
+            <stop offset="0%" stopColor="#7C3AED" />
+            <stop offset="50%" stopColor="#059669" />
+            <stop offset="100%" stopColor="#E11D48" />
           </linearGradient>
-          <filter id="vertexGlow" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="4" result="blur" />
-            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-          </filter>
         </defs>
 
         {gridLevels.map((lvl) => {
           const ringPoints = axes.map((_, i) => `${getCoordinates(i, lvl).x},${getCoordinates(i, lvl).y}`).join(' ');
           return (
             <g key={lvl}>
-              <polygon points={ringPoints} fill="none" stroke="rgba(255, 255, 255, 0.09)" strokeWidth="1" />
-              <text x={cx + 5} y={cy - (lvl / 100) * maxR - 3} fill="rgba(148, 163, 184, 0.7)" fontSize="8" fontFamily="monospace">
+              <polygon points={ringPoints} fill="none" stroke="rgba(15, 23, 42, 0.1)" strokeWidth="1" />
+              <text x={cx + 5} y={cy - (lvl / 100) * maxR - 3} fill="#475569" fontSize="8.5" fontFamily="monospace" fontWeight="bold">
                 {lvl}%
               </text>
             </g>
@@ -66,7 +62,7 @@ export default function RadarSvgCanvas({ axes, activeAxis, onSelectAxis }: Radar
               y1={cy}
               x2={x}
               y2={y}
-              stroke={isSelected ? axis.color : 'rgba(255, 255, 255, 0.12)'}
+              stroke={isSelected ? axis.color : 'rgba(15, 23, 42, 0.15)'}
               strokeWidth={isSelected ? '2.2' : '1'}
               strokeDasharray={isSelected ? 'none' : '3 3'}
             />
@@ -81,8 +77,8 @@ export default function RadarSvgCanvas({ axes, activeAxis, onSelectAxis }: Radar
           const isSelected = activeAxis === axis.id;
           return (
             <g key={axis.id} onClick={() => onSelectAxis(axis.id, i)} onMouseEnter={() => onSelectAxis(axis.id, i)} className="cursor-pointer">
-              <circle cx={x} cy={y} r={isSelected ? '7.5' : '4.5'} fill={axis.color} stroke="#060913" strokeWidth="2" filter={isSelected ? 'url(#vertexGlow)' : undefined} className="transition-all duration-300" />
-              <text x={labelPos.x} y={labelPos.y} textAnchor="middle" dominantBaseline="middle" fill={isSelected ? axis.color : '#E2E8F0'} fontSize={isSelected ? '10.5' : '9.5'} fontWeight={isSelected ? 'bold' : 'normal'} fontFamily="monospace" className="transition-all duration-200">
+              <circle cx={x} cy={y} r={isSelected ? '7.5' : '5'} fill={axis.color} stroke="#ffffff" strokeWidth="2" className="transition-all duration-300" />
+              <text x={labelPos.x} y={labelPos.y} textAnchor="middle" dominantBaseline="middle" fill={isSelected ? axis.color : '#0f172a'} fontSize={isSelected ? '10.5' : '9.5'} fontWeight="bold" fontFamily="monospace" className="transition-all duration-200">
                 {axis.name.split(' ')[0]} ({axis.score}%)
               </text>
             </g>

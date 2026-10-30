@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 import ProjectCard from '@/components/ProjectCard';
 import SectionHeading from '@/components/SectionHeading';
 import LiveAgentTerminal from '@/components/LiveAgentTerminal';
@@ -16,8 +16,8 @@ export default function HomeFlagshipSection() {
         <div className="relative space-y-8">
           <SectionHeading
             eyebrow="Flagship AI Agent"
-            title="Autonomous Gemini Code-Fixer & Test Runner"
-            description="The core differentiator: an autonomous closed-loop agent that continuously monitors source code, captures runtime regressions, prompts Google Gemini with AST context, and validates sandboxed fixes before committing."
+            title="Autonomous AI Code-Fixer & Test Runner"
+            description="The core differentiator: an autonomous closed-loop agent that continuously monitors source code, captures runtime regressions, extracts AST context, and validates sandboxed fixes before committing."
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -26,10 +26,10 @@ export default function HomeFlagshipSection() {
             </div>
             <div className="lg:col-span-5 space-y-3">
               <div className="flex items-center justify-between px-1">
-                <span className="flex items-center gap-1.5 text-xs font-mono text-violet-300 font-semibold">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-300" /> Multi-File AI IDE Workbench
+                <span className="flex items-center gap-1.5 text-xs font-mono text-slate-950 font-bold">
+                  <Terminal className="w-3.5 h-3.5 text-violet-700" /> Multi-File AI IDE Workbench
                 </span>
-                <span className="text-[10px] font-mono text-emerald-200 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
+                <span className="text-[10px] font-mono text-emerald-950 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
                   LIVE AI DAEMON
                 </span>
               </div>

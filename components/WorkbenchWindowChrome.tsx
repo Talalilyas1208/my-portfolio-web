@@ -17,28 +17,28 @@ export default function WorkbenchWindowChrome({
   onCopy,
 }: WorkbenchWindowChromeProps) {
   return (
-    <div className="px-4 py-3.5 bg-[#090e1f]/90 border-b border-white/[0.08] flex items-center justify-between backdrop-blur-md">
+    <div className="px-4 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="w-3 h-3 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.5)]" />
-        <div className="w-3 h-3 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]" />
-        <div className="w-3 h-3 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]" />
-        <span className="text-xs text-slate-200 ml-2 font-semibold">~/ai-agent/{fileName}</span>
+        <div className="w-3 h-3 rounded-full bg-rose-500" />
+        <div className="w-3 h-3 rounded-full bg-amber-400" />
+        <div className="w-3 h-3 rounded-full bg-emerald-500" />
+        <span className="text-xs text-slate-950 ml-2 font-bold">~/ai-agent/{fileName}</span>
       </div>
 
       <div className="flex items-center gap-2">
         <button
           onClick={onTogglePlay}
-          className="flex items-center gap-1.5 text-[11px] text-slate-200 hover:text-white px-2.5 py-1 rounded-xl liquid-glass-subtle transition-all font-medium"
+          className="flex items-center gap-1.5 text-[11px] text-slate-900 hover:text-slate-950 px-2.5 py-1 rounded-xl bg-white border border-slate-300 shadow-sm transition-all font-semibold"
           title={isPlaying ? 'Pause auto-simulation' : 'Resume auto-simulation'}
         >
           {isPlaying ? (
             <>
-              <Pause className="w-3 h-3 text-cyan-400" />
+              <Pause className="w-3 h-3 text-violet-700" />
               <span>Live Loop</span>
             </>
           ) : (
             <>
-              <Play className="w-3 h-3 text-emerald-400" />
+              <Play className="w-3 h-3 text-emerald-700" />
               <span>Paused</span>
             </>
           )}
@@ -46,10 +46,10 @@ export default function WorkbenchWindowChrome({
 
         <button
           onClick={onCopy}
-          className="p-1.5 rounded-xl liquid-glass-subtle text-slate-300 hover:text-cyan-300 transition-all"
+          className="p-1.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:text-violet-700 shadow-sm transition-all"
           title="Copy Code"
         >
-          {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <Check className="w-3.5 h-3.5 text-emerald-700" /> : <Copy className="w-3.5 h-3.5" />}
         </button>
       </div>
     </div>

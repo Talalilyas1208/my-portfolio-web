@@ -5,11 +5,11 @@ interface MetricItem {
   value: string;
 }
 
-const metricGradients = [
-  'text-gradient-violet',
-  'text-gradient-cyan',
-  'text-gradient-emerald',
-  'text-gradient-amber',
+const metricPills = [
+  'liquid-pill-violet',
+  'liquid-pill-primary',
+  'liquid-pill-emerald',
+  'liquid-pill-amber',
 ];
 
 export default function ProjectMetricsRow({ metrics }: { metrics?: MetricItem[] }) {
@@ -18,11 +18,11 @@ export default function ProjectMetricsRow({ metrics }: { metrics?: MetricItem[] 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
       {metrics.map((metric, idx) => (
-        <div key={idx} className="p-3 rounded-2xl liquid-glass-subtle text-center border border-white/[0.08]">
-          <div className={`text-base sm:text-lg font-bold font-mono ${metricGradients[idx % metricGradients.length]}`}>
+        <div key={idx} className={`p-3 rounded-2xl ${metricPills[idx % metricPills.length]} text-center`}>
+          <div className="text-base sm:text-lg font-extrabold font-mono text-slate-950">
             {metric.value}
           </div>
-          <div className="text-[10px] sm:text-[11px] text-slate-300 font-medium font-sans truncate">
+          <div className="text-[10px] sm:text-[11px] text-slate-800 font-semibold font-sans truncate">
             {metric.label}
           </div>
         </div>

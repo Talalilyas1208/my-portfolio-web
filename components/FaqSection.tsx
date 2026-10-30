@@ -45,8 +45,8 @@ export default function FaqSection() {
               key={idx}
               className={`rounded-3xl transition-all duration-300 overflow-hidden border ${
                 isOpen
-                  ? 'liquid-glass-accent border-violet-400/50 shadow-liquid-glow'
-                  : 'liquid-glass-subtle hover:border-white/25'
+                  ? 'liquid-glass-accent border-violet-400 shadow-liquid-glow'
+                  : 'liquid-glass-subtle hover:border-slate-300'
               }`}
             >
               <button
@@ -56,17 +56,17 @@ export default function FaqSection() {
                 aria-expanded={isOpen}
               >
                 <div className="flex items-center gap-3.5">
-                  <div className={`p-2 rounded-2xl ${isOpen ? 'liquid-glass text-violet-300' : 'liquid-glass-subtle text-cyan-400'}`}>
+                  <div className={`p-2 rounded-2xl ${isOpen ? 'liquid-glass text-violet-700' : 'liquid-glass-subtle text-indigo-600'}`}>
                     <HelpCircle className="w-4 h-4 shrink-0" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-bold text-white">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-950">
                     {faq.question}
                   </h3>
                 </div>
 
                 <div
-                  className={`p-1.5 rounded-full liquid-glass-subtle text-slate-300 transition-transform duration-300 shrink-0 ${
-                    isOpen ? 'rotate-180 text-violet-300 border-violet-400/40' : ''
+                  className={`p-1.5 rounded-full liquid-glass-subtle text-slate-700 transition-transform duration-300 shrink-0 ${
+                    isOpen ? 'rotate-180 text-violet-700 border-violet-300' : ''
                   }`}
                 >
                   <ChevronDown className="w-4 h-4" />
@@ -74,7 +74,7 @@ export default function FaqSection() {
               </button>
 
               {isOpen && (
-                <div className="px-5 sm:px-6 pb-6 pt-3 text-xs sm:text-sm text-slate-200 leading-relaxed border-t border-white/[0.08] font-sans">
+                <div className="px-5 sm:px-6 pb-6 pt-3 text-xs sm:text-sm text-slate-800 leading-relaxed border-t border-slate-200 font-sans">
                   <p>{faq.answer}</p>
                 </div>
               )}

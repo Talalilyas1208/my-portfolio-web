@@ -29,7 +29,7 @@ export default function ExperiencePage() {
               <div className={`text-xl sm:text-2xl font-bold font-mono ${statGrads[idx % statGrads.length]} mb-1`}>
                 {stat.value}
               </div>
-              <div className="text-xs text-slate-300 font-sans">{stat.label}</div>
+              <div className="text-xs text-slate-700 font-semibold font-sans">{stat.label}</div>
             </div>
           ))}
         </div>

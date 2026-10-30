@@ -15,14 +15,14 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
   if (!isOpen) return null;
 
   return (
-    <div className="lg:hidden border-b border-white/[0.1] bg-[#060913]/95 backdrop-blur-3xl animate-fade-in shadow-2xl">
+    <div className="lg:hidden border-b border-slate-200 bg-white/98 backdrop-blur-2xl animate-fade-in shadow-xl">
       <div className="px-4 pt-3 pb-6 space-y-2 max-w-md mx-auto">
-        <div className="p-3.5 mb-3 rounded-2xl liquid-glass flex items-center justify-between">
+        <div className="p-3.5 mb-3 rounded-2xl liquid-glass-subtle flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-xs text-slate-200 font-medium">Available for AI &amp; React Roles</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+            <span className="text-xs text-slate-900 font-semibold">Available for AI &amp; React Roles</span>
           </div>
-          <span className="text-[11px] font-mono text-slate-400">Pakistan 🇵🇰</span>
+          <span className="text-[11px] font-mono text-slate-700">Pakistan 🇵🇰</span>
         </div>
 
         {navItems.map((link) => {
@@ -37,26 +37,26 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
               onClick={onClose}
               className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-medium transition-all ${
                 isActive
-                  ? 'liquid-pill-violet text-white font-semibold'
-                  : 'text-slate-300 hover:text-white hover:bg-white/[0.06]'
+                  ? 'liquid-pill-violet text-slate-950 font-bold'
+                  : 'text-slate-800 hover:text-slate-950 hover:bg-slate-100'
               }`}
             >
               <div className="flex items-center gap-3">
                 <Icon className={`w-4 h-4 ${link.accent}`} />
                 <span>{link.name}</span>
               </div>
-              {isActive && <span className="w-2 h-2 rounded-full bg-violet-400 shadow-[0_0_8px_#a78bfa]" />}
+              {isActive && <span className="w-2 h-2 rounded-full bg-violet-600" />}
             </Link>
           );
         })}
 
-        <div className="pt-4 mt-3 border-t border-white/[0.08] flex items-center justify-between gap-3">
+        <div className="pt-4 mt-3 border-t border-slate-200 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <a
               href={personalData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl liquid-glass text-slate-300 hover:text-white"
+              className="p-2.5 rounded-xl liquid-glass text-slate-800 hover:text-slate-950"
               aria-label="GitHub"
             >
               <Github className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
               href={personalData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl liquid-glass text-slate-300 hover:text-white"
+              className="p-2.5 rounded-xl liquid-glass text-slate-800 hover:text-slate-950"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
@@ -74,7 +74,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
           <Link
             href="/contact"
             onClick={onClose}
-            className="flex-1 py-3 text-center text-xs font-semibold text-white liquid-btn-primary rounded-xl"
+            className="flex-1 py-3 text-center text-xs font-bold text-slate-950 liquid-btn-primary rounded-xl"
           >
             Get in Touch
           </Link>

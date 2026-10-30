@@ -11,7 +11,6 @@ import {
   Database,
   HardDrive,
   ShieldCheck,
-  Sparkles,
   Cpu,
 } from 'lucide-react';
 
@@ -176,7 +175,7 @@ export const archNodes: ArchNode[] = [
     name: 'Gemini 1.5 Pro / Flash',
     subtext: 'Multimodal LLM Core',
     tier: 'AI / ML PIPELINE',
-    icon: Sparkles,
+    icon: Bot,
     tech: 'Google Gemini 1.5 API · Structured Output Schema',
     protocol: 'HTTPS REST / gRPC',
     latency: '1.4s Flash Inference',

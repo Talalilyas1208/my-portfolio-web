@@ -8,11 +8,11 @@ import {
   selectSoundEnabled,
 } from '@/store/slices/interactiveSlice';
 import { sounds } from '@/lib/soundEffects';
-import { Sparkles } from 'lucide-react';
+import { Cpu } from 'lucide-react';
 import { allTechs, TechItem } from '@/data/techOrbitData';
 import OrbitRingRays from '@/components/OrbitRingRays';
 
-const dotColors = ['bg-violet-400', 'bg-cyan-400', 'bg-emerald-400', 'bg-amber-400', 'bg-rose-400'];
+const dotColors = ['bg-violet-600', 'bg-indigo-600', 'bg-emerald-600', 'bg-amber-600', 'bg-rose-600'];
 
 export default function TechOrbitSystem() {
   const dispatch = useDispatch();
@@ -28,18 +28,16 @@ export default function TechOrbitSystem() {
 
   return (
     <section className="relative py-16 overflow-hidden select-none">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[620px] h-[620px] bg-gradient-to-tr from-violet-500/10 via-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
         <div className="space-y-2 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-violet text-violet-200">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold liquid-pill-violet text-violet-950">
+            <Cpu className="w-3.5 h-3.5 text-violet-700" />
             Planetary Tech Orbit &bull; Redux Synchronized
           </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
             Integrated Technology Universe
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-800 font-sans leading-relaxed">
             Concentric planetary rings rotating across AI agents, React architecture, and containerized backend systems. Hover over any node to dispatch live Redux telemetry.
           </p>
         </div>
@@ -55,8 +53,8 @@ export default function TechOrbitSystem() {
               onClick={() => handleTechHover(tech)}
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl text-xs font-mono border transition-all cursor-pointer ${
                 activeTechName === tech.name
-                  ? 'liquid-pill-violet text-white border-violet-400 font-semibold'
-                  : 'liquid-glass text-slate-200 border-white/[0.12]'
+                  ? 'liquid-pill-violet text-slate-950 border-violet-500 font-bold'
+                  : 'liquid-glass text-slate-900 border-slate-200'
               }`}
             >
               <span className={`w-1.5 h-1.5 rounded-full ${dotColors[idx % dotColors.length]}`} />

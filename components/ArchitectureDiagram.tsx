@@ -10,17 +10,17 @@ import {
   selectSoundEnabled,
 } from '@/store/slices/interactiveSlice';
 import { sounds } from '@/lib/soundEffects';
-import { Sparkles } from 'lucide-react';
+import { Layers } from 'lucide-react';
 import { archNodes, archTiers } from '@/data/architectureNodesData';
 import ArchitectureNodeCard from '@/components/ArchitectureNodeCard';
 import ArchitectureInspector from '@/components/ArchitectureInspector';
 
 const tierHeaderColors: Record<string, { text: string; pill: string; dot: string }> = {
-  CLIENT: { text: 'text-cyan-300', pill: 'liquid-pill-primary text-cyan-200', dot: 'bg-cyan-400' },
-  'EDGE / GATEWAY': { text: 'text-amber-300', pill: 'liquid-pill-amber text-amber-200', dot: 'bg-amber-400' },
-  SERVICES: { text: 'text-violet-300', pill: 'liquid-pill-violet text-violet-200', dot: 'bg-violet-400' },
-  'DATA LAYER': { text: 'text-emerald-300', pill: 'liquid-pill-emerald text-emerald-200', dot: 'bg-emerald-400' },
-  'AI / ML PIPELINE': { text: 'text-rose-300', pill: 'liquid-pill-rose text-rose-200', dot: 'bg-rose-400' },
+  CLIENT: { text: 'text-indigo-800', pill: 'liquid-pill-primary text-indigo-950', dot: 'bg-indigo-600' },
+  'EDGE / GATEWAY': { text: 'text-amber-800', pill: 'liquid-pill-amber text-amber-950', dot: 'bg-amber-600' },
+  SERVICES: { text: 'text-violet-800', pill: 'liquid-pill-violet text-violet-950', dot: 'bg-violet-600' },
+  'DATA LAYER': { text: 'text-emerald-800', pill: 'liquid-pill-emerald text-emerald-950', dot: 'bg-emerald-600' },
+  'AI / ML PIPELINE': { text: 'text-rose-800', pill: 'liquid-pill-rose text-rose-950', dot: 'bg-rose-600' },
 };
 
 export default function ArchitectureDiagram() {
@@ -42,14 +42,14 @@ export default function ArchitectureDiagram() {
   };
 
   return (
-    <div className="p-6 sm:p-10 rounded-3xl liquid-glass border border-white/[0.12] shadow-liquid-glass-lg space-y-8 select-none">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
+    <div className="p-6 sm:p-10 rounded-3xl liquid-glass border border-slate-200 shadow-md space-y-8 select-none">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-violet text-violet-200 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold liquid-pill-violet text-violet-950 mb-2">
+            <Layers className="w-3.5 h-3.5 text-violet-700" />
             5-Tier Full-Stack &amp; AI Systems Schematic &bull; Redux Synchronized
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
             Production Distributed Architecture
           </h3>
         </div>
@@ -62,10 +62,10 @@ export default function ArchitectureDiagram() {
               <button
                 key={tier}
                 onClick={() => handleSelectTier(tier)}
-                className={`px-3 py-1 rounded-xl text-[10px] font-mono transition-all flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-xl text-[10px] font-mono transition-all flex items-center gap-1.5 ${
                   isSelected
                     ? `${tc.pill} font-bold scale-[1.03]`
-                    : 'liquid-glass-subtle text-slate-300 hover:text-white'
+                    : 'liquid-glass-subtle text-slate-800 hover:text-slate-950'
                 }`}
               >
                 <span className={`w-1.5 h-1.5 rounded-full ${tc.dot}`} />

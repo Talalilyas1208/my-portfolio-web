@@ -34,16 +34,16 @@ export default function InteractiveProjectExplorer() {
         </div>
       ) : (
         <div className="p-12 text-center rounded-3xl liquid-glass-subtle space-y-4">
-          <p className="text-slate-300 text-sm">
-            No projects found matching &ldquo;<span className="text-cyan-300 font-semibold">{searchQuery}</span>&rdquo; in category{' '}
-            <span className="text-white font-medium">{selectedCategory}</span>.
+          <p className="text-slate-800 text-sm">
+            No projects found matching &ldquo;<span className="text-violet-800 font-bold">{searchQuery}</span>&rdquo; in category{' '}
+            <span className="text-slate-950 font-bold">{selectedCategory}</span>.
           </p>
           <button
             onClick={() => {
               dispatch(setSearchQuery(''));
               dispatch(setCategoryFilter('All'));
             }}
-            className="px-5 py-2.5 rounded-2xl liquid-btn-primary text-white text-xs font-semibold"
+            className="px-5 py-2.5 rounded-2xl liquid-btn-primary text-slate-950 text-xs font-bold"
           >
             Reset Filters
           </button>

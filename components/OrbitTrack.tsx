@@ -17,19 +17,19 @@ interface OrbitTrackProps {
 
 const ringStyles = {
   violet: {
-    selected: 'liquid-pill-violet text-white border-violet-400',
-    dot: 'bg-violet-400',
-    hover: 'hover:border-violet-400/60',
+    selected: 'liquid-pill-violet text-violet-950 border-violet-500',
+    dot: 'bg-violet-600',
+    hover: 'hover:border-violet-500',
   },
   cyan: {
-    selected: 'liquid-pill-primary text-white border-cyan-400',
-    dot: 'bg-cyan-400',
-    hover: 'hover:border-cyan-400/60',
+    selected: 'liquid-pill-primary text-indigo-950 border-indigo-500',
+    dot: 'bg-indigo-600',
+    hover: 'hover:border-indigo-500',
   },
   emerald: {
-    selected: 'liquid-pill-emerald text-white border-emerald-400',
-    dot: 'bg-emerald-400',
-    hover: 'hover:border-emerald-400/60',
+    selected: 'liquid-pill-emerald text-emerald-950 border-emerald-500',
+    dot: 'bg-emerald-600',
+    hover: 'hover:border-emerald-500',
   },
 };
 
@@ -42,7 +42,7 @@ export default function OrbitTrack({
   activeTechName,
   onHover,
   fontSize = 'text-[11px]',
-  ringAccent = 'cyan',
+  ringAccent = 'violet',
 }: OrbitTrackProps) {
   const style = ringStyles[ringAccent];
 
@@ -69,10 +69,10 @@ export default function OrbitTrack({
                 className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono transition-all cursor-pointer ${fontSize} ${
                   isSelected
                     ? `${style.selected} scale-125 shadow-md font-bold`
-                    : `liquid-glass text-slate-100 hover:scale-110 ${style.hover} font-medium`
+                    : `liquid-glass text-slate-950 hover:scale-110 ${style.hover} font-semibold`
                 }`}
               >
-                <span className={`w-1.5 h-1.5 rounded-full ${style.dot} animate-pulse`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${style.dot}`} />
                 {tech.name}
               </span>
             </div>

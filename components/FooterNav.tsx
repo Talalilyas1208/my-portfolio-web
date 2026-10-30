@@ -7,7 +7,7 @@ export default function FooterNav() {
   return (
     <>
       <div className="space-y-3">
-        <h4 className="text-xs font-mono uppercase tracking-wider text-white font-bold">
+        <h4 className="text-xs font-mono uppercase tracking-wider text-slate-950 font-bold">
           Navigation
         </h4>
         <ul className="space-y-2.5 text-sm">
@@ -20,7 +20,7 @@ export default function FooterNav() {
             { name: 'Contact & Inquiries', href: '/contact' },
           ].map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="text-slate-300 hover:text-cyan-300 transition-colors font-medium">
+              <Link href={item.href} className="text-slate-800 hover:text-violet-700 transition-colors font-medium">
                 {item.name}
               </Link>
             </li>
@@ -29,21 +29,21 @@ export default function FooterNav() {
       </div>
 
       <div className="space-y-4">
-        <h4 className="text-xs font-mono uppercase tracking-wider text-white font-bold">
+        <h4 className="text-xs font-mono uppercase tracking-wider text-slate-950 font-bold">
           Flagship AI Agent
         </h4>
         <Link
           href="/projects/autonomous-gemini-code-fixer"
-          className="block p-3.5 rounded-2xl liquid-glass-subtle hover:border-violet-400/50 transition-all group"
+          className="block p-3.5 rounded-2xl liquid-glass-subtle hover:border-violet-400 transition-all group"
         >
           <div className="flex items-center gap-2 mb-1">
-            <Terminal className="w-3.5 h-3.5 text-violet-400" />
-            <span className="text-xs font-semibold text-white group-hover:text-violet-300 transition-colors">
+            <Terminal className="w-3.5 h-3.5 text-violet-700" />
+            <span className="text-xs font-bold text-slate-950 group-hover:text-violet-700 transition-colors">
               Autonomous Code-Fixer
             </span>
           </div>
-          <p className="text-[11px] text-slate-300 line-clamp-2">
-            Self-healing developer agent powered by Google Gemini API &amp; AST parsing.
+          <p className="text-[11px] text-slate-700 line-clamp-2">
+            Self-healing developer agent powered by LLM reasoning &amp; AST parsing.
           </p>
         </Link>
 
@@ -53,7 +53,7 @@ export default function FooterNav() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-violet-400/50 text-slate-300 hover:text-white transition-all"
+            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-violet-400 text-slate-800 hover:text-slate-950 transition-all"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -62,14 +62,14 @@ export default function FooterNav() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-cyan-400/50 text-slate-300 hover:text-white transition-all"
+            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-indigo-400 text-slate-800 hover:text-slate-950 transition-all"
           >
             <Linkedin className="w-4 h-4" />
           </a>
           <a
             href={`mailto:${personalData.email}`}
             aria-label="Email"
-            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-emerald-400/50 text-slate-300 hover:text-white transition-all"
+            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-emerald-400 text-slate-800 hover:text-slate-950 transition-all"
           >
             <Mail className="w-4 h-4" />
           </a>
