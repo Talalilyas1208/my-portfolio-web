@@ -22,12 +22,12 @@ export default function TelemetryHudPanel({
     <div className="mb-2 w-[calc(100vw-1.5rem)] sm:w-96 max-w-sm rounded-3xl bg-white border border-slate-200 shadow-2xl p-4 space-y-3 animate-fade-in text-xs">
       <div className="flex items-center justify-between border-b border-slate-200 pb-2.5">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-violet-600 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-slate-900 animate-pulse" />
           <span className="font-bold text-slate-950 uppercase tracking-wider text-[11px]">
             Redux Toolkit Telemetry
           </span>
         </div>
-        <span className="text-[10px] text-emerald-800 font-bold liquid-pill-emerald px-2 py-0.5 rounded-full">
+        <span className="text-[10px] text-slate-950 font-bold liquid-pill-emerald px-2 py-0.5 rounded-full">
           {fps} FPS · 60Hz
         </span>
       </div>
@@ -35,18 +35,18 @@ export default function TelemetryHudPanel({
       <div className="grid grid-cols-2 gap-2 text-[10px]">
         <div className="p-2 rounded-xl liquid-glass-subtle space-y-0.5">
           <div className="text-slate-600 font-medium">Active Radar Axis:</div>
-          <div className="text-violet-700 font-bold truncate">{activeRadar}</div>
+          <div className="text-slate-800 font-bold truncate">{activeRadar}</div>
         </div>
         <div className="p-2 rounded-xl liquid-glass-subtle space-y-0.5">
           <div className="text-slate-600 font-medium">Active Arch Node:</div>
-          <div className="text-indigo-700 font-bold truncate">{activeArch}</div>
+          <div className="text-slate-800 font-bold truncate">{activeArch}</div>
         </div>
       </div>
 
       <div className="space-y-1.5">
         <div className="text-[10px] text-slate-600 font-medium flex items-center justify-between">
           <span>Live Action Stream:</span>
-          <span className="text-amber-700 font-semibold">{logs.length} logged</span>
+          <span className="text-slate-800 font-semibold">{logs.length} logged</span>
         </div>
         <div className="max-h-36 overflow-y-auto space-y-1 pr-1 scrollbar-none text-[10px]">
           {logs.map((log) => (
@@ -54,7 +54,7 @@ export default function TelemetryHudPanel({
               key={log.id}
               className="p-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between gap-1"
             >
-              <span className="text-indigo-700 font-bold truncate">{log.action}</span>
+              <span className="text-slate-800 font-bold truncate">{log.action}</span>
               <span className="text-slate-800 truncate max-w-[120px]">{log.payload}</span>
             </div>
           ))}
@@ -68,7 +68,7 @@ export default function TelemetryHudPanel({
         >
           {soundEnabled ? (
             <>
-              <Volume2 className="w-3 h-3 text-emerald-600" />
+              <Volume2 className="w-3 h-3 text-slate-800" />
               <span>Sonic UI: ON</span>
             </>
           ) : (

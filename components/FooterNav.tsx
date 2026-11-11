@@ -20,7 +20,7 @@ export default function FooterNav() {
             { name: 'Contact & Inquiries', href: '/contact' },
           ].map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="text-slate-800 hover:text-violet-700 transition-colors font-medium">
+              <Link href={item.href} className="text-slate-800 hover:text-slate-800 transition-colors font-medium">
                 {item.name}
               </Link>
             </li>
@@ -34,11 +34,11 @@ export default function FooterNav() {
         </h4>
         <Link
           href="/projects/autonomous-gemini-code-fixer"
-          className="block p-3.5 rounded-2xl liquid-glass-subtle hover:border-violet-400 transition-all group"
+          className="block p-3.5 rounded-2xl liquid-glass-subtle hover:border-slate-300 transition-all group"
         >
           <div className="flex items-center gap-2 mb-1">
-            <Terminal className="w-3.5 h-3.5 text-violet-700" />
-            <span className="text-xs font-bold text-slate-950 group-hover:text-violet-700 transition-colors">
+            <Terminal className="w-3.5 h-3.5 text-slate-800" />
+            <span className="text-xs font-bold text-slate-950 group-hover:text-slate-800 transition-colors">
               Autonomous Code-Fixer
             </span>
           </div>
@@ -53,7 +53,7 @@ export default function FooterNav() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-violet-400 text-slate-800 hover:text-slate-950 transition-all"
+            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-slate-300 text-slate-800 hover:text-slate-950 transition-all"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -62,14 +62,14 @@ export default function FooterNav() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-indigo-400 text-slate-800 hover:text-slate-950 transition-all"
+            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-slate-300 text-slate-800 hover:text-slate-950 transition-all"
           >
             <Linkedin className="w-4 h-4" />
           </a>
           <a
             href={`mailto:${personalData.email}`}
             aria-label="Email"
-            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-emerald-400 text-slate-800 hover:text-slate-950 transition-all"
+            className="p-2.5 rounded-xl liquid-glass-subtle hover:border-slate-300 text-slate-800 hover:text-slate-950 transition-all"
           >
             <Mail className="w-4 h-4" />
           </a>

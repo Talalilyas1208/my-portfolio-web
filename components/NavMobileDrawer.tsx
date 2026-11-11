@@ -19,7 +19,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
       <div className="px-4 pt-3 pb-6 space-y-2 max-w-md mx-auto">
         <div className="p-3.5 mb-3 rounded-2xl liquid-glass-subtle flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-slate-900 animate-pulse" />
             <span className="text-xs text-slate-900 font-semibold">Available for AI &amp; React Roles</span>
           </div>
           <span className="text-[11px] font-mono text-slate-700">Pakistan 🇵🇰</span>
@@ -45,7 +45,7 @@ export default function NavMobileDrawer({ isOpen, onClose }: NavMobileDrawerProp
                 <Icon className={`w-4 h-4 ${link.accent}`} />
                 <span>{link.name}</span>
               </div>
-              {isActive && <span className="w-2 h-2 rounded-full bg-violet-600" />}
+              {isActive && <span className="w-2 h-2 rounded-full bg-slate-900" />}
             </Link>
           );
         })}

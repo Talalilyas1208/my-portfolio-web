@@ -27,9 +27,9 @@ export default function HomeFlagshipSection() {
             <div className="lg:col-span-5 space-y-3">
               <div className="flex items-center justify-between px-1">
                 <span className="flex items-center gap-1.5 text-xs font-mono text-slate-950 font-bold">
-                  <Terminal className="w-3.5 h-3.5 text-violet-700" /> Multi-File AI IDE Workbench
+                  <Terminal className="w-3.5 h-3.5 text-slate-800" /> Multi-File AI IDE Workbench
                 </span>
-                <span className="text-[10px] font-mono text-emerald-950 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
+                <span className="text-[10px] font-mono text-slate-950 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
                   LIVE AI DAEMON
                 </span>
               </div>

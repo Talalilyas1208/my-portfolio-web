@@ -15,8 +15,8 @@ export default function LazyLoadingPlaceholder({
       aria-busy="true"
       aria-label={label}
     >
-      <div className="w-12 h-12 rounded-2xl liquid-glass-subtle border border-violet-300 flex items-center justify-center">
-        <span className="w-4 h-4 rounded-full bg-violet-600 animate-ping" />
+      <div className="w-12 h-12 rounded-2xl liquid-glass-subtle border border-slate-300 flex items-center justify-center">
+        <span className="w-4 h-4 rounded-full bg-slate-900 animate-ping" />
       </div>
       <div className="space-y-2 text-center max-w-xs">
         <div className="h-3 bg-slate-200 rounded-full w-32 mx-auto" />

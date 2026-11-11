@@ -17,8 +17,8 @@ export default function ContactDirectInfo() {
     <div className="lg:col-span-5 space-y-6">
       <div className="p-6 sm:p-8 rounded-3xl liquid-glass shadow-liquid-glass-lg space-y-6 border border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-emerald text-emerald-800 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-emerald text-slate-950 mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-slate-900 animate-pulse" />
             Available for Full-Time &amp; Contract Roles
           </div>
           <h3 className="text-xl font-bold text-slate-950">Let&apos;s build something intelligent.</h3>
@@ -28,7 +28,7 @@ export default function ContactDirectInfo() {
         </div>
 
         <div className="p-4 rounded-2xl liquid-glass-subtle flex items-center gap-3">
-          <div className="p-2.5 rounded-xl liquid-glass text-indigo-700">
+          <div className="p-2.5 rounded-xl liquid-glass text-slate-800">
             <MapPin className="w-4 h-4" />
           </div>
           <div>
@@ -43,13 +43,13 @@ export default function ContactDirectInfo() {
             href={personalData.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-4 rounded-2xl liquid-pill-emerald hover:border-emerald-500 text-emerald-950 transition-all group shadow-sm"
+            className="flex items-center justify-between p-4 rounded-2xl liquid-pill-emerald hover:border-slate-900 text-slate-950 transition-all group shadow-sm"
           >
             <div className="flex items-center gap-2.5">
-              <MessageSquare className="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform" />
+              <MessageSquare className="w-4 h-4 text-slate-800 group-hover:scale-110 transition-transform" />
               <span className="text-xs font-bold">Chat directly on WhatsApp</span>
             </div>
-            <span className="text-[10px] font-mono bg-emerald-100 border border-emerald-400 text-emerald-950 px-2.5 py-0.5 rounded-full font-bold">
+            <span className="text-[10px] font-mono bg-[#F5F5F5] border border-slate-300 text-slate-950 px-2.5 py-0.5 rounded-full font-bold">
               Quick Response
             </span>
           </a>
@@ -58,30 +58,30 @@ export default function ContactDirectInfo() {
         <div className="p-4 rounded-2xl liquid-glass-subtle space-y-2">
           <span className="text-xs font-mono text-slate-600 font-semibold">Direct Email</span>
           <div className="flex items-center justify-between gap-2">
-            <span className="text-sm sm:text-base font-mono font-semibold text-indigo-700 truncate">
+            <span className="text-sm sm:text-base font-mono font-semibold text-slate-800 truncate">
               {personalData.email}
             </span>
             <button
               type="button"
               onClick={copyEmail}
-              className="p-2 rounded-xl liquid-glass text-slate-700 hover:text-violet-700 transition-all shrink-0"
+              className="p-2 rounded-xl liquid-glass text-slate-700 hover:text-slate-800 transition-all shrink-0"
               title="Copy email to clipboard"
             >
-              {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+              {copied ? <Check className="w-4 h-4 text-slate-800" /> : <Copy className="w-4 h-4" />}
             </button>
           </div>
-          {copied && <p className="text-xs font-mono text-emerald-700 font-semibold animate-fade-in">✓ Copied to clipboard!</p>}
+          {copied && <p className="text-xs font-mono text-slate-800 font-semibold animate-fade-in">✓ Copied to clipboard!</p>}
         </div>
 
         <div className="space-y-3 pt-2">
           <span className="text-xs font-mono text-slate-600 font-semibold block">Profiles &amp; Code</span>
           <div className="grid grid-cols-2 gap-2.5">
-            <a href={personalData.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 p-3.5 rounded-2xl liquid-glass-subtle hover:border-violet-400 text-slate-900 transition-all group">
-              <Github className="w-4 h-4 text-violet-600 group-hover:scale-110 transition-transform" />
+            <a href={personalData.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 p-3.5 rounded-2xl liquid-glass-subtle hover:border-slate-300 text-slate-900 transition-all group">
+              <Github className="w-4 h-4 text-slate-800 group-hover:scale-110 transition-transform" />
               <span className="text-xs font-semibold">GitHub</span>
             </a>
-            <a href={personalData.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 p-3.5 rounded-2xl liquid-glass-subtle hover:border-indigo-400 text-slate-900 transition-all group">
-              <Linkedin className="w-4 h-4 text-indigo-600 group-hover:scale-110 transition-transform" />
+            <a href={personalData.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 p-3.5 rounded-2xl liquid-glass-subtle hover:border-slate-300 text-slate-900 transition-all group">
+              <Linkedin className="w-4 h-4 text-slate-800 group-hover:scale-110 transition-transform" />
               <span className="text-xs font-semibold">LinkedIn</span>
             </a>
           </div>

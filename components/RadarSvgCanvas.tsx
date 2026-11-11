@@ -29,14 +29,12 @@ export default function RadarSvgCanvas({ axes, activeAxis, onSelectAxis }: Radar
       <svg viewBox="0 0 420 420" className="w-full max-w-[380px] sm:max-w-[420px] select-none">
         <defs>
           <linearGradient id="radarFillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.22" />
-            <stop offset="50%" stopColor="#059669" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="#D97706" stopOpacity="0.16" />
+            <stop offset="0%" stopColor="#0F172A" stopOpacity="0.14" />
+            <stop offset="100%" stopColor="#334155" stopOpacity="0.08" />
           </linearGradient>
           <linearGradient id="radarStrokeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7C3AED" />
-            <stop offset="50%" stopColor="#059669" />
-            <stop offset="100%" stopColor="#E11D48" />
+            <stop offset="0%" stopColor="#0F172A" />
+            <stop offset="100%" stopColor="#334155" />
           </linearGradient>
         </defs>
 

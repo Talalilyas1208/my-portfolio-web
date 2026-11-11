@@ -9,11 +9,11 @@ interface ArchitectureNodeCardProps {
 }
 
 const tierAccents: Record<string, { border: string; iconBg: string; sub: string }> = {
-  CLIENT: { border: 'border-indigo-500', iconBg: 'liquid-pill-primary text-indigo-800', sub: 'text-indigo-800' },
-  'EDGE / GATEWAY': { border: 'border-amber-500', iconBg: 'liquid-pill-amber text-amber-800', sub: 'text-amber-800' },
-  SERVICES: { border: 'border-violet-500', iconBg: 'liquid-pill-violet text-violet-800', sub: 'text-violet-800' },
-  'DATA LAYER': { border: 'border-emerald-500', iconBg: 'liquid-pill-emerald text-emerald-800', sub: 'text-emerald-800' },
-  'AI / ML PIPELINE': { border: 'border-rose-500', iconBg: 'liquid-pill-rose text-rose-800', sub: 'text-rose-800' },
+  CLIENT: { border: 'border-slate-900', iconBg: 'liquid-pill-primary text-slate-950', sub: 'text-slate-950' },
+  'EDGE / GATEWAY': { border: 'border-slate-900', iconBg: 'liquid-pill-amber text-slate-950', sub: 'text-slate-950' },
+  SERVICES: { border: 'border-slate-900', iconBg: 'liquid-pill-violet text-slate-950', sub: 'text-slate-950' },
+  'DATA LAYER': { border: 'border-slate-900', iconBg: 'liquid-pill-emerald text-slate-950', sub: 'text-slate-950' },
+  'AI / ML PIPELINE': { border: 'border-slate-900', iconBg: 'liquid-pill-rose text-slate-950', sub: 'text-slate-950' },
 };
 
 export default function ArchitectureNodeCard({
@@ -32,7 +32,7 @@ export default function ArchitectureNodeCard({
         isSelected
           ? `liquid-glass-accent ${accent.border} shadow-md scale-[1.02] z-20`
           : isConnected
-          ? 'liquid-glass border-violet-300 shadow-sm'
+          ? 'liquid-glass border-slate-300 shadow-sm'
           : 'liquid-glass-subtle hover:border-slate-300 hover:scale-[1.01]'
       }`}
     >
@@ -56,7 +56,7 @@ export default function ArchitectureNodeCard({
 
       <div className="mt-2.5 pt-2 border-t border-slate-200 flex items-center justify-between text-[10px] font-mono text-slate-600">
         <span>{node.protocol}</span>
-        <span className="text-emerald-800 font-bold">{node.latency}</span>
+        <span className="text-slate-950 font-bold">{node.latency}</span>
       </div>
     </div>
   );

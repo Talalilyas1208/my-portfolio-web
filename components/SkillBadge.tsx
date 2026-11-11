@@ -8,9 +8,9 @@ interface SkillBadgeProps {
 }
 
 const levelColors: Record<string, string> = {
-  Core: 'text-violet-800',
-  Advanced: 'text-emerald-800',
-  Proficient: 'text-indigo-800',
+  Core: 'text-slate-950',
+  Advanced: 'text-slate-950',
+  Proficient: 'text-slate-950',
 };
 
 export default function SkillBadge({
@@ -30,7 +30,7 @@ export default function SkillBadge({
       }`}
     >
       {highlight && (
-        <span className="w-1.5 h-1.5 rounded-full bg-violet-600" />
+        <span className="w-1.5 h-1.5 rounded-full bg-slate-900" />
       )}
       <span>{name}</span>
       {level && (

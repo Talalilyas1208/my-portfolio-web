@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="space-y-4">
         <div>
           <h3
-            className={`font-bold text-slate-950 group-hover:text-violet-800 transition-colors ${
+            className={`font-bold text-slate-950 group-hover:text-slate-950 transition-colors ${
               isFlagship ? 'text-2xl sm:text-3xl' : 'text-xl'
             }`}
           >
@@ -36,7 +36,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.title}
             </Link>
           </h3>
-          <p className="text-xs sm:text-sm text-violet-800 font-mono font-bold mt-1">
+          <p className="text-xs sm:text-sm text-slate-950 font-mono font-bold mt-1">
             {project.subtitle}
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {project.keyDifferentiator && (
           <div className="p-4 rounded-2xl liquid-pill-amber text-xs sm:text-sm text-slate-900">
-            <span className="font-bold text-amber-900 font-mono block mb-1">
+            <span className="font-bold text-slate-950 font-mono block mb-1">
               Engineering Differentiator:
             </span>
             <p className="leading-relaxed">{project.keyDifferentiator}</p>
@@ -61,7 +61,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 rounded-xl text-xs font-mono liquid-glass-subtle text-slate-900 font-medium hover:border-violet-400 transition-colors"
+                className="px-2.5 py-1 rounded-xl text-xs font-mono liquid-glass-subtle text-slate-900 font-medium hover:border-slate-300 transition-colors"
               >
                 {tech}
               </span>
@@ -72,15 +72,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="pt-4 flex items-center justify-between border-t border-slate-200">
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-bold text-violet-800 group-hover:text-violet-950 group-hover:translate-x-1.5 transition-all"
+            className="inline-flex items-center gap-2 text-sm font-bold text-slate-950 group-hover:text-slate-950 group-hover:translate-x-1.5 transition-all"
           >
             <span>Read Complete Case Study</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
 
           {isFlagship && (
-            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-emerald-950 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
-              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+            <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-slate-950 liquid-pill-emerald px-2.5 py-0.5 rounded-full font-bold">
+              <span className="w-2 h-2 rounded-full bg-slate-900 animate-pulse" />
               Autonomous Loop Active
             </span>
           )}

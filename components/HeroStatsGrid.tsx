@@ -2,10 +2,10 @@ import React from 'react';
 import { personalData } from '@/data/portfolioData';
 
 const statThemes = [
-  { badge: 'text-violet-800', border: 'hover:border-violet-400', bar: 'from-violet-600 to-purple-600' },
-  { badge: 'text-indigo-800', border: 'hover:border-indigo-400', bar: 'from-indigo-600 to-blue-600' },
-  { badge: 'text-emerald-800', border: 'hover:border-emerald-400', bar: 'from-emerald-600 to-teal-600' },
-  { badge: 'text-amber-800', border: 'hover:border-amber-400', bar: 'from-amber-500 to-orange-600' },
+  { badge: 'text-slate-950', border: 'hover:border-slate-300', bar: 'from-slate-400 to-slate-400' },
+  { badge: 'text-slate-950', border: 'hover:border-slate-300', bar: 'from-slate-400 to-blue-600' },
+  { badge: 'text-slate-950', border: 'hover:border-slate-300', bar: 'from-slate-400 to-slate-400' },
+  { badge: 'text-slate-950', border: 'hover:border-slate-300', bar: 'from-slate-400 to-orange-600' },
 ];
 
 export default function HeroStatsGrid() {

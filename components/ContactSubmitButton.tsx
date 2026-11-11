@@ -17,11 +17,11 @@ export default function ContactSubmitButton({ isSubmitting, cooldownRemaining }:
         <span>Sending Inquiry...</span>
       ) : cooldownRemaining > 0 ? (
         <span className="flex items-center gap-2 font-mono text-slate-800">
-          <Clock className="w-4 h-4 text-violet-700 animate-spin" /> Cooldown Active ({cooldownRemaining}s)
+          <Clock className="w-4 h-4 text-slate-800 animate-spin" /> Cooldown Active ({cooldownRemaining}s)
         </span>
       ) : (
         <span className="flex items-center gap-2">
-          <Send className="w-4 h-4 text-violet-700" /> Send Direct Inquiry
+          <Send className="w-4 h-4 text-slate-800" /> Send Direct Inquiry
         </span>
       )}
     </button>

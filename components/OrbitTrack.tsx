@@ -17,19 +17,19 @@ interface OrbitTrackProps {
 
 const ringStyles = {
   violet: {
-    selected: 'liquid-pill-violet text-violet-950 border-violet-500',
-    dot: 'bg-violet-600',
-    hover: 'hover:border-violet-500',
+    selected: 'liquid-pill-violet text-slate-950 border-slate-900',
+    dot: 'bg-slate-900',
+    hover: 'hover:border-slate-900',
   },
   cyan: {
-    selected: 'liquid-pill-primary text-indigo-950 border-indigo-500',
-    dot: 'bg-indigo-600',
-    hover: 'hover:border-indigo-500',
+    selected: 'liquid-pill-primary text-slate-950 border-slate-900',
+    dot: 'bg-slate-900',
+    hover: 'hover:border-slate-900',
   },
   emerald: {
-    selected: 'liquid-pill-emerald text-emerald-950 border-emerald-500',
-    dot: 'bg-emerald-600',
-    hover: 'hover:border-emerald-500',
+    selected: 'liquid-pill-emerald text-slate-950 border-slate-900',
+    dot: 'bg-slate-900',
+    hover: 'hover:border-slate-900',
   },
 };
 

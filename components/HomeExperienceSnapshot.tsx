@@ -18,9 +18,9 @@ export default function HomeExperienceSnapshot() {
               description="Proven track record in high-velocity startup and agency environments, combining practical React frontend performance with a formal Artificial Intelligence degree."
             />
 
-            <div className="p-6 rounded-3xl liquid-glass border border-emerald-200 space-y-3 shadow-sm">
-              <div className="flex items-center gap-2 text-emerald-700 font-mono text-xs font-bold">
-                <GraduationCap className="w-4 h-4 text-emerald-600" /> Academic Distinction
+            <div className="p-6 rounded-3xl liquid-glass border border-slate-300 space-y-3 shadow-sm">
+              <div className="flex items-center gap-2 text-slate-800 font-mono text-xs font-bold">
+                <GraduationCap className="w-4 h-4 text-slate-800" /> Academic Distinction
               </div>
               <h3 className="text-sm font-bold text-slate-950">{personalData.education.degree}</h3>
               <p className="text-xs text-slate-600 font-medium">
@@ -29,7 +29,7 @@ export default function HomeExperienceSnapshot() {
               <ul className="space-y-1.5 text-xs text-slate-800 pt-1">
                 {personalData.education.highlights.map((h, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-slate-800 shrink-0 mt-0.5" />
                     <span>{h}</span>
                   </li>
                 ))}
@@ -38,7 +38,7 @@ export default function HomeExperienceSnapshot() {
 
             <Link
               href="/experience"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-violet-700 hover:text-indigo-700 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-slate-800 transition-colors"
             >
               <span>View Full Experience Timeline</span>
               <ArrowRight className="w-4 h-4" />
@@ -47,17 +47,17 @@ export default function HomeExperienceSnapshot() {
 
           <div className="lg:col-span-8 space-y-6">
             {experienceData.map((exp, idx) => (
-              <div key={idx} className="p-6 sm:p-7 rounded-3xl liquid-glass liquid-glass-interactive space-y-4 hover:border-violet-400">
+              <div key={idx} className="p-6 sm:p-7 rounded-3xl liquid-glass liquid-glass-interactive space-y-4 hover:border-slate-300">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-4">
                   <div>
                     <h3 className="text-lg font-bold text-slate-950">{exp.role}</h3>
-                    <div className="text-sm text-violet-700 font-mono flex items-center gap-2 font-semibold">
-                      <Briefcase className="w-3.5 h-3.5 text-indigo-600" /> <span>{exp.company}</span>
+                    <div className="text-sm text-slate-800 font-mono flex items-center gap-2 font-semibold">
+                      <Briefcase className="w-3.5 h-3.5 text-slate-800" /> <span>{exp.company}</span>
                       <span className="text-slate-300">&bull;</span>
                       <span className="text-slate-600 text-xs">{exp.location}</span>
                     </div>
                   </div>
-                  <span className="text-xs font-mono text-amber-800 liquid-pill-amber px-3 py-1 rounded-full self-start sm:self-auto font-semibold">
+                  <span className="text-xs font-mono text-slate-950 liquid-pill-amber px-3 py-1 rounded-full self-start sm:self-auto font-semibold">
                     {exp.period}
                   </span>
                 </div>

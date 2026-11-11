@@ -19,9 +19,9 @@ export default function WorkbenchWindowChrome({
   return (
     <div className="px-4 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <div className="w-3 h-3 rounded-full bg-rose-500" />
-        <div className="w-3 h-3 rounded-full bg-amber-400" />
-        <div className="w-3 h-3 rounded-full bg-emerald-500" />
+        <div className="w-3 h-3 rounded-full bg-slate-900" />
+        <div className="w-3 h-3 rounded-full bg-slate-900" />
+        <div className="w-3 h-3 rounded-full bg-slate-900" />
         <span className="text-xs text-slate-950 ml-2 font-bold">~/ai-agent/{fileName}</span>
       </div>
 
@@ -33,12 +33,12 @@ export default function WorkbenchWindowChrome({
         >
           {isPlaying ? (
             <>
-              <Pause className="w-3 h-3 text-violet-700" />
+              <Pause className="w-3 h-3 text-slate-800" />
               <span>Live Loop</span>
             </>
           ) : (
             <>
-              <Play className="w-3 h-3 text-emerald-700" />
+              <Play className="w-3 h-3 text-slate-800" />
               <span>Paused</span>
             </>
           )}
@@ -46,10 +46,10 @@ export default function WorkbenchWindowChrome({
 
         <button
           onClick={onCopy}
-          className="p-1.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:text-violet-700 shadow-sm transition-all"
+          className="p-1.5 rounded-xl bg-white border border-slate-300 text-slate-800 hover:text-slate-800 shadow-sm transition-all"
           title="Copy Code"
         >
-          {copied ? <Check className="w-3.5 h-3.5 text-emerald-700" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <Check className="w-3.5 h-3.5 text-slate-800" /> : <Copy className="w-3.5 h-3.5" />}
         </button>
       </div>
     </div>

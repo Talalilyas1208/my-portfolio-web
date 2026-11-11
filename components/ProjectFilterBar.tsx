@@ -12,10 +12,10 @@ import {
 import { Search, Cpu, Layers, Bot, X } from 'lucide-react';
 
 const categories: { label: string; value: ProjectCategory; icon: React.ElementType; color: string }[] = [
-  { label: 'All Projects', value: 'All', icon: Layers, color: 'text-violet-700' },
-  { label: 'AI & Agentic Systems', value: 'AI & Agentic Systems', icon: Bot, color: 'text-violet-700' },
-  { label: 'Frontend Engineering', value: 'Frontend Engineering', icon: Layers, color: 'text-emerald-700' },
-  { label: 'Full-Stack', value: 'Full-Stack', icon: Cpu, color: 'text-amber-700' },
+  { label: 'All Projects', value: 'All', icon: Layers, color: 'text-slate-800' },
+  { label: 'AI & Agentic Systems', value: 'AI & Agentic Systems', icon: Bot, color: 'text-slate-800' },
+  { label: 'Frontend Engineering', value: 'Frontend Engineering', icon: Layers, color: 'text-slate-800' },
+  { label: 'Full-Stack', value: 'Full-Stack', icon: Cpu, color: 'text-slate-800' },
 ];
 
 export default function ProjectFilterBar({ count }: { count: number }) {
@@ -27,13 +27,13 @@ export default function ProjectFilterBar({ count }: { count: number }) {
     <div className="p-4 sm:p-6 rounded-3xl liquid-glass shadow-sm space-y-4 border border-slate-200">
       <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-violet-700" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-800" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => dispatch(setSearchQuery(e.target.value))}
             placeholder="Instant search by technology, keyword, or architecture..."
-            className="w-full pl-10 pr-10 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-950 placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all font-mono"
+            className="w-full pl-10 pr-10 py-3 rounded-2xl bg-slate-50 border border-slate-200 text-slate-950 placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-900/20 transition-all font-mono"
           />
           {searchQuery && (
             <button
@@ -48,7 +48,7 @@ export default function ProjectFilterBar({ count }: { count: number }) {
 
         <div className="flex items-center gap-2 shrink-0">
           <span className="text-xs font-mono text-slate-900 liquid-pill px-3.5 py-2 rounded-2xl">
-            <strong className="text-violet-800 font-bold">{count}</strong> matching {count === 1 ? 'project' : 'projects'}
+            <strong className="text-slate-950 font-bold">{count}</strong> matching {count === 1 ? 'project' : 'projects'}
           </span>
         </div>
       </div>

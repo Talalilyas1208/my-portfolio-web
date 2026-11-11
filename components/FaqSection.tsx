@@ -45,7 +45,7 @@ export default function FaqSection() {
               key={idx}
               className={`rounded-3xl transition-all duration-300 overflow-hidden border ${
                 isOpen
-                  ? 'liquid-glass-accent border-violet-400 shadow-liquid-glow'
+                  ? 'liquid-glass-accent border-slate-300 shadow-liquid-glow'
                   : 'liquid-glass-subtle hover:border-slate-300'
               }`}
             >
@@ -56,7 +56,7 @@ export default function FaqSection() {
                 aria-expanded={isOpen}
               >
                 <div className="flex items-center gap-3.5">
-                  <div className={`p-2 rounded-2xl ${isOpen ? 'liquid-glass text-violet-700' : 'liquid-glass-subtle text-indigo-600'}`}>
+                  <div className={`p-2 rounded-2xl ${isOpen ? 'liquid-glass text-slate-800' : 'liquid-glass-subtle text-slate-800'}`}>
                     <HelpCircle className="w-4 h-4 shrink-0" />
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-slate-950">
@@ -66,7 +66,7 @@ export default function FaqSection() {
 
                 <div
                   className={`p-1.5 rounded-full liquid-glass-subtle text-slate-700 transition-transform duration-300 shrink-0 ${
-                    isOpen ? 'rotate-180 text-violet-700 border-violet-300' : ''
+                    isOpen ? 'rotate-180 text-slate-800 border-slate-300' : ''
                   }`}
                 >
                   <ChevronDown className="w-4 h-4" />

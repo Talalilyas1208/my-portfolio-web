@@ -13,17 +13,17 @@ const iconsMap: Record<string, React.ElementType> = {
 };
 
 const categoryColors: Record<string, { pill: string; icon: string }> = {
-  'AI & Agentic Systems': { pill: 'liquid-pill-violet text-violet-950', icon: 'text-violet-700' },
-  'Frontend Engineering': { pill: 'liquid-pill-primary text-indigo-950', icon: 'text-indigo-700' },
-  'State & Networking': { pill: 'liquid-pill-amber text-amber-950', icon: 'text-amber-700' },
-  'Backend & Databases': { pill: 'liquid-pill-emerald text-emerald-950', icon: 'text-emerald-700' },
-  'Tools & DevOps': { pill: 'liquid-pill-rose text-rose-950', icon: 'text-rose-700' },
+  'AI & Agentic Systems': { pill: 'liquid-pill-violet text-slate-950', icon: 'text-slate-800' },
+  'Frontend Engineering': { pill: 'liquid-pill-primary text-slate-950', icon: 'text-slate-800' },
+  'State & Networking': { pill: 'liquid-pill-amber text-slate-950', icon: 'text-slate-800' },
+  'Backend & Databases': { pill: 'liquid-pill-emerald text-slate-950', icon: 'text-slate-800' },
+  'Tools & DevOps': { pill: 'liquid-pill-rose text-slate-950', icon: 'text-slate-800' },
 };
 
 const levelBadgeStyles: Record<string, string> = {
-  Core: 'liquid-pill-violet text-violet-950',
-  Advanced: 'liquid-pill-emerald text-emerald-950',
-  Proficient: 'liquid-pill-primary text-indigo-950',
+  Core: 'liquid-pill-violet text-slate-950',
+  Advanced: 'liquid-pill-emerald text-slate-950',
+  Proficient: 'liquid-pill-primary text-slate-950',
 };
 
 export default function SkillMatrixExplorer() {
@@ -72,10 +72,10 @@ export default function SkillMatrixExplorer() {
             return (
               <div
                 key={skill.name}
-                className="p-4 rounded-2xl liquid-glass-subtle liquid-glass-interactive flex flex-col justify-between space-y-2 group hover:border-violet-400"
+                className="p-4 rounded-2xl liquid-glass-subtle liquid-glass-interactive flex flex-col justify-between space-y-2 group hover:border-slate-300"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <span className="font-bold text-slate-950 text-sm group-hover:text-violet-800 transition-colors">
+                  <span className="font-bold text-slate-950 text-sm group-hover:text-slate-950 transition-colors">
                     {skill.name}
                   </span>
                   <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold shrink-0 ${badgeClass}`}>

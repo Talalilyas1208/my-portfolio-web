@@ -6,10 +6,10 @@ interface Props {
 }
 
 const stages = [
-  { id: 1, label: '1. Catch Trace', activeClass: 'liquid-pill-rose text-rose-950', dot: 'bg-rose-600' },
-  { id: 2, label: '2. AST Context', activeClass: 'liquid-pill-violet text-violet-950', dot: 'bg-violet-600' },
-  { id: 3, label: '3. Sandbox Test', activeClass: 'liquid-pill-amber text-amber-950', dot: 'bg-amber-600' },
-  { id: 4, label: '4. Auto-Commit', activeClass: 'liquid-pill-emerald text-emerald-950', dot: 'bg-emerald-600' },
+  { id: 1, label: '1. Catch Trace', activeClass: 'liquid-pill-rose text-slate-950', dot: 'bg-slate-900' },
+  { id: 2, label: '2. AST Context', activeClass: 'liquid-pill-violet text-slate-950', dot: 'bg-slate-900' },
+  { id: 3, label: '3. Sandbox Test', activeClass: 'liquid-pill-amber text-slate-950', dot: 'bg-slate-900' },
+  { id: 4, label: '4. Auto-Commit', activeClass: 'liquid-pill-emerald text-slate-950', dot: 'bg-slate-900' },
 ];
 
 export default function WorkbenchDaemonStatus({ step, onSelectStep }: Props) {
@@ -38,12 +38,12 @@ export default function WorkbenchDaemonStatus({ step, onSelectStep }: Props) {
 
       <div className="flex flex-wrap items-center justify-between gap-2 px-1">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-violet-600 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-slate-900 animate-pulse" />
           <span className="text-slate-950 font-bold">AI Daemon:</span>
-          {step === 1 && <span className="text-rose-800 font-semibold">Intercepted Runtime Regression in test_invoice.py</span>}
-          {step === 2 && <span className="text-violet-800 font-semibold">Synthesizing Patch with AST Scope Context...</span>}
-          {step === 3 && <span className="text-amber-800 font-semibold">Verifying Patch in Shadow Docker Sandbox...</span>}
-          {step === 4 && <span className="text-emerald-800 font-semibold">100% Tests Passed &bull; Patch Committed (3.8s)</span>}
+          {step === 1 && <span className="text-slate-950 font-semibold">Intercepted Runtime Regression in test_invoice.py</span>}
+          {step === 2 && <span className="text-slate-950 font-semibold">Synthesizing Patch with AST Scope Context...</span>}
+          {step === 3 && <span className="text-slate-950 font-semibold">Verifying Patch in Shadow Docker Sandbox...</span>}
+          {step === 4 && <span className="text-slate-950 font-semibold">100% Tests Passed &bull; Patch Committed (3.8s)</span>}
         </div>
         <span className="text-[10px] text-slate-600 font-mono font-semibold">Step {step}/4</span>
       </div>

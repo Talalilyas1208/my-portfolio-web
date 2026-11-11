@@ -32,9 +32,9 @@ export default function SkillsPage() {
         description="Comprehensive breakdown of skills grouped by domain, from closed-loop autonomous AI agent architectures to enterprise React state management."
       />
 
-      <div className="p-6 sm:p-8 rounded-3xl liquid-glass-accent shadow-liquid-glow space-y-3 border border-violet-300">
-        <div className="flex items-center gap-2 text-xs font-mono font-bold text-violet-800 uppercase tracking-wider">
-          <Cpu className="w-4 h-4 text-violet-600" />
+      <div className="p-6 sm:p-8 rounded-3xl liquid-glass-accent shadow-liquid-glow space-y-3 border border-slate-300">
+        <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-950 uppercase tracking-wider">
+          <Cpu className="w-4 h-4 text-slate-800" />
           Primary Specialization: AI Agents &amp; Modern React
         </div>
         <p className="text-sm sm:text-base text-slate-800 leading-relaxed font-sans">

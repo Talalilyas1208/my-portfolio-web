@@ -27,12 +27,10 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'py-2.5 sm:py-3 bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-sm'
-          : 'py-3.5 sm:py-4 bg-white/85 backdrop-blur-md border-b border-slate-200/70'
+          ? 'py-2.5 sm:py-3 bg-[#F5F5F5]/95 backdrop-blur-xl border-b border-slate-300 shadow-sm'
+          : 'py-3.5 sm:py-4 bg-[#F5F5F5]/90 backdrop-blur-md border-b border-slate-200'
       }`}
     >
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-violet-600 via-emerald-500 to-amber-500 pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           <NavBrand />
@@ -44,7 +42,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="p-2 rounded-xl liquid-glass text-slate-800 hover:text-slate-950 hover:border-violet-400 transition-all shadow-sm"
+              className="p-2 rounded-xl liquid-glass text-slate-800 hover:text-slate-950 hover:border-slate-900 transition-all shadow-sm"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -53,7 +51,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="p-2 rounded-xl liquid-glass text-slate-800 hover:text-slate-950 hover:border-indigo-400 transition-all shadow-sm"
+              className="p-2 rounded-xl liquid-glass text-slate-800 hover:text-slate-950 hover:border-slate-900 transition-all shadow-sm"
             >
               <Linkedin className="w-4 h-4" />
             </a>
@@ -61,7 +59,7 @@ export default function Navbar() {
               href="/contact"
               className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-slate-950 liquid-btn-primary rounded-xl"
             >
-              <Send className="w-3.5 h-3.5 text-violet-700" />
+              <Send className="w-3.5 h-3.5 text-slate-900" />
               <span>Hire Me</span>
             </a>
           </div>

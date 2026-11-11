@@ -48,11 +48,11 @@ export default function ReduxTelemetryDock() {
           setIsOpen(!isOpen);
           if (soundEnabled) sounds.playClick();
         }}
-        className="flex items-center gap-2 px-3.5 py-2 rounded-2xl liquid-glass-accent border border-violet-300 shadow-liquid-glow hover:scale-105 transition-all text-xs font-bold text-slate-950 cursor-pointer"
+        className="flex items-center gap-2 px-3.5 py-2 rounded-2xl liquid-glass-accent border border-slate-300 shadow-liquid-glow hover:scale-105 transition-all text-xs font-bold text-slate-950 cursor-pointer"
       >
-        <Activity className="w-3.5 h-3.5 text-violet-600 animate-spin" />
+        <Activity className="w-3.5 h-3.5 text-slate-800 animate-spin" />
         <span className="hidden sm:inline">Redux Telemetry</span>
-        <span className="text-[10px] text-emerald-800 liquid-pill-emerald px-2 py-0.5 rounded-full font-bold">
+        <span className="text-[10px] text-slate-950 liquid-pill-emerald px-2 py-0.5 rounded-full font-bold">
           {fps} FPS
         </span>
         {isOpen ? <ChevronDown className="w-3.5 h-3.5 text-slate-700" /> : <ChevronUp className="w-3.5 h-3.5 text-slate-700" />}

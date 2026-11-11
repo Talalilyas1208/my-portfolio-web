@@ -4,12 +4,12 @@ import { usePathname } from 'next/navigation';
 import { Terminal, Layers, Briefcase, Cpu, BookOpen, Mail } from 'lucide-react';
 
 export const navItems = [
-  { name: 'Home', href: '/', icon: Terminal, accent: 'text-violet-700' },
-  { name: 'Projects', href: '/projects', icon: Layers, accent: 'text-indigo-700' },
-  { name: 'Experience', href: '/experience', icon: Briefcase, accent: 'text-emerald-700' },
-  { name: 'Skills', href: '/skills', icon: Cpu, accent: 'text-amber-700' },
-  { name: 'Articles', href: '/blog', icon: BookOpen, accent: 'text-rose-700' },
-  { name: 'Contact', href: '/contact', icon: Mail, accent: 'text-teal-700' },
+  { name: 'Home', href: '/', icon: Terminal, accent: 'text-slate-800' },
+  { name: 'Projects', href: '/projects', icon: Layers, accent: 'text-slate-800' },
+  { name: 'Experience', href: '/experience', icon: Briefcase, accent: 'text-slate-800' },
+  { name: 'Skills', href: '/skills', icon: Cpu, accent: 'text-slate-800' },
+  { name: 'Articles', href: '/blog', icon: BookOpen, accent: 'text-slate-800' },
+  { name: 'Contact', href: '/contact', icon: Mail, accent: 'text-slate-800' },
 ];
 
 export default function NavDesktopLinks() {

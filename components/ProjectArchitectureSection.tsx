@@ -6,18 +6,18 @@ export default function ProjectArchitectureSection({ project }: { project: Proje
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="p-6 sm:p-7 rounded-3xl liquid-glass border border-rose-200 space-y-3">
-          <div className="flex items-center gap-2 text-rose-700 font-mono text-xs font-bold uppercase tracking-wider">
-            <AlertCircle className="w-4 h-4 text-rose-600" /> The Problem Statement
+        <div className="p-6 sm:p-7 rounded-3xl liquid-glass border border-slate-300 space-y-3">
+          <div className="flex items-center gap-2 text-slate-800 font-mono text-xs font-bold uppercase tracking-wider">
+            <AlertCircle className="w-4 h-4 text-slate-800" /> The Problem Statement
           </div>
           <p className="text-sm text-slate-700 leading-relaxed font-sans">
             {project.problemStatement}
           </p>
         </div>
 
-        <div className="p-6 sm:p-7 rounded-3xl liquid-glass border border-emerald-200 space-y-3">
-          <div className="flex items-center gap-2 text-emerald-700 font-mono text-xs font-bold uppercase tracking-wider">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" /> The Engineering Solution
+        <div className="p-6 sm:p-7 rounded-3xl liquid-glass border border-slate-300 space-y-3">
+          <div className="flex items-center gap-2 text-slate-800 font-mono text-xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-4 h-4 text-slate-800" /> The Engineering Solution
           </div>
           <p className="text-sm text-slate-700 leading-relaxed font-sans">
             {project.overview}
@@ -28,7 +28,7 @@ export default function ProjectArchitectureSection({ project }: { project: Proje
       <div className="space-y-8">
         <div className="border-b border-slate-200 pb-4">
           <h2 className="text-2xl font-bold text-slate-950 tracking-tight flex items-center gap-2.5">
-            <Cpu className="w-6 h-6 text-violet-600" /> Architectural Deep Dive &amp; System Design
+            <Cpu className="w-6 h-6 text-slate-800" /> Architectural Deep Dive &amp; System Design
           </h2>
           <p className="text-sm text-slate-700 mt-1">
             How the components interface to provide performance, isolation, and reliability.
@@ -43,7 +43,7 @@ export default function ProjectArchitectureSection({ project }: { project: Proje
               <ul className="space-y-2 pt-2 border-t border-slate-200">
                 {arch.items.map((item, iIdx) => (
                   <li key={iIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                    <CheckCircle2 className="w-4 h-4 text-indigo-600 mt-0.5 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-slate-800 mt-0.5 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -57,10 +57,10 @@ export default function ProjectArchitectureSection({ project }: { project: Proje
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-xs font-mono text-slate-700 font-semibold">
-              <FileCode className="w-4 h-4 text-violet-600" />
+              <FileCode className="w-4 h-4 text-slate-800" />
               <span>Core Implementation Logic: {project.codeSnippet.filename}</span>
             </div>
-            <span className="text-[11px] font-mono text-violet-800 uppercase liquid-pill-violet px-2.5 py-0.5 rounded-full font-bold">
+            <span className="text-[11px] font-mono text-slate-950 uppercase liquid-pill-violet px-2.5 py-0.5 rounded-full font-bold">
               {project.codeSnippet.language}
             </span>
           </div>

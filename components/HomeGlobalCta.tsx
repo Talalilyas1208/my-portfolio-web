@@ -7,11 +7,11 @@ export default function HomeGlobalCta() {
   return (
     <>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-10 rounded-3xl liquid-glass border border-violet-200 shadow-sm space-y-6">
+        <div className="p-8 sm:p-10 rounded-3xl liquid-glass border border-slate-300 shadow-sm space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-emerald text-emerald-800">
-                <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold liquid-pill-emerald text-slate-950">
+                <MapPin className="w-3.5 h-3.5 text-slate-800" />
                 🌐 Worldwide Remote &bull; Global AI &amp; React Engineering
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
@@ -29,13 +29,13 @@ export default function HomeGlobalCta() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl liquid-btn-emerald text-slate-950 font-bold text-xs shadow-sm"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-700" /> <span>WhatsApp Connect</span>
+                <MessageSquare className="w-4 h-4 text-slate-800" /> <span>WhatsApp Connect</span>
               </a>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl liquid-btn-primary text-slate-950 font-bold text-xs shadow-sm"
               >
-                <Mail className="w-4 h-4 text-violet-700" /> <span>Email Consultation</span>
+                <Mail className="w-4 h-4 text-slate-800" /> <span>Email Consultation</span>
               </Link>
             </div>
           </div>
@@ -43,10 +43,10 @@ export default function HomeGlobalCta() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl liquid-glass-accent p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-sm border border-violet-300">
+        <div className="rounded-3xl liquid-glass-accent p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-sm border border-slate-300">
           <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold liquid-pill-emerald text-emerald-800">
-              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" /> Available for Full-Time &amp; Contract Roles
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold liquid-pill-emerald text-slate-950">
+              <span className="w-2 h-2 rounded-full bg-slate-900 animate-pulse" /> Available for Full-Time &amp; Contract Roles
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-tight">
               Ready to build high-performance <span className="text-gradient-liquid">AI systems</span> and React applications?
@@ -58,7 +58,7 @@ export default function HomeGlobalCta() {
               <Link href="/contact" className="px-6 py-3.5 rounded-2xl liquid-btn-primary text-slate-950 font-bold text-sm">
                 Get In Touch
               </Link>
-              <a href={personalData.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-2xl liquid-btn-secondary text-slate-950 hover:text-violet-700 font-semibold text-sm">
+              <a href={personalData.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-2xl liquid-btn-secondary text-slate-950 hover:text-slate-800 font-semibold text-sm">
                 View GitHub Repositories
               </a>
             </div>

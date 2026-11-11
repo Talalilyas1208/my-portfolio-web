@@ -25,16 +25,16 @@ function getLineColorClass(line: string): string {
     return 'text-slate-500 italic';
   }
   if (/^(async|def|return|for|if|with|from|import|export|const|interface|class)\b/.test(trimmed)) {
-    return 'text-violet-800 font-semibold';
+    return 'text-slate-950 font-semibold';
   }
   if (trimmed.startsWith('@') || /^(FROM|WORKDIR|RUN|COPY|ENTRYPOINT)\b/.test(trimmed)) {
-    return 'text-amber-800 font-semibold';
+    return 'text-slate-950 font-semibold';
   }
   if (trimmed.includes('gemini') || trimmed.includes('RepairResult') || trimmed.includes('createSlice')) {
-    return 'text-indigo-800 font-medium';
+    return 'text-slate-950 font-medium';
   }
   if (trimmed.includes('SUCCESS') || trimmed.includes('HEALED') || trimmed.includes('is_success')) {
-    return 'text-emerald-800 font-semibold';
+    return 'text-slate-950 font-semibold';
   }
   return 'text-slate-900';
 }
@@ -114,7 +114,7 @@ export default function LiveAgentTerminal() {
         <span className="text-slate-800 text-[11px] truncate font-medium">{currentFile.description}</span>
         <Link
           href="/projects/autonomous-gemini-code-fixer"
-          className="text-violet-800 hover:text-violet-950 font-bold flex items-center gap-1 text-[11px] transition-colors shrink-0"
+          className="text-slate-950 hover:text-slate-950 font-bold flex items-center gap-1 text-[11px] transition-colors shrink-0"
         >
           <span>Explore Pipeline</span>
           <ArrowRight className="w-3.5 h-3.5" />

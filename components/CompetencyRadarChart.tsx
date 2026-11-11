@@ -31,8 +31,8 @@ export default function CompetencyRadarChart() {
     <div className="p-6 sm:p-10 rounded-3xl liquid-glass border border-slate-200 shadow-md space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold liquid-pill-violet text-violet-950 mb-2">
-            <Activity className="w-3.5 h-3.5 text-violet-700" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold liquid-pill-violet text-slate-950 mb-2">
+            <Activity className="w-3.5 h-3.5 text-slate-800" />
             Multiaxial Competency Radar &bull; Redux Synchronized
           </div>
           <h3 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
@@ -73,7 +73,7 @@ export default function CompetencyRadarChart() {
             {currentActive.details}
           </p>
         </div>
-        <span className="text-xs font-mono text-emerald-950 liquid-pill-emerald px-3 py-1 rounded-full shrink-0 self-start sm:self-auto font-bold">
+        <span className="text-xs font-mono text-slate-950 liquid-pill-emerald px-3 py-1 rounded-full shrink-0 self-start sm:self-auto font-bold">
           {currentActive.score}% PROFICIENCY
         </span>
       </div>

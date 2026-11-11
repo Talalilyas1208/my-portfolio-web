@@ -8,9 +8,9 @@ export default function ModalMetricsOverview({ project }: { project: Project }) 
   return (
     <>
       {project.keyDifferentiator && (
-        <div className="p-4 rounded-2xl liquid-glass-subtle border border-violet-300 text-xs sm:text-sm space-y-1.5 shadow-sm">
-          <span className="font-bold text-amber-800 font-mono flex items-center gap-1.5">
-            <Zap className="w-4 h-4 text-amber-600" /> Engineering Differentiator:
+        <div className="p-4 rounded-2xl liquid-glass-subtle border border-slate-300 text-xs sm:text-sm space-y-1.5 shadow-sm">
+          <span className="font-bold text-slate-950 font-mono flex items-center gap-1.5">
+            <Zap className="w-4 h-4 text-slate-800" /> Engineering Differentiator:
           </span>
           <p className="text-slate-800 leading-relaxed">{project.keyDifferentiator}</p>
         </div>

@@ -9,10 +9,10 @@ interface WorkbenchTabRailProps {
 }
 
 const tabAccents: Record<string, string> = {
-  agent: 'text-violet-700',
-  redux: 'text-indigo-700',
-  fastapi: 'text-emerald-700',
-  docker: 'text-amber-700',
+  agent: 'text-slate-800',
+  redux: 'text-slate-800',
+  fastapi: 'text-slate-800',
+  docker: 'text-slate-800',
 };
 
 export default function WorkbenchTabRail({
@@ -24,7 +24,7 @@ export default function WorkbenchTabRail({
     <div className="flex flex-wrap gap-1 px-3 pt-2 bg-slate-100/80 border-b border-slate-200 overflow-x-auto">
       {files.map((file) => {
         const isActive = activeTab === file.id;
-        const accent = tabAccents[file.id] || 'text-violet-700';
+        const accent = tabAccents[file.id] || 'text-slate-800';
         return (
           <button
             key={file.id}

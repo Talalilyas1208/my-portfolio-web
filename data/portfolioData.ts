@@ -140,6 +140,281 @@ export const localFaqs: FAQItem[] = [
 
 export const projectsData: Project[] = [
   {
+    slug: 'saas-revenue-intelligence',
+    title: 'RevTerm — SaaS Revenue & Billing Intelligence Platform',
+    subtitle: 'Full-Stack Subscription Analytics Engine with Express.js, Supabase PostgreSQL, RTK Query & Stripe Webhooks',
+    tagline: 'Production-ready SaaS revenue & billing intelligence platform with real-time Stripe webhook ingestion, TTL metrics caching, and React 18 + RTK Query telemetry.',
+    category: 'Full-Stack',
+    isFlagship: true,
+    featured: true,
+    period: '2026',
+    techStack: ['React 18', 'Redux Toolkit (RTK Query)', 'Express.js', 'Sequelize ORM', 'Supabase PostgreSQL', 'Stripe SDK & Webhooks', 'Recharts', 'Docker', 'Python Textual TUI'],
+    githubUrl: 'https://github.com/Talalilyas1208/saas-revenue-intelligence',
+    summary:
+      'A production-grade SaaS revenue and billing intelligence platform built with a layered Express.js + Sequelize backend, Supabase PostgreSQL with Row-Level Security (RLS), raw-body Stripe webhook synchronization, and a clean medium-white (#F5F5F5) React 18 + RTK Query analytics frontend.',
+    keyDifferentiator:
+      'Combines sub-50ms server-side TTL metrics caching and raw-body cryptographic Stripe webhook verification with code-split RTK Query client state and an optional Python Textual terminal companion.',
+    overview:
+      'Modern SaaS operators need real-time visibility into Monthly Recurring Revenue (MRR), net revenue retention, subscriber churn, and live payment streams without waiting on slow data warehouse syncs. RevTerm provides an end-to-end financial intelligence stack with multi-workspace switching, global ⌘K command search, 7D/30D/90D/1Y cohort charting, and cryptographic Polar.sh / HMAC license activation.',
+    problemStatement:
+      'Direct client queries to payment provider APIs hit strict rate limits and suffer from multi-second latency when aggregating thousands of subscription invoices. Furthermore, multi-tenant SaaS dashboards require strict workspace isolation and idempotent webhook handling to prevent duplicate transaction ledger entries.',
+    architectureDetails: [
+      {
+        title: '1. Layered Express.js + Sequelize ORM & Supabase PostgreSQL Backend',
+        description:
+          'Engineered a clean controller-service-model backend connecting to Supabase PostgreSQL via transaction connection pooling with strict Row-Level Security (RLS) policies.',
+        items: [
+          'Sequelize relational models for Users, Organizations, Customers, and Transactions',
+          'Raw-body Stripe Webhook controller verifying cryptographic signatures before ledger mutation',
+          'In-memory TTL MetricsCache service reducing P95 dashboard aggregation latency below 25ms',
+        ],
+      },
+      {
+        title: '2. React 18 + Redux Toolkit (RTK Query) Real-Time Analytics UI',
+        description:
+          'Built a code-split, lazy-loaded medium-white (#F5F5F5) frontend with automated cache invalidation, optimistic payment recording, and instant workspace switching.',
+        items: [
+          'RTK Query apiSlice managing automated tag invalidation across KPIs, RevenueChart, and CustomerTable',
+          'Global ⌘K search bar, date range presets (7D / 30D / 90D / 1Y), and one-click CSV subscriber export',
+          'LiveEventFeed streaming real-time billing events with instant status filtering',
+        ],
+      },
+      {
+        title: '3. Multi-Stage Docker Runtime & Python Textual TUI Companion',
+        description:
+          'Packaged for zero-downtime cloud deployment alongside a terminal-native Python Textual dashboard for CLI-first engineering teams.',
+        items: [
+          'Multi-stage Dockerfile compiling Vite chunks and serving SPA assets behind Express security headers',
+          'Strict JWT authentication middleware and centralized async error handling',
+          'HMAC Pro license verification and live Stripe API key health diagnostics',
+        ],
+      },
+    ],
+    keyFeatures: [
+      'Real-Time MRR, ARR, Churn, and Net Revenue KPI Cards with interactive explainer tooltips.',
+      'Cryptographic Raw-Body Stripe Webhook Ingestion & Manual Invoice Recording Modal.',
+      'Multi-Workspace Switcher with strict JWT and Supabase PostgreSQL Row-Level Security.',
+      'Global ⌘K Search, Filterable Subscriber Directory, and Instant CSV Ledger Export.',
+      'Clean #F5F5F5 Architectural UI paired with an optional Python Textual TUI companion.',
+    ],
+    challengesAndSolutions: [
+      {
+        challenge: 'Stripe webhook payloads require raw unparsed request buffers for signature verification, conflicting with global Express JSON body parsers.',
+        solution: 'Mounted an isolated raw-body middleware pipeline specifically on /api/v1/webhooks/stripe prior to global express.json() initialization.',
+      },
+      {
+        challenge: 'Recomputing 1-year time-series revenue aggregations on every dashboard load caused database CPU spikes.',
+        solution: 'Implemented a workspace-scoped TTL MetricsCache service that serves warm aggregations in <15ms and selectively invalidates on new webhook or manual payment events.',
+      },
+    ],
+    outcomesAndImpact: [
+      'Delivered sub-25ms P95 analytics query responses across 7D, 30D, 90D, and 1Y revenue windows.',
+      'Guaranteed 100% idempotent Stripe transaction ingestion with zero duplicate ledger rows.',
+      'Reduced initial frontend bundle payload via strategic React.lazy() route and modal code-splitting.',
+    ],
+    metrics: [
+      { label: 'Metrics Cache Latency', value: '<25ms' },
+      { label: 'Webhook Idempotency', value: '100%' },
+      { label: 'Database Security', value: 'Supabase RLS' },
+      { label: 'State Engine', value: 'RTK Query' },
+    ],
+    codeSnippet: {
+      language: 'javascript',
+      filename: 'server/src/services/metricsCacheService.js',
+      code: `export class MetricsCacheService {
+  constructor(ttlMs = 30_000) {
+    this.store = new Map();
+    this.ttlMs = ttlMs;
+  }
+
+  getWorkspaceMetrics(orgId, rangePreset) {
+    const key = \`\${orgId}:\${rangePreset}\`;
+    const entry = this.store.get(key);
+    if (!entry || Date.now() > entry.expiresAt) {
+      this.store.delete(key);
+      return null;
+    }
+    return entry.payload;
+  }
+
+  setWorkspaceMetrics(orgId, rangePreset, payload) {
+    const key = \`\${orgId}:\${rangePreset}\`;
+    this.store.set(key, {
+      payload,
+      expiresAt: Date.now() + this.ttlMs,
+    });
+  }
+
+  invalidateOrganization(orgId) {
+    for (const key of this.store.keys()) {
+      if (key.startsWith(\`\${orgId}:\`)) this.store.delete(key);
+    }
+  }
+}`,
+    },
+  },
+  {
+    slug: 'figuremint-profit-intelligence',
+    title: 'FigureMint — Dynamic Fee & Net Profit Intelligence Platform',
+    subtitle: 'Full-Stack Financial Modeling & AI Margin Engine with Next.js 15, React 19, Redux Toolkit & Gemini AI',
+    tagline: 'Real-time marketplace fee breakdown, net profit modeling, and Google Gemini AI margin optimization built on Next.js 15, Ant Design 5, Express 5, and Supabase.',
+    category: 'AI & Agentic Systems',
+    isFlagship: false,
+    featured: true,
+    period: '2026',
+    techStack: ['Next.js 15', 'React 19', 'TypeScript', 'Redux Toolkit', 'Ant Design 5', 'Express.js 5', 'Supabase PostgreSQL', 'Google Gemini AI SDK', 'Zod'],
+    githubUrl: 'https://github.com/Talalilyas1208/FigureMint',
+    liveUrl: 'https://figuremint.vercel.app',
+    summary:
+      'An enterprise financial calculation and e-commerce fee intelligence platform engineered with Next.js 15, React 19, Ant Design 5, Redux Toolkit, Express.js 5, and Supabase PostgreSQL—empowering sellers and finance teams to model 2026 payment processing fees, tiered marketplace commissions, and AI-recommended pricing strategies.',
+    keyDifferentiator:
+      'Unifies deterministic sub-millisecond Redux Toolkit fee calculations and Zod-validated Express 5 + Supabase PostgreSQL persistence with streaming Google Gemini AI (@ai-sdk/google) pricing optimization.',
+    overview:
+      'E-commerce brands and digital merchants face complex, shifting multi-tier fee structures across payment gateways, platform commissions, ad spend ROAS targets, and fulfillment tiers. FigureMint provides an interactive, high-precision financial workbench that calculates exact net profit margins in real time and leverages Google Gemini AI to recommend optimal price points and cost-reduction levers.',
+    problemStatement:
+      'Merchants routinely miscalculate true net margins due to compounded percentage fees, fixed per-order surcharges, refund reserve holds, and cross-border FX spreads—leading to unprofitable SKU scaling.',
+    architectureDetails: [
+      {
+        title: '1. Next.js 15 + React 19 + Ant Design 5 Financial Workbench',
+        description:
+          'Built with the Next.js 15 App Router and @ant-design/nextjs-registry for zero-FOUC server-rendered financial tables, interactive sliders, and scenario comparison matrices.',
+        items: [
+          'Deterministic Redux Toolkit calculation slices updating net margin, ROI, and break-even ROAS in 0ms',
+          'Ant Design 5 high-density data grids for side-by-side multi-channel fee comparisons',
+          'Strict Zod 3.24 schema validation across all user inputs and scenario presets',
+        ],
+      },
+      {
+        title: '2. Google Gemini AI Margin Advisor (@ai-sdk/google)',
+        description:
+          'Integrated the Vercel AI SDK with Google Generative AI to analyze SKU cost structures and synthesize actionable margin recovery strategies.',
+        items: [
+          'Structured AI unit-economics audits identifying fee-tier cliff thresholds',
+          'Automated sensitivity modeling for bundle pricing and fulfillment weight brackets',
+          'Low-latency streaming responses with deterministic fallback heuristics',
+        ],
+      },
+      {
+        title: '3. Express.js 5 + Supabase PostgreSQL Persistence Layer',
+        description:
+          'Backed by a standalone Express 5 TypeScript API with Helmet security headers and pooled Supabase PostgreSQL storage.',
+        items: [
+          'Parameterized pg and Supabase client queries storing historical fee tables and saved scenarios',
+          'Hardened CORS and Helmet 8 HTTP security policies',
+          'Deployed live on Vercel Edge with sub-second First Contentful Paint',
+        ],
+      },
+    ],
+    keyFeatures: [
+      'Real-Time 2026 Multi-Channel Fee & Net Profit Margin Calculator.',
+      'AI-Powered Unit Economics & Pricing Advisor using Google Gemini SDK.',
+      'Break-Even ROAS, CPA, and Volume Sensitivity Scenario Matrix.',
+      'Zero-FOUC SSR Rendering with Next.js 15, React 19, and Ant Design 5.',
+      'Dual-Mode Persistence via Express.js 5 API and Supabase PostgreSQL.',
+    ],
+    challengesAndSolutions: [
+      {
+        challenge: 'Floating-point precision drift in JavaScript when compounding multiple percentage fees and tax brackets.',
+        solution: 'Normalized all intermediate monetary calculations into integer basis points and cents before formatting display outputs.',
+      },
+      {
+        challenge: 'Preventing layout shifts when hydrating complex Ant Design 5 financial components in Next.js 15 App Router.',
+        solution: 'Configured @ant-design/nextjs-registry to extract and inline critical CSS during server rendering.',
+      },
+    ],
+    outcomesAndImpact: [
+      'Delivered instantaneous 0ms client-side recalculations across 15+ Simultaneous Fee Variables.',
+      'Deployed production platform on Vercel with 100% TypeScript 5.7 strictness.',
+      'Enabled instant AI-assisted margin optimization for e-commerce unit economics.',
+    ],
+    metrics: [
+      { label: 'Calculation Latency', value: '0ms' },
+      { label: 'Precision Accuracy', value: '100% Basis-Pt' },
+      { label: 'Frontend Stack', value: 'Next 15 + React 19' },
+      { label: 'AI Integration', value: 'Gemini SDK' },
+    ],
+  },
+  {
+    slug: 'hiveshield-b2b-oem',
+    title: 'HiveShield B2B — Custom Industrial OEM/ODM Manufacturing & ERP Platform',
+    subtitle: '5-Step Interactive 2D SVG Product Configurator, Automated PDF Tech Pack Engine & B2B RFQ ERP',
+    tagline: 'Tier-1 industrial OEM/ODM wholesale platform with live 2D SVG customization, @react-pdf/renderer factory spec sheets, and CBM container freight calculators.',
+    category: 'Frontend Engineering',
+    isFlagship: false,
+    featured: true,
+    period: '2026',
+    techStack: ['Next.js 15', 'React 19', 'TypeScript', 'Zustand', 'PostgreSQL', 'Prisma ORM', '@react-pdf/renderer', 'SVG / HTML5 Canvas', 'Tailwind CSS', 'Zod'],
+    githubUrl: 'https://github.com/Talalilyas1208/hiveshield-b2b-oem',
+    summary:
+      'A full-scale industrial OEM/ODM B2B manufacturing and wholesale procurement platform featuring an interactive 5-step 2D SVG Private-Label Studio, real-time FOB tiered pricing and CBM container load calculators, automated 2-page PDF Factory Tech Pack generation, and a 10-stage QC production tracker.',
+    keyDifferentiator:
+      'Bridges interactive 2D multi-layer SVG product customization with deterministic B2B manufacturing math—compiling buyer configurations into factory-ready @react-pdf/renderer Tech Pack Spec Sheets and Proforma Invoices in under 3 minutes.',
+    overview:
+      'Wholesale buyers and private-label distributors across the USA, UK, Europe, and Australia traditionally spend weeks exchanging emails and CAD drafts to spec custom protective gear and industrial apparel. HiveShield B2B digitizes the entire OEM procurement lifecycle—from live 2D fabric/trim customization and MOQ margin simulation to container load optimization (20ft/40ft FCL) and 10-stage factory QC tracking.',
+    problemStatement:
+      'B2B manufacturing procurement suffers from opaque MOQ pricing tiers, manual PDF spec sheet drafting errors, uncalculated volumetric air/sea freight costs, and fragmented post-order quality control visibility.',
+    architectureDetails: [
+      {
+        title: '1. 5-Step Interactive 2D SVG OEM Configurator & Persisted Zustand Store',
+        description:
+          'Engineered a persisted state machine (useOemBuilderStore) driving a parameterized multi-layer SVG visualizer with real-time FOB unit pricing.',
+        items: [
+          'Dynamic color zones (#main-torso, #pocket-trim, #knee-pads, #cuffs) and 3D mesh <pattern> overlays',
+          'DOMPurify-sanitized vector logo uploads (.SVG, .PNG, .AI) with live chest, back yoke, and sleeve placement',
+          'Automatic MOQ tier validation (50–99, 100–249, 250–499, 500+ pcs) and mold setup fee amortization',
+        ],
+      },
+      {
+        title: '2. Deterministic CBM Container Load & Incoterm Freight Engine',
+        description:
+          'Built pure TypeScript calculation engines for master carton dimensions, volumetric weight, and EXW/FOB/CIF/DDP shipping estimates.',
+        items: [
+          'Real-time master carton math (0.096 CBM/carton) and DHL/FedEx volumetric weight formulas',
+          'Interactive 20ft / 40ft FCL container utilization progress bars in the Bulk RFQ Cart',
+          'Multi-currency switcher (USD, EUR, GBP, AUD) and metric/imperial unit toggling (cm/kg vs in/lbs)',
+        ],
+      },
+      {
+        title: '3. Automated Factory PDF Engine & 10-Stage QC Admin ERP',
+        description:
+          'Connected PostgreSQL + Prisma ORM with @react-pdf/renderer to generate official production documents and track factory milestones.',
+        items: [
+          'Instant 2-page PDF Factory Tech Pack Spec Sheet and Proforma Invoice (PI) generation',
+          'Factory Admin ERP featuring an RFQ Kanban Board and Quote Responder Workbench',
+          'Programmatic SEO country export routes with Schema.org Product + AggregateOffer JSON-LD',
+        ],
+      },
+    ],
+    keyFeatures: [
+      'Interactive 2D Multi-Layer SVG Product Customizer with live logo & Pantone trim preview.',
+      'Automated 2-Page PDF Factory Tech Pack & Proforma Invoice Generator (@react-pdf/renderer).',
+      'Real-Time FOB Volume Tier Pricing, Distributor Margin Slider & CBM Container Load Bar.',
+      'Wholesale Buyer Portal & 10-Stage Factory QC Milestone ERP Tracker.',
+      'Programmatic B2B SEO Landing Pages with Schema.org AggregateOffer Structured Data.',
+    ],
+    challengesAndSolutions: [
+      {
+        challenge: 'Rendering complex multi-zone technical flat-sketch SVGs with custom fabric textures and user-uploaded logos without frame drops.',
+        solution: 'Used parameterized SVG <defs> and hardware-accelerated pattern fills coupled with Zustand selector memoization.',
+      },
+      {
+        challenge: 'Ensuring buyer-uploaded vector logos do not introduce XSS vulnerabilities when previewed inline or embedded into PDFs.',
+        solution: 'Enforced strict Zod MIME/size validation and DOMPurify SVG sanitization prior to canvas rendering and presigned R2/S3 upload.',
+      },
+    ],
+    outcomesAndImpact: [
+      'Reduced private-label B2B Tech Pack specification time from 5+ days of email back-and-forth to under 3 minutes.',
+      'Automated 100% of FOB volume tier pricing, setup fee waivers, and CBM container utilization math.',
+      'Delivered end-to-end type safety across Prisma ORM schemas, API routes, and PDF document templates.',
+    ],
+    metrics: [
+      { label: 'Tech Pack Generation', value: '<3 mins' },
+      { label: 'Configurator Steps', value: '5-Stage 2D SVG' },
+      { label: 'QC Tracking Pipeline', value: '10-Stage ERP' },
+      { label: 'Type Safety', value: '100% TS + Zod' },
+    ],
+  },
+  {
     slug: 'autonomous-gemini-code-fixer',
     title: 'Autonomous Gemini Code-Fixer & Test Runner Agent',
     subtitle: 'Self-Healing AI Developer Agent with Gemini LLM & Real-Time Test Verification',
@@ -147,7 +422,7 @@ export const projectsData: Project[] = [
     category: 'AI & Agentic Systems',
     isFlagship: true,
     featured: true,
-    period: '2024',
+    period: '2025',
     techStack: ['Python', 'Google Gemini API', 'Watchdog / File Watcher', 'AST Parsing', 'Pytest / Unittest', 'Prompt Engineering', 'Subprocess Sandbox'],
     githubUrl: 'https://github.com/Talalilyas1208/autonomous-gemini-code-fixer',
     summary:
@@ -260,9 +535,9 @@ export const projectsData: Project[] = [
     category: 'Frontend Engineering',
     isFlagship: false,
     featured: true,
-    period: '2024',
+    period: '2025',
     techStack: ['React.js', 'Redux Toolkit', 'TypeScript', 'Vite', 'Ant Design', 'Tailwind CSS', 'Axios', 'Chart.js'],
-    githubUrl: 'https://github.com/Talalilyas1208/enterprise-billing-platform',
+    githubUrl: 'https://github.com/Talalilyas1208/billing-project-using-models',
     summary:
       'An enterprise-grade financial portal engineered for high-concurrency invoice lifecycle management, automated tax calculation, client tracking, and zero-loss draft persistence across complex multi-step transaction flows.',
     keyDifferentiator:
@@ -337,9 +612,9 @@ export const projectsData: Project[] = [
     category: 'Full-Stack',
     isFlagship: false,
     featured: true,
-    period: '2023 - 2024',
+    period: '2024',
     techStack: ['TypeScript', 'React.js', 'REST APIs', 'Tailwind CSS', 'React Hook Form', 'Zod', 'Recharts'],
-    githubUrl: 'https://github.com/Talalilyas1208/farm-management-system',
+    githubUrl: 'https://github.com/Talalilyas1208/poultry-mangement-system-app',
     summary:
       'A comprehensive agriculture management platform delivering strict end-to-end type safety for livestock health tracking, flock mortality metrics, automated feed inventory allocation, and granular expense reporting.',
     keyDifferentiator:

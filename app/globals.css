@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
+    --background: 245 245 245;
     --foreground: 15 23 42;
   }
 
@@ -14,94 +14,80 @@
   }
 
   body {
-    @apply text-slate-900 font-sans antialiased selection:bg-violet-600 selection:text-white;
+    @apply text-slate-950 font-sans antialiased selection:bg-slate-900 selection:text-white;
     min-height: 100vh;
-    background-color: #ffffff;
-    background-image:
-      radial-gradient(ellipse 75% 50% at 50% -10%, rgba(124, 58, 237, 0.06) 0px, transparent 70%),
-      radial-gradient(circle at 90% 15%, rgba(16, 185, 129, 0.05) 0px, transparent 45%),
-      radial-gradient(circle at 10% 35%, rgba(245, 158, 11, 0.05) 0px, transparent 45%),
-      radial-gradient(circle at 85% 70%, rgba(236, 72, 153, 0.04) 0px, transparent 50%),
-      radial-gradient(circle at 15% 85%, rgba(79, 70, 229, 0.05) 0px, transparent 50%);
-    background-attachment: fixed;
+    background-color: #F5F5F5;
   }
 }
 
-/* High-Level Architectural Dot & Micro-Grid Matrix (Ant Design Pro Enterprise Canvas) */
+/* High-Level Architectural Dot & Micro-Grid Matrix on #F5F5F5 Canvas */
 .bg-grid-pattern,
 .bg-blueprint-grid {
+  background-color: #F5F5F5;
   background-image:
-    radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px),
+    radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
     repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.025) 0px, rgba(15, 23, 42, 0.025) 1px, transparent 1px, transparent 48px),
     repeating-linear-gradient(90deg, rgba(15, 23, 42, 0.025) 0px, rgba(15, 23, 42, 0.025) 1px, transparent 1px, transparent 48px);
   background-size: 24px 24px, 48px 48px, 48px 48px;
 }
 
 .bg-radial-hero {
-  background:
-    radial-gradient(ellipse 80% 55% at 50% -15%, rgba(124, 58, 237, 0.07), transparent 70%),
-    radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.06), transparent 50%),
-    radial-gradient(circle at 15% 45%, rgba(245, 158, 11, 0.05), transparent 50%);
+  background: radial-gradient(ellipse 80% 55% at 50% -15%, rgba(255, 255, 255, 0.9), transparent 70%);
 }
 
 .portrait-glow {
   box-shadow:
     0 20px 50px -12px rgba(15, 23, 42, 0.12),
-    0 0 35px -10px rgba(124, 58, 237, 0.15);
+    0 4px 16px -4px rgba(15, 23, 42, 0.06);
 }
 
-/* Custom Scrollbar (Light Enterprise) */
+/* Custom Scrollbar (#F5F5F5 Minimalist) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d4d4d4;
   border-radius: 9999px;
-  border: 2px solid #f8fafc;
+  border: 2px solid #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #a3a3a3;
 }
 
 /* ==========================================================================
-   ANT DESIGN PRO / HIGH-CLARITY WHITE ENTERPRISE SURFACE SYSTEM
+   MINIMALIST #F5F5F5 & WHITE MONOCHROME ARCHITECTURAL SURFACE SYSTEM
    ========================================================================== */
 
-/* Primary White Card Panel */
+/* Primary Elevated Card Panel */
 .liquid-glass {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
   box-shadow:
-    0 6px 24px -4px rgba(15, 23, 42, 0.05),
-    0 2px 6px -1px rgba(15, 23, 42, 0.03),
-    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+    0 4px 20px -4px rgba(15, 23, 42, 0.05),
+    0 1px 4px -1px rgba(15, 23, 42, 0.03);
 }
 
-/* Secondary White/Alabaster Card Panel */
+/* Secondary #F5F5F5 Surface Panel */
 .liquid-glass-subtle {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  box-shadow:
-    0 2px 8px -2px rgba(15, 23, 42, 0.04),
-    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  background: #F5F5F5;
+  border: 1px solid #e5e5e5;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
 }
 
-/* Highlighted White Card (Multi-Spectrum Ant Design Pro Accent) */
+/* Highlighted Architectural Card (#F5F5F5 to #FFFFFF Monochrome) */
 .liquid-glass-accent {
-  background: linear-gradient(135deg, #ffffff 0%, #faf5ff 55%, #f0fdf4 100%);
-  border: 1px solid #d8b4fe;
+  background: linear-gradient(135deg, #ffffff 0%, #F5F5F5 100%);
+  border: 1px solid #d4d4d4;
   box-shadow:
-    0 12px 32px -8px rgba(124, 58, 237, 0.10),
-    0 2px 8px -2px rgba(15, 23, 42, 0.04),
+    0 10px 30px -8px rgba(15, 23, 42, 0.07),
+    0 2px 6px -2px rgba(15, 23, 42, 0.04),
     inset 0 1px 0 0 #ffffff;
 }
 
@@ -114,194 +100,88 @@
 
 .liquid-glass-interactive:hover {
   transform: translateY(-3px);
-  border-color: #a78bfa;
+  border-color: #171717;
   box-shadow:
     0 16px 36px -8px rgba(15, 23, 42, 0.09),
-    0 4px 12px -2px rgba(124, 58, 237, 0.08);
+    0 4px 12px -2px rgba(15, 23, 42, 0.05);
 }
 
-/* Ant Design 5.0 Semantic Tag Pills (White/Pastel with High-Contrast Dark Text) */
-.liquid-pill {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  color: #0f172a;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-}
-
-.liquid-pill-primary {
-  background: #f0f9ff;
-  border: 1px solid #7dd3fc;
-  color: #0f172a;
-  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.08);
-}
-
-.liquid-pill-violet {
-  background: #f5f3ff;
-  border: 1px solid #c4b5fd;
-  color: #0f172a;
-  box-shadow: 0 1px 3px rgba(124, 58, 237, 0.08);
-}
-
-.liquid-pill-emerald {
-  background: #ecfdf5;
-  border: 1px solid #6ee7b7;
-  color: #0f172a;
-  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.08);
-}
-
-.liquid-pill-amber {
-  background: #fffbeb;
-  border: 1px solid #fcd34d;
-  color: #0f172a;
-  box-shadow: 0 1px 3px rgba(245, 158, 11, 0.08);
-}
-
+/* Monochrome #F5F5F5 Tag Pills (Zero Fancy Colors) */
+.liquid-pill,
+.liquid-pill-primary,
+.liquid-pill-violet,
+.liquid-pill-emerald,
+.liquid-pill-amber,
 .liquid-pill-rose {
-  background: #fff1f2;
-  border: 1px solid #fda4af;
+  background: #F5F5F5;
+  border: 1px solid #d4d4d4;
   color: #0f172a;
-  box-shadow: 0 1px 3px rgba(244, 63, 94, 0.08);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
 }
 
-/* Ant Design Pro Buttons (Light Multi-Color Surface + Crisp Black Text) */
-.liquid-btn-primary {
-  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #e0e7ff 100%);
+/* Monochrome #F5F5F5 & White Buttons */
+.liquid-btn-primary,
+.liquid-btn-emerald {
+  background: #F5F5F5;
   color: #0f172a;
-  border: 1.5px solid #8b5cf6;
-  box-shadow: 0 4px 14px -2px rgba(124, 58, 237, 0.16), inset 0 1px 0 0 #ffffff;
+  border: 1.5px solid #171717;
+  box-shadow: 0 3px 10px -2px rgba(15, 23, 42, 0.08), inset 0 1px 0 0 #ffffff;
   transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.liquid-btn-primary:hover {
+.liquid-btn-primary:hover,
+.liquid-btn-emerald:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 50%, #c7d2fe 100%);
-  border-color: #6d28d9;
-  box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.24), inset 0 1px 0 0 #ffffff;
+  background: #ebebeb;
+  border-color: #000000;
+  box-shadow: 0 6px 16px -3px rgba(15, 23, 42, 0.14), inset 0 1px 0 0 #ffffff;
 }
 
 .liquid-btn-secondary {
   background: #ffffff;
   color: #0f172a;
-  border: 1.5px solid #cbd5e1;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+  border: 1.5px solid #d4d4d4;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
   transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .liquid-btn-secondary:hover {
   transform: translateY(-2px);
-  border-color: #7c3aed;
-  background: #faf5ff;
-  box-shadow: 0 6px 16px -3px rgba(124, 58, 237, 0.12);
+  border-color: #171717;
+  background: #F5F5F5;
+  box-shadow: 0 6px 16px -3px rgba(15, 23, 42, 0.08);
 }
 
-.liquid-btn-emerald {
-  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-  color: #0f172a;
-  border: 1.5px solid #10b981;
-  box-shadow: 0 4px 14px -2px rgba(16, 185, 129, 0.16), inset 0 1px 0 0 #ffffff;
-  transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.liquid-btn-emerald:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-  border-color: #059669;
-  box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.24), inset 0 1px 0 0 #ffffff;
-}
-
-/* Soft Multi-Tone Architectural Light Orbs on White Canvas */
+/* Neutral Subtle Light Shading Orbs (No Rainbow Colors) */
 .liquid-orb {
   position: absolute;
   border-radius: 9999px;
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.5;
   transform: translate3d(0, 0, 0);
-  will-change: transform;
 }
 
-.liquid-orb-1 {
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(99, 102, 241, 0.04) 45%, transparent 70%);
-  top: -8%;
-  left: 2%;
-  animation: liquidFloat 24s ease-in-out infinite alternate;
-}
-
-.liquid-orb-2 {
-  width: 620px;
-  height: 620px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(20, 184, 166, 0.04) 45%, transparent 70%);
-  top: 28%;
-  right: 0%;
-  animation: liquidFloat 28s ease-in-out 3s infinite alternate-reverse;
-}
-
-.liquid-orb-3 {
+.liquid-orb-1,
+.liquid-orb-2,
+.liquid-orb-3,
+.liquid-orb-4 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.07) 0%, rgba(244, 63, 94, 0.04) 45%, transparent 70%);
-  top: 58%;
-  left: 12%;
-  animation: liquidFloat 26s ease-in-out 6s infinite alternate;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
 }
 
-.liquid-orb-4 {
-  width: 680px;
-  height: 680px;
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.07) 0%, rgba(139, 92, 246, 0.04) 45%, transparent 70%);
-  top: 82%;
-  right: 8%;
-  animation: liquidFloat 30s ease-in-out 1s infinite alternate-reverse;
-}
-
-/* High-Contrast Typography Accents for White Background */
-.text-gradient-blue {
-  background: linear-gradient(135deg, #0f172a 0%, #3730a3 50%, #4f46e5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #0f172a 0%, #0f766e 50%, #0d9488 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-violet {
-  background: linear-gradient(135deg, #0f172a 0%, #5b21b6 50%, #7c3aed 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-emerald {
-  background: linear-gradient(135deg, #0f172a 0%, #065f46 50%, #059669 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-amber {
-  background: linear-gradient(135deg, #0f172a 0%, #92400e 50%, #d97706 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-silver {
-  background: linear-gradient(180deg, #090d16 0%, #1e293b 65%, #334155 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-liquid {
-  background: linear-gradient(135deg, #090d16 0%, #4c1d95 45%, #be185d 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
+/* Monochrome High-Contrast Typography (No Rainbow Gradients) */
+.text-gradient-blue,
+.text-gradient-cyan,
+.text-gradient-violet,
+.text-gradient-emerald,
+.text-gradient-amber,
+.text-gradient-silver,
+.text-gradient-liquid,
 .text-gradient-ai {
-  background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #db2777 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0f172a;
+  background: none;
+  -webkit-text-fill-color: #0f172a;
 }
 
 /* Orbit Hover Pause */

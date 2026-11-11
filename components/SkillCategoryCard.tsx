@@ -12,24 +12,24 @@ const categoryIcons: Record<string, React.ElementType> = {
 };
 
 const categoryAccents: Record<string, string> = {
-  'AI & Agentic Systems': 'liquid-pill-violet text-violet-800',
-  'Frontend Engineering': 'liquid-pill-primary text-indigo-800',
-  'State & Networking': 'liquid-pill-amber text-amber-800',
-  'Backend & Databases': 'liquid-pill-emerald text-emerald-800',
-  'Tools & DevOps': 'liquid-pill-rose text-rose-800',
+  'AI & Agentic Systems': 'liquid-pill-violet text-slate-950',
+  'Frontend Engineering': 'liquid-pill-primary text-slate-950',
+  'State & Networking': 'liquid-pill-amber text-slate-950',
+  'Backend & Databases': 'liquid-pill-emerald text-slate-950',
+  'Tools & DevOps': 'liquid-pill-rose text-slate-950',
 };
 
 export default function SkillCategoryCard({ group }: { group: SkillGroup }) {
   const Icon = categoryIcons[group.category] || Cpu;
   const isAiGroup = group.category === 'AI & Agentic Systems';
-  const iconStyle = categoryAccents[group.category] || 'liquid-pill-violet text-violet-800';
+  const iconStyle = categoryAccents[group.category] || 'liquid-pill-violet text-slate-950';
 
   return (
     <div
       className={`p-6 sm:p-8 rounded-3xl transition-all duration-300 ${
         isAiGroup
-          ? 'liquid-glass-accent md:col-span-2 shadow-md border-violet-300'
-          : 'liquid-glass shadow-sm hover:border-violet-300'
+          ? 'liquid-glass-accent md:col-span-2 shadow-md border-slate-300'
+          : 'liquid-glass shadow-sm hover:border-slate-300'
       }`}
     >
       <div className="flex items-center gap-3 mb-4">
