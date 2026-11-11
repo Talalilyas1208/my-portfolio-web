@@ -4,11 +4,22 @@ import SectionHeading from '@/components/SectionHeading';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
 import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 import { personalData } from '@/data/portfolioData';
+import { siteUrl } from '@/data/siteMetadata';
 
 export const metadata: Metadata = {
   title: 'Experience & Education',
   description:
     'Professional software engineering work history and academic foundation in Artificial Intelligence of Muhammad Talal.',
+  alternates: {
+    canonical: `${siteUrl}/experience`,
+  },
+  openGraph: {
+    title: 'Experience & Education | Muhammad Talal',
+    description:
+      'Professional software engineering work history and academic foundation in Artificial Intelligence of Muhammad Talal.',
+    url: `${siteUrl}/experience`,
+    type: 'profile',
+  },
 };
 
 const statGrads = ['text-gradient-violet', 'text-gradient-cyan', 'text-gradient-emerald', 'text-gradient-amber'];

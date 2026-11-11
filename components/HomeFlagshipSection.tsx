@@ -7,7 +7,8 @@ import TechnicalRulerDivider from '@/components/TechnicalRulerDivider';
 import { projectsData } from '@/data/portfolioData';
 
 export default function HomeFlagshipSection() {
-  const flagshipProject = projectsData.find((p) => p.isFlagship) || projectsData[0];
+  const flagshipProject =
+    projectsData.find((p) => p.slug === 'autonomous-gemini-code-fixer') || projectsData[0];
 
   return (
     <>

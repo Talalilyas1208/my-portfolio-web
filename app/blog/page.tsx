@@ -4,11 +4,22 @@ import SectionHeading from '@/components/SectionHeading';
 import ArticleCard from '@/components/ArticleCard';
 import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 import { articlesData } from '@/data/portfolioData';
+import { siteUrl } from '@/data/siteMetadata';
 
 export const metadata: Metadata = {
   title: 'Engineering Articles & Insights',
   description:
     'Technical deep-dives on autonomous AI agents, Google Gemini LLM pipelines, React state normalization, and Next.js App Router performance by Muhammad Talal.',
+  alternates: {
+    canonical: `${siteUrl}/blog`,
+  },
+  openGraph: {
+    title: 'Engineering Articles & Insights | Muhammad Talal',
+    description:
+      'Technical deep-dives on autonomous AI agents, Google Gemini LLM pipelines, React state normalization, and Next.js App Router performance by Muhammad Talal.',
+    url: `${siteUrl}/blog`,
+    type: 'website',
+  },
 };
 
 export default function BlogPage() {

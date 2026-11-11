@@ -1,15 +1,18 @@
 import type { Metadata } from 'next';
-import { personalData } from '@/data/portfolioData';
+import { personalData, projectsData } from '@/data/portfolioData';
 
 export const siteUrl = 'https://talal-ai-portfolio.web.app';
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${personalData.name} | AI & Full-Stack React Engineer | Autonomous Agentic Systems`,
+    default: `${personalData.name} | AI & Full-Stack React Engineer | SaaS & Autonomous Agent Systems`,
     template: `%s | ${personalData.name} — AI & Full-Stack Engineer`,
   },
-  description: `${personalData.shortBio} Leading AI & Full-Stack React Engineer specializing in Autonomous LLM Agents (Gemini & OpenAI), Self-Healing Code Loops, and sub-second React & Next.js web applications. Available worldwide for full-time engineering roles, contracting & consulting.`,
+  description: `${personalData.shortBio} Leading AI & Full-Stack React Engineer specializing in SaaS Revenue Intelligence, Autonomous LLM Agents (Gemini & OpenAI), Self-Healing Code Loops, and sub-second React & Next.js web applications. Available worldwide for full-time engineering roles, contracting & consulting.`,
+  alternates: {
+    canonical: siteUrl,
+  },
   keywords: [
     'Muhammad Talal Ilyas',
     'Muhammad Talal',
@@ -19,6 +22,9 @@ export const siteMetadata: Metadata = {
     'Muhammad Talal Full Stack Engineer',
     'Muhammad Talal Software Engineer',
     'Muhammad Talal React Developer',
+    'RevTerm SaaS Revenue Intelligence',
+    'FigureMint Fee Calculator',
+    'HiveShield B2B OEM Platform',
     'AI Engineer',
     'Autonomous AI Agents Developer',
     'Agentic Systems Engineer',
@@ -30,7 +36,7 @@ export const siteMetadata: Metadata = {
     'Prompt Engineering Specialist',
     'Full Stack React Engineer',
     'Senior React Developer',
-    'Next.js 14 Developer',
+    'Next.js 15 Developer',
     'TypeScript Engineer',
     'Redux Toolkit Specialist',
     'Tailwind CSS UI Architect',
@@ -39,6 +45,7 @@ export const siteMetadata: Metadata = {
   ],
   authors: [{ name: personalData.name, url: personalData.github }],
   creator: personalData.name,
+  publisher: personalData.name,
   other: {
     target: 'all',
     rating: 'general',
@@ -46,18 +53,18 @@ export const siteMetadata: Metadata = {
     distribution: 'Global',
   },
   openGraph: {
-    type: 'profile',
+    type: 'website',
     locale: 'en_US',
     url: siteUrl,
     title: `${personalData.name} — AI & Full-Stack React Engineer | Talal AI Portfolio`,
     description:
-      'Official Talal AI Portfolio: Autonomous LLM agents, self-healing code pipelines, and high-performance React & Next.js web applications for engineering teams worldwide.',
+      'Official Talal AI Portfolio: SaaS Revenue Intelligence, Autonomous LLM agents, self-healing code pipelines, and high-performance React & Next.js web applications.',
     siteName: `Talal AI Portfolio — ${personalData.name}`,
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
+        url: `${siteUrl}/profile.jpg`,
+        width: 800,
+        height: 800,
         alt: `Talal AI Portfolio — Muhammad Talal Ilyas`,
       },
     ],
@@ -66,12 +73,13 @@ export const siteMetadata: Metadata = {
     card: 'summary_large_image',
     title: `${personalData.name} — AI & Full-Stack React Engineer`,
     description:
-      'Autonomous LLM agents, self-healing code pipelines, and high-performance React frontends worldwide.',
-    images: ['/og-image.png'],
+      'SaaS Revenue Intelligence, Autonomous LLM agents, self-healing code pipelines, and high-performance React frontends worldwide.',
+    images: [`${siteUrl}/profile.jpg`],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -84,6 +92,7 @@ export const siteMetadata: Metadata = {
     google: [
       'hOemf1EHtxp2E-9BMfcLvlUiuMInv1sB3CX-Ms24RiE',
       'i0ICyyGSnIlk8hz_i9TDhxW8VOlQGvpLhtijsPfdbtY',
+      '46d288d7e8f0014d',
     ],
   },
 };
@@ -92,11 +101,29 @@ export const personJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: `Talal AI Portfolio — ${personalData.name}`,
+      description: personalData.shortBio,
+      publisher: { '@id': `${siteUrl}/#person` },
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${siteUrl}/#profilepage`,
+      url: siteUrl,
+      name: `${personalData.name} — AI & Full-Stack React Engineer Portfolio`,
+      isPartOf: { '@id': `${siteUrl}/#website` },
+      mainEntity: { '@id': `${siteUrl}/#person` },
+    },
+    {
       '@type': 'Person',
       '@id': `${siteUrl}/#person`,
       name: personalData.name,
       jobTitle: personalData.title,
       url: siteUrl,
+      image: `${siteUrl}/profile.jpg`,
       email: personalData.email,
       telephone: personalData.phone,
       sameAs: [personalData.github, personalData.linkedin],
@@ -129,63 +156,28 @@ export const personJsonLd = {
         'Autonomous AI Agents',
         'Large Language Models (LLMs)',
         'Google Gemini API',
+        'SaaS Revenue Intelligence',
         'React.js',
         'Next.js',
         'TypeScript',
         'Tailwind CSS',
         'Redux Toolkit',
+        'Express.js',
+        'PostgreSQL & Supabase',
         'Self-Healing Code Pipelines',
-        'Software Engineering in Sargodha',
       ],
     },
     {
-      '@type': 'ProfessionalService',
-      '@id': `${siteUrl}/#service`,
-      name: `Muhammad Talal — AI & Full-Stack Software Engineering Services`,
-      url: siteUrl,
-      telephone: personalData.phone,
-      priceRange: '$$',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Sargodha',
-        addressRegion: 'Punjab',
-        addressCountry: 'PK',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 32.0836,
-        longitude: 72.6711,
-      },
-      areaServed: [
-        { '@type': 'City', name: 'Sargodha' },
-        { '@type': 'City', name: 'Lahore' },
-        { '@type': 'Country', name: 'Pakistan' },
-        { '@type': 'AdministrativeArea', name: 'Worldwide (Remote)' },
-      ],
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Software & AI Engineering Services',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Autonomous AI Agent & LLM Development',
-              description:
-                'Custom AI agent pipelines, Google Gemini and OpenAI integrations, and self-healing test systems.',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'High-Performance React & Next.js Development',
-              description:
-                'Scalable web applications with sub-second rendering, complex Redux state machines, and 100% Core Web Vitals.',
-            },
-          },
-        ],
-      },
+      '@type': 'ItemList',
+      '@id': `${siteUrl}/#projects-list`,
+      name: 'Featured Software & AI Engineering Case Studies',
+      itemListElement: projectsData.map((project, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: project.title,
+        description: project.summary,
+        url: `${siteUrl}/projects/${project.slug}`,
+      })),
     },
   ],
 };

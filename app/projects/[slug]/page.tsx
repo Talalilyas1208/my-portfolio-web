@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { projectsData, personalData } from '@/data/portfolioData';
+import { siteUrl } from '@/data/siteMetadata';
 import JsonLd from '@/components/JsonLd';
 import ProjectDetailHero from '@/components/ProjectDetailHero';
 import ProjectArchitectureSection from '@/components/ProjectArchitectureSection';
@@ -19,17 +20,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projectsData.find((p) => p.slug === params.slug);
   if (!project) return { title: 'Project Not Found' };
 
-  const url = `https://talalai.vercel.app/projects/${project.slug}`;
+  const url = `${siteUrl}/projects/${project.slug}`;
   return {
     title: `${project.title} — Case Study`,
     description: project.summary,
-    keywords: [project.title, ...project.techStack, 'Muhammad Talal', 'Case Study'],
+    keywords: [project.title, ...project.techStack, 'Muhammad Talal Ilyas', 'Case Study'],
     openGraph: {
-      title: `${project.title} | Case Study by Muhammad Talal`,
+      title: `${project.title} | Case Study by ${personalData.name}`,
       description: project.summary,
       url,
       type: 'article',
-      siteName: `${personalData.name} Portfolio`,
+      siteName: `Talal AI Portfolio — ${personalData.name}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -49,9 +50,10 @@ export default function ProjectCaseStudyPage({ params }: Props) {
     '@type': 'SoftwareSourceCode',
     name: project.title,
     description: project.summary,
+    url: `${siteUrl}/projects/${project.slug}`,
     programmingLanguage: project.techStack.join(', '),
     codeRepository: project.githubUrl,
-    author: { '@type': 'Person', name: personalData.name, url: 'https://talalai.vercel.app' },
+    author: { '@type': 'Person', name: personalData.name, url: siteUrl },
     keywords: project.techStack.join(', '),
   };
 
@@ -59,9 +61,9 @@ export default function ProjectCaseStudyPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://talalai.vercel.app' },
-      { '@type': 'ListItem', position: 2, name: 'Projects', item: 'https://talalai.vercel.app/projects' },
-      { '@type': 'ListItem', position: 3, name: project.title, item: `https://talalai.vercel.app/projects/${project.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Projects', item: `${siteUrl}/projects` },
+      { '@type': 'ListItem', position: 3, name: project.title, item: `${siteUrl}/projects/${project.slug}` },
     ],
   };
 

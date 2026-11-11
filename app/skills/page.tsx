@@ -7,6 +7,7 @@ import SkillCategoryCard from '@/components/SkillCategoryCard';
 import SmoothLazyReveal from '@/components/SmoothLazyReveal';
 import LazyLoadingPlaceholder from '@/components/LazyLoadingPlaceholder';
 import { skillGroupsData } from '@/data/portfolioData';
+import { siteUrl } from '@/data/siteMetadata';
 import { Cpu } from 'lucide-react';
 
 const CompetencyRadarChart = dynamic(() => import('@/components/CompetencyRadarChart'), {
@@ -21,6 +22,16 @@ export const metadata: Metadata = {
   title: 'Skills & Technical Expertise',
   description:
     'Technical skill matrix of Muhammad Talal across AI & Agentic Systems, Frontend Engineering, State Management, Backend & DevOps.',
+  alternates: {
+    canonical: `${siteUrl}/skills`,
+  },
+  openGraph: {
+    title: 'Skills & Technical Expertise | Muhammad Talal',
+    description:
+      'Technical skill matrix of Muhammad Talal across AI & Agentic Systems, Frontend Engineering, State Management, Backend & DevOps.',
+    url: `${siteUrl}/skills`,
+    type: 'website',
+  },
 };
 
 export default function SkillsPage() {
