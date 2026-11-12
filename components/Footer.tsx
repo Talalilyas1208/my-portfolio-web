@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <span className="text-slate-700 font-medium">© {new Date().getFullYear()} Muhammad Talal. Built with Next.js, TypeScript &amp; #F5F5F5 Architectural System.</span>
+          <span className="text-slate-700 font-medium">© {new Date().getFullYear()} Muhammad Talal. All rights reserved.</span>
           <button
             onClick={scrollToTop}
             className="flex items-center gap-1.5 text-slate-900 hover:text-black transition-colors bg-white border border-slate-300 px-3.5 py-1.5 rounded-xl font-semibold"
